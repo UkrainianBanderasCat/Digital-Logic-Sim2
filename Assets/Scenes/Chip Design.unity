@@ -2297,9 +2297,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0850237
+    x: 0.09812689
     y: 0
-    width: 0.8299526
+    width: 0.8037462
     height: 1
   near clip plane: 0.3
   far clip plane: 1500
@@ -2692,7 +2692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ccc252f57e34603a8c153170222a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minStepTime: 0.075
+  minStepTime: 0.025
 --- !u!4 &1119697276
 Transform:
   m_ObjectHideFlags: 0
@@ -5404,6 +5404,7 @@ MonoBehaviour:
   - {fileID: 5420785331373779543, guid: 9a33af9da745e1d41a6039634f18b4a2, type: 3}
   - {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0, type: 3}
   - {fileID: 894826051406503273, guid: 808e12d27921848a59bac447b93aec0f, type: 3}
+  - {fileID: 8384850648039707066, guid: 64a24a3507ebe0f7697488ff84e1a1e0, type: 3}
   chipBar: {fileID: 606875003}
 --- !u!4 &1830893909
 Transform:
@@ -5457,6 +5458,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleChange: {x: 0.1, y: 0.1, z: 0}
+  min: 0.6
+  max: 1.3
+  objectsToZoom: []
+  _chipInteraction: {fileID: 0}
 --- !u!1 &1843717162
 GameObject:
   m_ObjectHideFlags: 0
@@ -7051,6 +7056,11 @@ PrefabInstance:
       propertyPath: selectionBoundsBorderPadding
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 4750937598426732716, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interaction
+      objectReference: {fileID: 0}
     - target: {fileID: 4750937598926047525, guid: d48b4f02647794ac2aba95960c3d59ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7120,6 +7130,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chip Editor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750937599765430255, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4750937600005748789, guid: d48b4f02647794ac2aba95960c3d59ab,
         type: 3}
