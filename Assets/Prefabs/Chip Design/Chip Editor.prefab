@@ -962,7 +962,7 @@ GameObject:
   - component: {fileID: 4750937598426732714}
   m_Layer: 0
   m_Name: Chip Interaction
-  m_TagString: Untagged
+  m_TagString: Interaction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1254,7 +1254,7 @@ GameObject:
   - component: {fileID: 5537867366871689101}
   m_Layer: 0
   m_Name: Chip Editor
-  m_TagString: ZoomArea
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
