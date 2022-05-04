@@ -8,12 +8,12 @@ public class Bus : Chip {
 	public Palette palette;
 	const int HighZ = -1;
 
-	protected override void ProcessOutput () {
+	protected override void ProcessOutput (int[] input) {
 		int outputSignal = -1;
-		for (int i = 0; i < inputPins.Length; i++) {
+		for (int i = 0; i < input.Length; i++) {
 			if (inputPins[i].HasParent) {
-				if (inputPins[i].State != HighZ)
-					if (inputPins[i].State == 1) {
+				if (input[i] != HighZ)
+					if (input[i] == 1) {
 						outputSignal = 1;
 					}
 				else {

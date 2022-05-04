@@ -10,6 +10,7 @@ public class Manager : MonoBehaviour {
 	public ChipPackage chipPackagePrefab;
 	public Wire wirePrefab;
 	public Chip[] builtinChips;
+	public bool DebugMode;
 
 	ChipEditor activeChipEditor;
 	int currentChipCreationIndex;

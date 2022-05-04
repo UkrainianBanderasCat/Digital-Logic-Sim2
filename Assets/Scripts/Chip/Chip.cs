@@ -7,6 +7,7 @@ public class Chip : MonoBehaviour {
 	public string chipName = "Untitled";
 	public Pin[] inputPins;
 	public Pin[] outputPins;
+	int[] debugInput;
 
 	// Number of input signals received (on current simulation step)
 	int numInputSignalsReceived;
@@ -19,10 +20,20 @@ public class Chip : MonoBehaviour {
 
 	protected virtual void Awake () {
 		bounds = GetComponent<BoxCollider2D> ();
+		Simulation.onStoreInputDebug += StoreDebugInput;
+		Simulation.onDebugStep += DebugStep;
 	}
 
 	protected virtual void Start () {
 		SetPinIndices ();
+	}
+
+	void StoreDebugInput () {
+		debugInput = StateOfInputPins ();
+	}
+
+	void DebugStep() {
+		ProcessOutput (debugInput);
 	}
 
 	public void InitSimulationFrame () {
@@ -33,7 +44,7 @@ public class Chip : MonoBehaviour {
 	}
 
 	// Receive input signal from pin: either pin has power, or pin does not have power.
-	// Once signals from all input pins have been received, calls the ProcessOutput() function.
+	// Once signals from all input pins have been received, calls the ProcessOutput() function, unless debug mode is enabled.
 	public virtual void ReceiveInputSignal (Pin pin) {
 
 		// Reset if on new step of simulation
@@ -43,11 +54,24 @@ public class Chip : MonoBehaviour {
 			InitSimulationFrame ();
 		}
 
+		if (Simulation.debugMode) {
+			return;
+		}
+
 		numInputSignalsReceived++;
 
 		if (numInputSignalsReceived == inputPins.Length) {
-			ProcessOutput ();
+			ProcessOutput (StateOfInputPins ());
 		}
+	}
+
+	int[] StateOfInputPins () {
+		List<int> stateOfPins = new List<int> ();
+		foreach (Pin pin in inputPins)
+		{
+			stateOfPins.Add(pin.State);
+		}
+		return stateOfPins.ToArray();
 	}
 
 	void ProcessCycleAndUnconnectedInputs () {
@@ -63,7 +87,7 @@ public class Chip : MonoBehaviour {
 
 	// Called once all inputs to the component are known.
 	// Sends appropriate output signals to output pins
-	protected virtual void ProcessOutput () {
+	protected virtual void ProcessOutput (int[] input) {
 
 	}
 

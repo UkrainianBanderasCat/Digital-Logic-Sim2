@@ -16,7 +16,7 @@ public class Display : BuiltinChip
 		base.Awake ();
 	}
 
-	protected override void ProcessOutput () {
+	protected override void ProcessOutput (int[] input) {
         
 	}
 }

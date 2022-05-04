@@ -3,21 +3,30 @@ using UnityEngine;
 public class Clock : BuiltinChip {
 
     public float clockCycle = 1;
-    public int currentOutputSignal = 0;
+    int currentOutputSignal = 0;
     float cycleTimeLeft;
 
     protected override void Awake () {
         cycleTimeLeft = clockCycle;
+        Simulation.onDebugClockCycle += DebugClockCycle;
         base.Awake();
     }
 
     void Update () {
+        if (Simulation.debugMode) {
+            return;
+        }
+
         cycleTimeLeft -= Time.deltaTime;
         if (cycleTimeLeft > 0) {
             return;
         }
         FlipOutputSignal ();
         cycleTimeLeft = clockCycle;
+    }
+
+    void DebugClockCycle () {
+        FlipOutputSignal ();
     }
 
     void FlipOutputSignal () {

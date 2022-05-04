@@ -12,13 +12,13 @@ public class SegmentDisplay : BuiltinChip
 		base.Awake ();
 	}
 
-	protected override void ProcessOutput () {
+	protected override void ProcessOutput (int[] input) {
         for (int i = 0; i<leds.Length; i++) {
-            if (inputPins[i].State == 1) {
+            if (input[i] == 1) {
                 leds[i].GetComponent<MeshRenderer>().material = on;
             }
 
-            else if (inputPins[i].State == 0) {
+            else if (input[i] == 0) {
                 leds[i].GetComponent<MeshRenderer>().material = off;
             }
         }

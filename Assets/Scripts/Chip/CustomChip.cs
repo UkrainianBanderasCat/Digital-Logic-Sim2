@@ -12,10 +12,10 @@ public class CustomChip : Chip {
 		base.ReceiveInputSignal (pin);
 	}
 
-	protected override void ProcessOutput () {
+	protected override void ProcessOutput (int[] input) {
 		// Send signals from input pins through the chip
-		for (int i = 0; i < inputPins.Length; i++) {
-			inputSignals[i].SendSignal (inputPins[i].State);
+		for (int i = 0; i < input.Length; i++) {
+			inputSignals[i].SendSignal (input[i]);
 		}
 
 		// Pass processed signals on to ouput pins

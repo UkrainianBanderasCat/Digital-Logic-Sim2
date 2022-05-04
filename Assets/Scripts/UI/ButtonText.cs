@@ -15,7 +15,7 @@ public class ButtonText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 	public Color highlightedCol = Color.white;
 	bool highlighted;
 
-	string name;
+	new string name;
 
 	public ChipDelete _chipDelete;
 

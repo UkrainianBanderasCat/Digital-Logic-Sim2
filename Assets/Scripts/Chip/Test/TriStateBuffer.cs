@@ -8,9 +8,9 @@ public class TriStateBuffer : Chip {
 		base.Awake ();
 	}
 
-	protected override void ProcessOutput () {
-		int data = inputPins[0].State;
-		int enable = inputPins[1].State;
+	protected override void ProcessOutput (int[] input) {
+		int data = input[0];
+		int enable = input[1];
 
 		if (enable == 1) {
 			//Debug.Log (data + "  " + enable + ":  " + data);

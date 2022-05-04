@@ -6,8 +6,8 @@ public class AndGate : BuiltinChip {
 		base.Awake ();
 	}
 
-	protected override void ProcessOutput () {
-		int outputSignal = inputPins[0].State & inputPins[1].State;
+	protected override void ProcessOutput (int[] input) {
+		int outputSignal = input[0] & input[1];
 		outputPins[0].ReceiveSignal (outputSignal);
 	}
 

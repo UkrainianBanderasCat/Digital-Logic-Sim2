@@ -4,8 +4,8 @@
 		base.Awake ();
 	}
 
-	protected override void ProcessOutput () {
-		int outputSignal = 1 - inputPins[0].State;
+	protected override void ProcessOutput (int[] input) {
+		int outputSignal = 1 - input[0];
 		outputPins[0].ReceiveSignal (outputSignal);
 	}
 }

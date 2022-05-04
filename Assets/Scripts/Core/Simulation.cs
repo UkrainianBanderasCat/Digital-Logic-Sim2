@@ -4,6 +4,10 @@ using UnityEngine;
 public class Simulation : MonoBehaviour {
 
 	public static int simulationFrame { get; private set; }
+	public static bool debugMode { get; private set; }
+	public static event System.Action onStoreInputDebug;
+	public static event System.Action onDebugStep;
+	public static event System.Action onDebugClockCycle;
 
 	static Simulation instance;
 	InputSignal[] inputSignals;
@@ -21,6 +25,19 @@ public class Simulation : MonoBehaviour {
 			lastStepTime = Time.time;
 			StepSimulation ();
 		}
+	}
+
+	public void SetDebugMode (bool debug) {
+		debugMode = debug;
+	}
+
+	public void DebugStep () {
+		onStoreInputDebug?.Invoke ();
+		onDebugStep?.Invoke ();
+	}
+
+	public void DebugClockCycle () {
+		onDebugClockCycle?.Invoke ();
 	}
 
 	void StepSimulation () {
