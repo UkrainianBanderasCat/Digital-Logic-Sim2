@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinType: 0
   chip: {fileID: 8384850648039707066}
-  pinName: B
+  pinName: F
   cyclic: 0
   index: 0
   parentPin: {fileID: 0}
