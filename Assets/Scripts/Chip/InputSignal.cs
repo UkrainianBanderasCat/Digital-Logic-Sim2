@@ -22,6 +22,7 @@ public class InputSignal : ChipSignal {
 	}
 
 	public void SendSignal () {
+		gameObject.tag = "Zoom";
 		outputPins[0].ReceiveSignal (currentState);
 	}
 
@@ -35,6 +36,7 @@ public class InputSignal : ChipSignal {
 	}
 
 	void OnMouseDown () {
+		Debug.Log("Stop");
 		ToggleActive ();
 	}
 }

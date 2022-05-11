@@ -8,7 +8,6 @@ public class LoadProjectMenu : MonoBehaviour {
 	public Transform scrollHolder;
 	[SerializeField, HideInInspector]
 	List<Button> loadButtons;
-
 	void OnEnable () {
 		string[] projectNames = SaveSystem.GetSaveNames ();
 
@@ -18,6 +17,7 @@ public class LoadProjectMenu : MonoBehaviour {
 				loadButtons.Add (Instantiate (projectButtonPrefab, parent : scrollHolder));
 			}
 			Button loadButton = loadButtons[i];
+			loadButton.GetComponent<ProjectButton>().name = projectName.Trim();
 			loadButton.GetComponentInChildren<TMPro.TMP_Text> ().text = projectName.Trim ();
 			loadButton.onClick.AddListener (() => LoadProject (projectName));
 		}

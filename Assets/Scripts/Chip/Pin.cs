@@ -5,6 +5,7 @@ public class Pin : MonoBehaviour {
 
 	public enum PinType { ChipInput, ChipOutput }
 	public PinType pinType;
+	public GameObject input;
 	// The chip that this pin is attached to (either as an input or output terminal)
 	public Chip chip;
 	public string pinName;
@@ -45,6 +46,8 @@ public class Pin : MonoBehaviour {
 
 	void Start () {
 		SetScale ();
+
+		
 	}
 
 	public void SetScale () {

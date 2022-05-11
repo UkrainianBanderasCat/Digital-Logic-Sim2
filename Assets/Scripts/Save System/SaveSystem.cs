@@ -64,4 +64,9 @@ public static class SaveSystem {
 			return Path.Combine (Application.persistentDataPath, saveFolderName);
 		}
 	}
+
+	public static void DeleteProject(string nameProject)
+	{
+		Directory.Delete(SaveDataDirectoryPath + "/" + nameProject, true);
+	}
 }

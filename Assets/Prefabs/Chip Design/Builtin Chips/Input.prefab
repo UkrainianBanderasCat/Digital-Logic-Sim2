@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2072548877}
   m_Layer: 0
   m_Name: Input
-  m_TagString: Zoom
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -329,6 +329,11 @@ PrefabInstance:
       propertyPath: chip
       value: 
       objectReference: {fileID: 4370981688201696047}
+    - target: {fileID: 8774343771143846598, guid: 3f5693e72562648d19f39eace0ccffd6,
+        type: 3}
+      propertyPath: input
+      value: 
+      objectReference: {fileID: 761073645497421232}
     - target: {fileID: 8774343771143846598, guid: 3f5693e72562648d19f39eace0ccffd6,
         type: 3}
       propertyPath: pinName
