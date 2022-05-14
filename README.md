@@ -9,6 +9,7 @@
 **Ideas to add:**
 - **Bus**
 - **Edit chips**
+- **Slider on clock to controll speed**
          
 
 [Watch video](https://www.youtube.com/watch?v=QZwneRb-zqA)
