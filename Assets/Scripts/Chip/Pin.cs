@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Pin : MonoBehaviour {
 
+	const float diameter = 0.215f;
+
 	public enum PinType { ChipInput, ChipOutput }
 	public PinType pinType;
 	public GameObject input;
@@ -28,7 +30,6 @@ public class Pin : MonoBehaviour {
 
 	public static float radius {
 		get {
-			float diameter = 0.215f;
 			return diameter / 2;
 		}
 	}
@@ -45,9 +46,7 @@ public class Pin : MonoBehaviour {
 	}
 
 	void Start () {
-		SetScale ();
-
-		
+		SetScale ();		
 	}
 
 	public void SetScale () {

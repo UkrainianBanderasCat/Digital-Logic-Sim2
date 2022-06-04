@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class Simulation : MonoBehaviour {
 
-	public static int simulationFrame { get; private set; }
-	public static bool debugMode { get; private set; }
+	public static event System.Action<int> onClockCycle;
+	public static event System.Action onUpdateClockSignals;
 	public static event System.Action onStoreInputDebug;
 	public static event System.Action onDebugStep;
-	public static event System.Action onDebugClockCycle;
+
+	public static int simulationFrame { get; private set; }
+	public static bool debugMode { get; private set; }
 
 	static Simulation instance;
 	InputSignal[] inputSignals;
@@ -15,9 +17,13 @@ public class Simulation : MonoBehaviour {
 
 	public float minStepTime = 0.075f;
 	float lastStepTime;
+	float clockCycleSpeed = 0.6f;
+    float cycleTimeLeft;
+	int currentClockState = 0;
 
 	void Awake () {
 		simulationFrame = 0;
+        cycleTimeLeft = clockCycleSpeed;
 	}
 
 	void Update () {
@@ -25,11 +31,27 @@ public class Simulation : MonoBehaviour {
 			lastStepTime = Time.time;
 			StepSimulation ();
 		}
+		
+		if (Simulation.debugMode) {
+            return;
+        }
+
+        cycleTimeLeft -= Time.deltaTime;
+        if (cycleTimeLeft > 0) {
+            return;
+        }
+		currentClockState = 1 - currentClockState;
+        onClockCycle?.Invoke (currentClockState);
+		onUpdateClockSignals?.Invoke ();
+        cycleTimeLeft = clockCycleSpeed;
 	}
 
-	public void SetSpeed(float speed)
-	{
+	public void SetSignalSpeed(float speed) {
 		minStepTime = speed;
+	}
+
+	public void SetClockSpeed(float speed) {
+		clockCycleSpeed = speed;
 	}
 
 	public void SetDebugMode (bool debug) {
@@ -42,16 +64,18 @@ public class Simulation : MonoBehaviour {
 	}
 
 	public void DebugClockCycle () {
-		onDebugClockCycle?.Invoke ();
+		currentClockState = 1 - currentClockState;
+		onClockCycle?.Invoke (currentClockState);
+		onUpdateClockSignals?.Invoke ();
 	}
 
 	void StepSimulation () {
 		simulationFrame++;
 		RefreshChipEditorReference ();
 
-		// Clear output signals
 		if (!debugMode)
 		{	
+			// Clear output signals
 			List<ChipSignal> outputSignals = chipEditor.outputsEditor.signals;
 			for (int i = 0; i < outputSignals.Count; i++) {
 				outputSignals[i].SetDisplayState (0);

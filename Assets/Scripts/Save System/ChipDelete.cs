@@ -6,7 +6,7 @@ using TMPro;
 
 public class ChipDelete : MonoBehaviour
 {
-    string name;
+    new string name;
 	const string fileExtension = ".txt";
     Manager _manager;
     public GameObject deleteConfirmation;

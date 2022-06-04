@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectButton : MonoBehaviour
 {
-    public string name;
+    public new string name;
     bool onHover;
 
     void Update()
