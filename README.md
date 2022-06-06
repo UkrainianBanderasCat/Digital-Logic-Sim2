@@ -9,6 +9,7 @@
 **Ideas to add:**
 - **Bus**
 - **Edit chips**
+- **Copy and paste selected chips**
          
 
 [Watch video](https://www.youtube.com/watch?v=QZwneRb-zqA)
