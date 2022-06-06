@@ -17,13 +17,14 @@ public class Simulation : MonoBehaviour {
 
 	public float minStepTime = 0.075f;
 	float lastStepTime;
-	float clockCycleSpeed = 0.6f;
+	float clockCycleDuration = 0.5f;
+	bool clockEnabled = true;
     float cycleTimeLeft;
 	int currentClockState = 0;
 
 	void Awake () {
 		simulationFrame = 0;
-        cycleTimeLeft = clockCycleSpeed;
+        cycleTimeLeft = clockCycleDuration;
 	}
 
 	void Update () {
@@ -31,10 +32,13 @@ public class Simulation : MonoBehaviour {
 			lastStepTime = Time.time;
 			StepSimulation ();
 		}
-		
+
 		if (Simulation.debugMode) {
             return;
         }
+		if (!clockEnabled) {
+			return;
+		}
 
         cycleTimeLeft -= Time.deltaTime;
         if (cycleTimeLeft > 0) {
@@ -43,7 +47,7 @@ public class Simulation : MonoBehaviour {
 		currentClockState = 1 - currentClockState;
         onClockCycle?.Invoke (currentClockState);
 		onUpdateClockSignals?.Invoke ();
-        cycleTimeLeft = clockCycleSpeed;
+        cycleTimeLeft = clockCycleDuration;
 	}
 
 	public void SetSignalSpeed(float speed) {
@@ -51,7 +55,12 @@ public class Simulation : MonoBehaviour {
 	}
 
 	public void SetClockSpeed(float speed) {
-		clockCycleSpeed = speed;
+		if (speed == 0) {
+			clockEnabled = false;
+			return;
+		}
+		clockEnabled = true;
+		clockCycleDuration = 1 / speed;
 	}
 
 	public void SetDebugMode (bool debug) {
