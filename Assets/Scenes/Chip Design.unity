@@ -1420,6 +1420,18 @@ MonoBehaviour:
           m_StringArgument: OFF
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2052198031}
+        m_TargetAssemblyTypeName: ChangeColor, Assembly-CSharp
+        m_MethodName: ChangeColorFromString
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 292929
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &294736068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1641,6 +1653,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: SLOW
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2052198031}
+        m_TargetAssemblyTypeName: ChangeColor, Assembly-CSharp
+        m_MethodName: ChangeColorFromString
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FF0000
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &299420941
@@ -2383,6 +2407,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: SLOW
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1886031494}
+        m_TargetAssemblyTypeName: ChangeColor, Assembly-CSharp
+        m_MethodName: ChangeColorFromString
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FF0000
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &450842400
@@ -3242,6 +3278,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: MEDIUM
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1886031494}
+        m_TargetAssemblyTypeName: ChangeColor, Assembly-CSharp
+        m_MethodName: ChangeColorFromString
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FFFF00
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &658141509
@@ -6534,6 +6582,18 @@ MonoBehaviour:
           m_StringArgument: FAST
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2052198031}
+        m_TargetAssemblyTypeName: ChangeColor, Assembly-CSharp
+        m_MethodName: ChangeColorFromString
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 00FF00
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1294821305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7354,6 +7414,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: FAST
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1886031494}
+        m_TargetAssemblyTypeName: ChangeColor, Assembly-CSharp
+        m_MethodName: ChangeColorFromString
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 00FF00
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1383935386
@@ -9674,6 +9746,7 @@ MonoBehaviour:
   - {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0, type: 3}
   - {fileID: 894826051406503273, guid: 808e12d27921848a59bac447b93aec0f, type: 3}
   - {fileID: 8384850648039707066, guid: 64a24a3507ebe0f7697488ff84e1a1e0, type: 3}
+  - {fileID: 557203502348323242, guid: 19bc8bd8dedb6d14dadfe08742189d98, type: 3}
   DebugMode: 0
   chipBar: {fileID: 606875003}
 --- !u!4 &1830893909
@@ -9972,6 +10045,7 @@ GameObject:
   - component: {fileID: 1886031493}
   - component: {fileID: 1886031492}
   - component: {fileID: 1886031491}
+  - component: {fileID: 1886031494}
   m_Layer: 5
   m_Name: Current
   m_TagString: Untagged
@@ -10008,8 +10082,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278255360
+  m_fontColor: {r: 0, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10096,6 +10170,18 @@ RectTransform:
   m_AnchoredPosition: {x: 117.04, y: 0}
   m_SizeDelta: {x: -234.08, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1886031494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886031490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb492efcd6c3c14448494f76410e97b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1886837753
 GameObject:
   m_ObjectHideFlags: 0
@@ -10279,6 +10365,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: MEDIUM
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2052198031}
+        m_TargetAssemblyTypeName: ChangeColor, Assembly-CSharp
+        m_MethodName: ChangeColorFromString
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FFFF00
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1894748689
@@ -11231,6 +11329,7 @@ GameObject:
   - component: {fileID: 2052198030}
   - component: {fileID: 2052198029}
   - component: {fileID: 2052198028}
+  - component: {fileID: 2052198031}
   m_Layer: 5
   m_Name: Current
   m_TagString: Untagged
@@ -11267,8 +11366,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278255360
+  m_fontColor: {r: 0, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11355,6 +11454,18 @@ RectTransform:
   m_AnchoredPosition: {x: 117.03999, y: 0}
   m_SizeDelta: {x: -234.08, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2052198031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052198027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb492efcd6c3c14448494f76410e97b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2065890250
 GameObject:
   m_ObjectHideFlags: 0
