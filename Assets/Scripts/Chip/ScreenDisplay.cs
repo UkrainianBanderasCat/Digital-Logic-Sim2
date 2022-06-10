@@ -3,8 +3,6 @@ using UnityEngine.UI;
 
 public class ScreenDisplay : BuiltinChip
 {
-    public Color onColor;
-    public Color offColor;
     public Image[] pixels;
 
     protected override void ProcessOutput (int[] input) {
@@ -13,9 +11,12 @@ public class ScreenDisplay : BuiltinChip
             return;
         }
 
-        bool data = input[input.Length - 2] == 1;
+        float red = input[input.Length - 4];
+        float green = input[input.Length - 3];
+        float blue = input[input.Length - 2];
+
         float address = 0;
-        for (int i = 0; i < input.Length - 2; i++) {
+        for (int i = 0; i < input.Length - 4; i++) {
             if (input[i] == 1) {
                 address += Mathf.Pow(2f, (float)i);
             }
@@ -24,7 +25,7 @@ public class ScreenDisplay : BuiltinChip
             return;
         }
 
-        Color color = data ? onColor : offColor;
+        Color color = new Color(red, green, blue);
         pixels[(int)address].color = color;
     }
 }
