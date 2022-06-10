@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinType: 1
+  input: {fileID: 0}
   chip: {fileID: 8869523655109081479}
   pinName: OUT
   cyclic: 0
@@ -301,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinType: 0
+  input: {fileID: 0}
   chip: {fileID: 8869523655109081479}
   pinName: A
   cyclic: 0
@@ -537,6 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinType: 0
+  input: {fileID: 0}
   chip: {fileID: 8869523655109081479}
   pinName: B
   cyclic: 0
@@ -784,9 +787,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 8351000557739538980}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 8351000557739538980}
+  m_maskType: 0

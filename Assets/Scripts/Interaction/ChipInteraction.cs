@@ -14,6 +14,8 @@ public class ChipInteraction : InteractionHandler {
 	public float selectionBoundsBorderPadding = 0.1f;
 	public Color selectionBoxCol;
 	public Color invalidPlacementCol;
+	public KeyCode clockwiseRotationKey;
+	public KeyCode counterclockwiseRotationKey;
 
 	const float dragDepth = -50;
 	const float chipDepth = -0.2f;
@@ -40,15 +42,18 @@ public class ChipInteraction : InteractionHandler {
 			case State.None:
 				HandleSelection ();
 				HandleDeletion ();
+				HandleRotation ();
 				break;
 			case State.PlacingNewChips:
 				HandleNewChipPlacement ();
+				HandleRotation ();
 				break;
 			case State.SelectingChips:
 				HandleSelectionBox ();
 				break;
 			case State.MovingOldChips:
 				HandleChipMovement ();
+				HandleRotation ();
 				break;
 		}
 		DrawSelectedChipBounds ();
@@ -130,6 +135,22 @@ public class ChipInteraction : InteractionHandler {
 
 		allChips.Remove (chip);
 		Destroy (chip.gameObject);
+	}
+
+	void HandleRotation () {
+		//Rotate selected chips
+		if (Input.GetKeyDown (clockwiseRotationKey)) {
+			RotateSelectedChips (-90);
+		}
+		if (Input.GetKeyDown (counterclockwiseRotationKey)) {
+			RotateSelectedChips (90);
+		}
+	}
+
+	void RotateSelectedChips (float degrees) {
+		foreach (Chip chip in selectedChips) {
+			chip.transform.Rotate(0, 0, degrees);
+		}
 	}
 
 	void HandleSelectionBox () {
@@ -257,7 +278,7 @@ public class ChipInteraction : InteractionHandler {
 			var pos = item.transform.position + Vector3.forward * -0.5f;
 			float sizeX = item.BoundsSize.x + (Pin.radius + selectionBoundsBorderPadding * 0.75f);
 			float sizeY = item.BoundsSize.y + selectionBoundsBorderPadding;
-			Matrix4x4 matrix = Matrix4x4.TRS (pos, Quaternion.identity, new Vector3 (sizeX, sizeY, 1));
+			Matrix4x4 matrix = Matrix4x4.TRS (pos, item.transform.rotation, new Vector3 (sizeX, sizeY, 1));
 			Graphics.DrawMesh (selectionMesh, matrix, selectionBoxMaterial, 0);
 		}
 	}

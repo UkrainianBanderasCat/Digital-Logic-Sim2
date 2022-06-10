@@ -1005,6 +1005,8 @@ MonoBehaviour:
   selectionBoundsBorderPadding: 0.25
   selectionBoxCol: {r: 1, g: 1, b: 1, a: 0.101960786}
   invalidPlacementCol: {r: 0.990566, g: 0.35978103, b: 0.35978103, a: 0.29803923}
+  clockwiseRotationKey: 101
+  counterclockwiseRotationKey: 113
 --- !u!1 &4750937598611645874
 GameObject:
   m_ObjectHideFlags: 0
