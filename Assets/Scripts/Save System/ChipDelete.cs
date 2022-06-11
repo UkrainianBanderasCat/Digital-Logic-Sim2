@@ -25,9 +25,11 @@ public class ChipDelete : MonoBehaviour
     public void ConfirmDelete()
     {
         string deletePath = SaveSystem.GetPathToSaveFile(name);
+	string wireDeletePath = SaveSystem.GetPathToWireSaveFile(name);
         Debug.Log(deletePath);
         if (File.Exists(deletePath)) {
             File.Delete(deletePath);
+	    File.Delete(wireDeletePath);
             _manager.RefreshAll();
         }
 
