@@ -21,7 +21,7 @@ public class Chip : MonoBehaviour {
 
 	protected virtual void Awake () {
 		bounds = GetComponent<BoxCollider2D> ();
-		Simulation.onUpdateClockSignals += UpdateClockSignals;
+		Simulation.onClockCycle += UpdateClockSignals;
 		Simulation.onStoreInputDebug += StoreDebugInput;
 		Simulation.onDebugStep += DebugStep;
 	}
@@ -38,7 +38,7 @@ public class Chip : MonoBehaviour {
 		ProcessOutput (debugInput);
 	}
 
-	void UpdateClockSignals () {
+	void UpdateClockSignals (int clockSignal) {
 		if (stateOfInputPins is null) {
 			return;
 		}

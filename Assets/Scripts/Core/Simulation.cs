@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Simulation : MonoBehaviour {
 
-	public static event System.Action<int> onClockCycle;
-	public static event System.Action onUpdateClockSignals;
-	public static event System.Action onStoreInputDebug;
-	public static event System.Action onDebugStep;
+	public static event Action<int> onClockCycle;
+	public static event Action onStoreInputDebug;
+	public static event Action onDebugStep;
 
 	public static int simulationFrame { get; private set; }
 	public static bool debugMode { get; private set; }
@@ -17,7 +17,7 @@ public class Simulation : MonoBehaviour {
 
 	public float minStepTime = 0.075f;
 	float lastStepTime;
-	float clockCycleDuration = 0.5f;
+	float clockCycleDuration = 0.2f;
 	bool clockEnabled = true;
     float cycleTimeLeft;
 	int currentClockState = 0;
@@ -46,7 +46,6 @@ public class Simulation : MonoBehaviour {
         }
 		currentClockState = 1 - currentClockState;
         onClockCycle?.Invoke (currentClockState);
-		onUpdateClockSignals?.Invoke ();
         cycleTimeLeft = clockCycleDuration;
 	}
 
@@ -75,7 +74,6 @@ public class Simulation : MonoBehaviour {
 	public void DebugClockCycle () {
 		currentClockState = 1 - currentClockState;
 		onClockCycle?.Invoke (currentClockState);
-		onUpdateClockSignals?.Invoke ();
 	}
 
 	void StepSimulation () {
