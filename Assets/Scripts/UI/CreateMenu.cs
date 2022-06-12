@@ -18,6 +18,7 @@ public class CreateMenu : MonoBehaviour {
 	public Slider valueSlider;
 	[Range (0, 1)]
 	public float textColThreshold = 0.5f;
+	public List<string> chipNames = new List<string>();
 
 	public Color[] suggestedColours;
 	int suggestedColourIndex;
@@ -59,9 +60,17 @@ public class CreateMenu : MonoBehaviour {
 	}
 
 	bool IsValidChipName (string chipName) {
-		if (chipName == "AND" || chipName == "NOT" || chipName.Length == 0) {
-			return false;
+		if (chipName.Length != 0) {
+			for (int i = 0; i < chipNames.Count; i++)
+			{
+				if (chipName == chipNames[i])
+					return false;
+			}
 		}
+
+		else 
+			return false;
+
 		return true;
 	}
 

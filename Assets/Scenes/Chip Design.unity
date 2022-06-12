@@ -5107,9 +5107,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.04376656
+    x: 0.027262002
     y: 0
-    width: 0.9124669
+    width: 0.945476
     height: 1
   near clip plane: 0.3
   far clip plane: 1500
@@ -9428,6 +9428,7 @@ MonoBehaviour:
   saturationSlider: {fileID: 1882264447}
   valueSlider: {fileID: 207296940}
   textColThreshold: 0.75
+  chipNames: []
   suggestedColours:
   - {r: 0.25044498, g: 0.5853932, b: 0.7924528, a: 0}
   - {r: 0.1990477, g: 0.6698113, b: 0.36648417, a: 0}

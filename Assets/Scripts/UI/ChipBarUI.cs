@@ -57,6 +57,8 @@ public class ChipBarUI : MonoBehaviour {
 		// Set button event
 		//button.onClick.AddListener (() => manager.SpawnChip (chip));
 		button.onPointerDown += (() => manager.SpawnChip (chip));
+
+		GameObject.Find("UI Manager").transform.GetChild(0).gameObject.GetComponent<CreateMenu>().chipNames.Add(chip.chipName);
 	}
 
 }
