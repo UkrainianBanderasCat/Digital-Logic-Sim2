@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.38073987, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2742,10 +2742,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.029619813
-    y: 0
-    width: 0.9407604
-    height: 1
+    x: 0
+    y: 0.02822581
+    width: 1
+    height: 0.9435484
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -4616,8 +4616,8 @@ MonoBehaviour:
   m_text: '<size=header><color=header>Overview</color></size>
 
     You begin with
-    two types of chips: AND, NOT and 7 Segment Display. From these you can build
-    anything you want.
+    three basic chips: AND, NOT and Display. From these you can build anything you
+    want.
 
     See <color=link><link="https://www.youtube.com/playlist?list=PLFt_AvWsXl0dPhqVsKt1Ni_46ARyiCGSq">this
     video series</link></color> if you''d like to have something to follow along
@@ -4659,6 +4659,19 @@ MonoBehaviour:
     press backspace. To see the name of a pin, hold Alt while hovering over it.
 
 
+    <size=header><color=header>Import
+    Chips</color></size>
+
+    To import chips from other projects, you must click
+    on the "Import Chip" button on the top bar. Then, you have to select the chip
+    you want to import and click "OK" in the file explorer, and the game will do
+    all the work for you. If you want to import chips from another person''s project,
+    you first need to import all of their other chips used in this chip. If you want
+    to be sure, just drag every chip and every wire layout into your "Global" folder,
+    in the game data folder (AppData\LocalLow\Sebastian Lague _ Lime inc_\Digital
+    Logic Sim\SaveData\Global)
+
+
     <size=header><color=header>Finally...</color></size>
 
     You
@@ -4692,8 +4705,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4973,11 +4986,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<size=30><color=#DDDDDD>Overview</color></size>
 
-    You begin with two
-    types of chips: AND, NOT and 7 Segment Display. From these you can build anything
-    you want.
+    You begin with three
+    basic chips: AND, NOT and Display. From these you can build anything you want.
 
-    See <color=#75ACFF><link="https://www.youtube.com/playlist?list=PLFt_AvWsXl0dPhqVsKt1Ni_46ARyiCGSq">this
+    See
+    <color=#75ACFF><link="https://www.youtube.com/playlist?list=PLFt_AvWsXl0dPhqVsKt1Ni_46ARyiCGSq">this
     video series</link></color> if you''d like to have something to follow along
     with.
 
@@ -5017,6 +5030,19 @@ MonoBehaviour:
     press backspace. To see the name of a pin, hold Alt while hovering over it.
 
 
+    <size=30><color=#DDDDDD>Import
+    Chips</color></size>
+
+    To import chips from other projects, you must click
+    on the "Import Chip" button on the top bar. Then, you have to select the chip
+    you want to import and click "OK" in the file explorer, and the game will do
+    all the work for you. If you want to import chips from another person''s project,
+    you first need to import all of their other chips used in this chip. If you want
+    to be sure, just drag every chip and every wire layout into your "Global" folder,
+    in the game data folder (AppData\LocalLow\Sebastian Lague _ Lime inc_\Digital
+    Logic Sim\SaveData\Global)
+
+
     <size=30><color=#DDDDDD>Finally...</color></size>
 
     You
@@ -5050,8 +5076,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
