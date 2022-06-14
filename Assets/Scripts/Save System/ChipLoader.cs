@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public static class ChipLoader {
-
+public class ChipLoader {
+	Dictionary<string, Chip> loadedChips = new Dictionary<string, Chip>();
 	public static void LoadAllChips (string[] chipPaths, Manager manager) {
 		SavedChip[] savedChips = new SavedChip[chipPaths.Length];
+		Dictionary<string, Chip> loadedChips = new Dictionary<string, Chip>();
 
 		// Read saved chips from file
 		for (int i = 0; i < chipPaths.Length; i++) {
@@ -18,7 +19,7 @@ public static class ChipLoader {
 
 		SortChipsByOrderOfCreation (ref savedChips);
 		// Maintain dictionary of loaded chips (initially just the built-in chips)
-		Dictionary<string, Chip> loadedChips = new Dictionary<string, Chip> ();
+		
 		for (int i = 0; i < manager.builtinChips.Length; i++) {
 			Chip builtinChip = manager.builtinChips[i];
 			loadedChips.Add (builtinChip.chipName, builtinChip);
@@ -30,6 +31,8 @@ public static class ChipLoader {
 			Chip loadedChip = manager.LoadChip (loadedChipData);
 			loadedChips.Add (loadedChip.chipName, loadedChip);
 		}
+			
+		
 	}
 
 	// Instantiates all components that make up the given clip, and connects them up with wires
@@ -91,7 +94,16 @@ public static class ChipLoader {
 		return loadedChipData;
 	}
 
-	public static SavedWireLayout LoadWiringFile (string path) {
+	public static Dictionary<string, Chip> GetLoadedChips
+	{
+		get
+		{
+			var chipLoader = new ChipLoader();
+			return chipLoader.loadedChips;
+		}
+	}
+
+			public static SavedWireLayout LoadWiringFile (string path) {
 		using (StreamReader reader = new StreamReader (path)) {
 			string wiringSaveString = reader.ReadToEnd ();
 			return JsonUtility.FromJson<SavedWireLayout> (wiringSaveString);
