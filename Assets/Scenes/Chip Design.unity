@@ -5260,10 +5260,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.02822581
-    width: 1
-    height: 0.9435484
+    x: 0.02058494
+    y: 0
+    width: 0.9588301
+    height: 1
   near clip plane: 0.3
   far clip plane: 1500
   field of view: 60
@@ -10772,7 +10772,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1830893913}
         m_TargetAssemblyTypeName: ChipImporter, Assembly-CSharp
-        m_MethodName: ImportChip
+        m_MethodName: OpenFileBrowser
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
