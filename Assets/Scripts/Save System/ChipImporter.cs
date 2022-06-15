@@ -4,12 +4,13 @@ using System.Linq;
 using System.IO;
 using System;
 using UnityEngine;
-using UnityEditor;
+using SimpleFileBrowser;
 
 public class ChipImporter : MonoBehaviour
 {
     SavedChip importedChip;
     private string chipName;
+    private string path;
     private string chipSaveString;
     private string WireLayoutSaveString;
     private string thisChipName;
@@ -20,12 +21,17 @@ public class ChipImporter : MonoBehaviour
     private SavedComponentChip[] usedChips;
     private SavedComponentChip thisChip;
 
-    public void ImportChip()
+    public void OpenFileBrowser()
     {
+        FileBrowser.SetFilters(false, ".txt");
+        FileBrowser.ShowLoadDialog((path) => { ImportChip(path); }, null, FileBrowser.PickMode.Files, false, SaveSystem.GlobalDirectoryPath, null, "Load Chip Save File", "Load") ;
+
+    }
+    public void ImportChip(string[] paths)
+    {
+        path = paths[0];
+
         int i;
-        string path = EditorUtility.OpenFilePanel("Import a new chip (extension : .txt) ", SaveSystem.GlobalDirectoryPath, "txt");
-        
-        
         using (StreamReader reader = new StreamReader(path))
         { chipSaveString = reader.ReadToEnd(); }
 
