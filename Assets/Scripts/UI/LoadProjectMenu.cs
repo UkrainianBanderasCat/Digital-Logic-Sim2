@@ -27,4 +27,5 @@ public class LoadProjectMenu : MonoBehaviour {
 		SaveSystem.SetActiveProject (projectName);
 		UnityEngine.SceneManagement.SceneManager.LoadScene (1);
 	}
+
 }
