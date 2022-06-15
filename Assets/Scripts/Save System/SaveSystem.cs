@@ -14,16 +14,25 @@ public static class SaveSystem {
 		// Create save directory (if doesn't exist already)
 		Directory.CreateDirectory (CurrentSaveProfileDirectoryPath);
 		Directory.CreateDirectory (CurrentSaveProfileWireLayoutDirectoryPath);
+		Directory.CreateDirectory(GlobalDirectoryPath);
+		Directory.CreateDirectory(GlobalWireLayoutDirectoryPath);
 	}
 
 	public static void LoadAll (Manager manager) {
 		// Load any saved chips
 		var sw = System.Diagnostics.Stopwatch.StartNew ();
 		string[] chipSavePaths = Directory.GetFiles (CurrentSaveProfileDirectoryPath, "*" + fileExtension);
+		
 		ChipLoader.LoadAllChips (chipSavePaths, manager);
 		Debug.Log ("Load time: " + sw.ElapsedMilliseconds);
-		Debug.Log (CurrentSaveProfileDirectoryPath);
+		Debug.Log (CurrentSaveProfileDirectoryPath + GlobalDirectoryPath);
 
+	}
+
+	public static void LoadGlobal(Manager manager)
+    {
+		string[] globalChipSavePaths = Directory.GetFiles(GlobalDirectoryPath, "*" + fileExtension);
+		ChipLoader.LoadAllChips(globalChipSavePaths, manager);
 	}
 
 	public static string GetPathToSaveFile (string saveFileName) {
@@ -34,17 +43,45 @@ public static class SaveSystem {
 		return Path.Combine (CurrentSaveProfileWireLayoutDirectoryPath, saveFileName + fileExtension);
 	}
 
-	static string CurrentSaveProfileDirectoryPath {
+	public static string GetPathToGlobalSaveFile(string saveFileName)
+	{
+		return Path.Combine(GlobalDirectoryPath, saveFileName + fileExtension);
+	}
+
+	public static string GetPathToGlobalWireSaveFile(string saveFileName)
+	{
+		return Path.Combine(GlobalWireLayoutDirectoryPath, saveFileName + fileExtension);
+	}
+
+	public static string CurrentSaveProfileDirectoryPath {
 		get {
 			return Path.Combine (SaveDataDirectoryPath, activeProjectName);
 		}
 	}
 
-	static string CurrentSaveProfileWireLayoutDirectoryPath {
+	public static string CurrentSaveProfileWireLayoutDirectoryPath {
 		get {
 			return Path.Combine (CurrentSaveProfileDirectoryPath, "WireLayout");
 		}
 	}
+
+	public static string GlobalDirectoryPath
+	{
+		get
+		{
+			return Path.Combine(SaveDataDirectoryPath, "Global");
+		}
+	}
+
+	public static string GlobalWireLayoutDirectoryPath
+	{
+		get
+		{
+			return Path.Combine(GlobalDirectoryPath, "WireLayout");
+		}
+	}
+
+
 
 	public static string[] GetSaveNames () {
 		string[] savedProjectPaths = new string[0];

@@ -23,6 +23,12 @@ public class MainMenu : MonoBehaviour {
 
 	public void StartNewProject () {
 		string projectName = projectNameField.text;
+		if(projectName.ToLower() == "global")
+        {
+			projectName = "";
+			projectNameField.text = "";
+			return;
+        }
 		SaveSystem.SetActiveProject (projectName);
 		UnityEngine.SceneManagement.SceneManager.LoadScene (1);
 	}

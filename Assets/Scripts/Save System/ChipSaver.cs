@@ -28,6 +28,19 @@ public static class ChipSaver {
 		using (StreamWriter writer = new StreamWriter (wireLayoutSavePath)) {
 			writer.Write (wiringSaveString);
 		}
+
+		// Write to Global Save File
+		string globalSavePath = SaveSystem.GetPathToGlobalSaveFile(chipEditor.chipName);
+		using (StreamWriter writer = new StreamWriter(globalSavePath))
+		{
+			writer.Write(saveString);
+		}
+
+		string globalWireLayoutSavePath = SaveSystem.GetPathToGlobalWireSaveFile(chipEditor.chipName);
+		using (StreamWriter writer = new StreamWriter(globalWireLayoutSavePath))
+		{
+			writer.Write(wiringSaveString);
+		}
 	}
 
 }
