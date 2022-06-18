@@ -7,7 +7,6 @@ public class Chip : MonoBehaviour {
 	public string chipName = "Untitled";
 	public Pin[] inputPins;
 	public Pin[] outputPins;
-	int[] stateOfInputPins;
 	int[] debugInput;
 
 	// Number of input signals received (on current simulation step)
@@ -21,7 +20,6 @@ public class Chip : MonoBehaviour {
 
 	protected virtual void Awake () {
 		bounds = GetComponent<BoxCollider2D> ();
-		Simulation.onUpdateClockSignals += UpdateClockSignals;
 		Simulation.onStoreInputDebug += StoreDebugInput;
 		Simulation.onDebugStep += DebugStep;
 	}
@@ -36,13 +34,6 @@ public class Chip : MonoBehaviour {
 
 	void DebugStep() {
 		ProcessOutput (debugInput);
-	}
-
-	void UpdateClockSignals () {
-		if (stateOfInputPins is null) {
-			return;
-		}
-		ProcessOutput (stateOfInputPins);
 	}
 
 	public void InitSimulationFrame () {
@@ -70,8 +61,7 @@ public class Chip : MonoBehaviour {
 		}
 
 		if (numInputSignalsReceived == inputPins.Length) {
-			stateOfInputPins = StateOfInputPins ();
-			ProcessOutput (stateOfInputPins);
+			ProcessOutput (StateOfInputPins ());
 		}
 	}
 

@@ -60,17 +60,13 @@ public class CreateMenu : MonoBehaviour {
 	}
 
 	bool IsValidChipName (string chipName) {
-		if (chipName.Length != 0) {
-			for (int i = 0; i < chipNames.Count; i++)
-			{
-				if (chipName == chipNames[i])
-					return false;
+		string[] invalidNames = { "", "AND", "NOT", "CLOCK", "SCREEN", "7SEG DISP", "SYMB" };
+		foreach (string invalidName in invalidNames)
+		{
+			if (chipName == invalidName) {
+				return false;
 			}
 		}
-
-		else 
-			return false;
-
 		return true;
 	}
 
@@ -87,9 +83,7 @@ public class CreateMenu : MonoBehaviour {
 	}
 
 	void FinishCreation () {
-		if (onChipCreatePressed != null) {
-			onChipCreatePressed.Invoke ();
-		}
+		onChipCreatePressed?.Invoke ();
 		CloseMenu ();
 	}
 
