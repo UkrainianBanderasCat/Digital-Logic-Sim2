@@ -7,31 +7,36 @@ public class Keyboard : BuiltinChip {
 	public List<string> chars = new List<string>();
 
 	void Update() {
-        if(Input.anyKey || Input.inputString != "")
+		print(Input.anyKey);
+        if (Input.anyKey)
         {
-			chars = new List<string>();
-            char tmp=Input.inputString[0];
-            int temp=(int)tmp;
-
-            string binary = Convert.ToString(temp, 2);
-
-            if (binary.Length < 8)
-            {
-                for (int i = 8 - binary.Length; i > 0; i--)
-                {
-                    binary = "0" + binary;
-                }
-            }
-
-			for (int i = 0; i < 8; i++)
-         	{
-            	chars.Add(System.Convert.ToString(binary[i]));
-         	}
-
-            for (int i = 0; i < chars.Count; i++)
+			if (Input.inputString != "" || Input.inputString != null)
 			{
-				int outputSignal = int.Parse(chars[i]);
-				outputPins[i].ReceiveSignal (outputSignal);
+				chars = new List<string>();
+				print(Input.inputString[0]);
+            	char tmp=Input.inputString[0];
+            	int temp=(int)tmp;
+
+            	string binary = Convert.ToString(temp, 2);
+
+            	if (binary.Length < 8)
+            	{
+                	for (int i = 8 - binary.Length; i > 0; i--)
+                	{
+                    	binary = "0" + binary;
+                	}
+            	}
+
+				for (int i = 0; i < 8; i++)
+         		{
+            		chars.Add(System.Convert.ToString(binary[i]));
+         		}
+
+            	for (int i = 0; i < chars.Count; i++)
+				{
+					int outputSignal = int.Parse(chars[i]);
+					outputPins[i].ReceiveSignal (outputSignal);
+				}
 			}
         }
 		

@@ -18,7 +18,7 @@ public class ChipSignal : Chip {
 
 	[HideInInspector]
 	public string signalName;
-	protected bool interactable = true;
+	public bool interactable = true;
 
 	public virtual void SetInteractable (bool interactable) {
 		this.interactable = interactable;

@@ -25,6 +25,7 @@ public class ChipInterfaceEditor : InteractionHandler {
 	public TMPro.TMP_InputField nameField;
 	public UnityEngine.UI.Button deleteButton;
 	public UnityEngine.UI.Toggle twosComplementToggle;
+	public UnityEngine.UI.Dropdown pinType;
 	public Transform signalHolder;
 
 	[Header ("Appearance")]

@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8931610395766659374}
-  - component: {fileID: 894826051406503273}
+  - component: {fileID: 1823947994495193734}
   - component: {fileID: 4748678331030113159}
   m_Layer: 0
   m_Name: Output
@@ -202,7 +202,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &894826051406503273
+--- !u!114 &1823947994495193734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6546064343775056193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ab54cfd34da341fe8cf2d0420adc299, type: 3}
+  m_Script: {fileID: 11500000, guid: 0416cd0eeac8159bf8f8ed68878730c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chipName: SIGNAL OUT
@@ -225,6 +225,7 @@ MonoBehaviour:
   pinRenderer: {fileID: 7264883394423657326}
   wireRenderer: {fileID: 4557980508572362864}
   signalName: 
+  pinType: 0
 --- !u!58 &4748678331030113159
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -328,7 +329,12 @@ PrefabInstance:
         type: 3}
       propertyPath: chip
       value: 
-      objectReference: {fileID: 894826051406503273}
+      objectReference: {fileID: 1823947994495193734}
+    - target: {fileID: 8774343771143846598, guid: 3f5693e72562648d19f39eace0ccffd6,
+        type: 3}
+      propertyPath: input
+      value: 
+      objectReference: {fileID: 6546064343775056193}
     - target: {fileID: 8774343771143846598, guid: 3f5693e72562648d19f39eace0ccffd6,
         type: 3}
       propertyPath: pinName
@@ -337,7 +343,7 @@ PrefabInstance:
     - target: {fileID: 8774343771143846598, guid: 3f5693e72562648d19f39eace0ccffd6,
         type: 3}
       propertyPath: pinType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
