@@ -19,6 +19,7 @@ public class ChipInteraction : InteractionHandler {
 
 	const float dragDepth = -50;
 	const float chipDepth = -0.2f;
+	const float rotationAmount = 90;
 
 	public List<Chip> allChips { get; private set; }
 
@@ -140,10 +141,10 @@ public class ChipInteraction : InteractionHandler {
 	void HandleRotation () {
 		//Rotate selected chips
 		if (Input.GetKeyDown (clockwiseRotationKey)) {
-			RotateSelectedChips (-90);
+			RotateSelectedChips (-rotationAmount);
 		}
 		if (Input.GetKeyDown (counterclockwiseRotationKey)) {
-			RotateSelectedChips (90);
+			RotateSelectedChips (rotationAmount);
 		}
 	}
 

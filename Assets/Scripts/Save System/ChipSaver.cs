@@ -7,8 +7,8 @@ public static class ChipSaver {
 
 	const bool usePrettyPrint = true;
 
-	public static void Save (ChipEditor chipEditor) {
-		ChipSaveData chipSaveData = new ChipSaveData (chipEditor);
+	public static void Save (ChipEditor chipEditor, ChipSignal inputSignalPf, Transform signalHolder) {
+		ChipSaveData chipSaveData = new ChipSaveData (chipEditor, inputSignalPf, signalHolder);
 
 		// Generate new chip save string
 		var compositeChip = new SavedChip (chipSaveData);

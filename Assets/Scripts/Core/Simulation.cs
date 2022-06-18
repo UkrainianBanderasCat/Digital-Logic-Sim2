@@ -4,7 +4,6 @@ using UnityEngine;
 public class Simulation : MonoBehaviour {
 
 	public static event System.Action<int> onClockCycle;
-	public static event System.Action onUpdateClockSignals;
 	public static event System.Action onStoreInputDebug;
 	public static event System.Action onDebugStep;
 
@@ -27,30 +26,38 @@ public class Simulation : MonoBehaviour {
         cycleTimeLeft = clockCycleDuration;
 	}
 
-	void Update () {
-		if (Time.time - lastStepTime > minStepTime) {
-			lastStepTime = Time.time;
-			StepSimulation ();
-		}
+	void Update ()
+    {
+        if (Time.time - lastStepTime > minStepTime)
+        {
+            lastStepTime = Time.time;
+            StepSimulation();
+        }
 
-		if (Simulation.debugMode) {
+        UpdateClocks();
+    }
+
+    private void UpdateClocks()
+    {
+        if (Simulation.debugMode)
+        {
             return;
         }
-		if (!clockEnabled) {
-			return;
-		}
-
+        if (!clockEnabled)
+        {
+            return;
+        }
+		
         cycleTimeLeft -= Time.deltaTime;
-        if (cycleTimeLeft > 0) {
-            return;
+        if (cycleTimeLeft <= 0)
+        {
+            currentClockState = 1 - currentClockState;
+            onClockCycle?.Invoke(currentClockState);
+            cycleTimeLeft = clockCycleDuration;
         }
-		currentClockState = 1 - currentClockState;
-        onClockCycle?.Invoke (currentClockState);
-		onUpdateClockSignals?.Invoke ();
-        cycleTimeLeft = clockCycleDuration;
-	}
+    }
 
-	public void SetSignalSpeed(float speed) {
+    public void SetSignalSpeed(float speed) {
 		minStepTime = speed;
 	}
 
@@ -75,7 +82,6 @@ public class Simulation : MonoBehaviour {
 	public void DebugClockCycle () {
 		currentClockState = 1 - currentClockState;
 		onClockCycle?.Invoke (currentClockState);
-		onUpdateClockSignals?.Invoke ();
 	}
 
 	void StepSimulation () {

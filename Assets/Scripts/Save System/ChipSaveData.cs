@@ -17,11 +17,30 @@ public class ChipSaveData {
 
 	}
 
-	public ChipSaveData (ChipEditor chipEditor) {
+	public ChipSaveData (ChipEditor chipEditor, ChipSignal inputSignalPf, Transform signalHolder) {
 		List<Chip> componentChipList = new List<Chip> ();
 
 		var sortedInputs = chipEditor.inputsEditor.signals;
 		sortedInputs.Sort ((a, b) => b.transform.position.y.CompareTo (a.transform.position.y));
+
+		List<Chip> clocks = new List<Chip>();
+		List<Pin> clockControlledPins = new List<Pin>();
+		foreach (Chip chip in chipEditor.chipInteraction.allChips) {
+			if (chip is Clock) {
+				clocks.Add(chip);
+				clockControlledPins.AddRange (chip.outputPins[0].childPins);
+				MonoBehaviour.Destroy (chip);
+			}
+		}
+		if (clocks.Count > 0) {
+			ChipSignal clockInputSignal = MonoBehaviour.Instantiate (inputSignalPf, signalHolder);
+			clockInputSignal.UpdateSignalName("CLOCK");
+			foreach (Pin pin in clockControlledPins) {
+				Pin.MakeConnection (clockInputSignal.outputPins[0], pin);
+			}
+			sortedInputs.Add (clockInputSignal);
+		}
+
 		var sortedOutputs = chipEditor.outputsEditor.signals;
 		sortedOutputs.Sort ((a, b) => b.transform.position.y.CompareTo (a.transform.position.y));
 

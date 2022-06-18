@@ -4774,6 +4774,8 @@ MonoBehaviour:
   outputPins: []
   bounds: {fileID: 0}
   packageColour: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 0}
+  width: 12
+  height: 8
   pixels:
   - {fileID: 5308065233851026256}
   - {fileID: 7107197615619610627}
