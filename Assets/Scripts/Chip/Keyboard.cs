@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Keyboard : BuiltinChip {
 
@@ -25,7 +25,7 @@ public class Keyboard : BuiltinChip {
 
 			for (int i = 0; i < 8; i++)
          	{
-            	chars.Add(System.Convert.ToString(binary[i]));
+            	chars.Add(Convert.ToString(binary[i]));
          	}
 
             for (int i = 0; i < chars.Count; i++)

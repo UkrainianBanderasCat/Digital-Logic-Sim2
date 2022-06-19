@@ -5299,6 +5299,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037477231}
   m_CullTransparentMesh: 0
+--- !u!114 &1056686689 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4750937600015594407, guid: d48b4f02647794ac2aba95960c3d59ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 3008879100212563310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4fb784db75a48cfa8bd655e09c58af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1064844459
 GameObject:
   m_ObjectHideFlags: 0
@@ -12810,6 +12822,11 @@ PrefabInstance:
       propertyPath: clockwiseRotation
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 4750937598426732714, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: pinAndWireInteraction
+      value: 
+      objectReference: {fileID: 1056686689}
     - target: {fileID: 4750937598426732714, guid: d48b4f02647794ac2aba95960c3d59ab,
         type: 3}
       propertyPath: counterclockwiseRotation

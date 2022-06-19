@@ -144,6 +144,12 @@ public class PinAndWireInteraction : InteractionHandler {
 		}
 	}
 
+	public void AddWire(Wire wire, Pin inputPin) {
+		allWires.Add (wire);
+		wiresByChipInputPin.Add (inputPin, wire);
+		onConnectionChanged?.Invoke ();
+	}
+
 	// Pin cannot have multiple inputs, so when placing a new wire, first remove the wire that already goes to that pin (if there is one)
 	void RemoveConflictingWire (Pin chipInputPin) {
 		if (wiresByChipInputPin.ContainsKey (chipInputPin)) {
