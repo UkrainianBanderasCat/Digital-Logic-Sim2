@@ -994,6 +994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2f6370dd4ea407badc66be4e2226f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pinAndWireInteraction: {fileID: 0}
   chipArea: {fileID: 4750937599942274015}
   chipHolder: {fileID: 4750937600419506468}
   chipMask:
