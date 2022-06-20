@@ -10,6 +10,8 @@ public class Manager : MonoBehaviour {
 	public ChipPackage chipPackagePrefab;
 	public Wire wirePrefab;
 	public Chip[] builtinChips;
+	public ChipSignal inputSignalPf;
+	public Transform signalHolder;
 	public bool DebugMode;
 
 	ChipEditor activeChipEditor;
@@ -45,8 +47,7 @@ public class Manager : MonoBehaviour {
 	}
 
 	void SaveAndPackageChip () {
-
-		ChipSaver.Save (activeChipEditor);
+		ChipSaver.Save (activeChipEditor, inputSignalPf, signalHolder);
 		PackageChip ();
 		LoadNewEditor ();
 	}

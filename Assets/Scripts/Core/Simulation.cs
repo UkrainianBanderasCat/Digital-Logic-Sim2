@@ -4,7 +4,6 @@ using UnityEngine;
 public class Simulation : MonoBehaviour {
 
 	public static event System.Action<int> onClockCycle;
-	public static event System.Action onUpdateClockSignals;
 	public static event System.Action onStoreInputDebug;
 	public static event System.Action onDebugStep;
 
@@ -27,30 +26,38 @@ public class Simulation : MonoBehaviour {
         cycleTimeLeft = clockCycleDuration;
 	}
 
-	void Update () {
-		if (Time.time - lastStepTime > minStepTime) {
-			lastStepTime = Time.time;
-			StepSimulation ();
-		}
+	void Update ()
+    {
+        if (Time.time - lastStepTime > minStepTime)
+        {
+            lastStepTime = Time.time;
+            StepSimulation();
+        }
 
-		if (Simulation.debugMode) {
+        UpdateClocks();
+    }
+
+    private void UpdateClocks()
+    {
+        if (Simulation.debugMode)
+        {
             return;
         }
-		if (!clockEnabled) {
-			return;
-		}
-
+        if (!clockEnabled)
+        {
+            return;
+        }
+		
         cycleTimeLeft -= Time.deltaTime;
-        if (cycleTimeLeft > 0) {
-            return;
+        if (cycleTimeLeft <= 0)
+        {
+            currentClockState = 1 - currentClockState;
+            onClockCycle?.Invoke(currentClockState);
+            cycleTimeLeft = clockCycleDuration;
         }
-		currentClockState = 1 - currentClockState;
-        onClockCycle?.Invoke (currentClockState);
-		onUpdateClockSignals?.Invoke ();
-        cycleTimeLeft = clockCycleDuration;
-	}
+    }
 
-	public void SetSignalSpeed(float speed) {
+    public void SetSignalSpeed(float speed) {
 		minStepTime = speed;
 	}
 
@@ -75,7 +82,6 @@ public class Simulation : MonoBehaviour {
 	public void DebugClockCycle () {
 		currentClockState = 1 - currentClockState;
 		onClockCycle?.Invoke (currentClockState);
-		onUpdateClockSignals?.Invoke ();
 	}
 
 	void StepSimulation () {
@@ -85,9 +91,27 @@ public class Simulation : MonoBehaviour {
 		if (!debugMode)
 		{	
 			// Clear output signals
-			List<ChipSignal> outputSignals = chipEditor.outputsEditor.signals;
+			List<ChipSignal> outputSignals = new List<ChipSignal>();
+
+			for (int i = 0; i < chipEditor.inputsEditor.signals.Count; i++)
+			{
+				if (chipEditor.inputsEditor.signals[i].inputPins[0].pinType == Pin.PinType.ChipInput)
+				{
+					outputSignals.Add(chipEditor.inputsEditor.signals[i]);
+				}
+			}
+
+			for (int i = 0; i < chipEditor.outputsEditor.signals.Count; i++)
+			{
+				if (chipEditor.outputsEditor.signals[i].inputPins[0].pinType == Pin.PinType.ChipInput)
+				{
+					outputSignals.Add(chipEditor.outputsEditor.signals[i]);
+				}
+			}
+
 			for (int i = 0; i < outputSignals.Count; i++) {
-				outputSignals[i].SetDisplayState (0);
+				if (outputSignals[i].inputPins[0].pinType == Pin.PinType.ChipInput)
+					outputSignals[i].SetDisplayState (0);
 			}
 		}
 
@@ -98,10 +122,26 @@ public class Simulation : MonoBehaviour {
 		}
 
 		// Process inputs
-		List<ChipSignal> inputSignals = chipEditor.inputsEditor.signals;
+		List<ChipSignal> inputSignals = new List<ChipSignal>();
+
+		for (int i = 0; i < chipEditor.inputsEditor.signals.Count; i++)
+		{
+			if (chipEditor.inputsEditor.signals[i].outputPins[0].pinType == Pin.PinType.ChipOutput)
+			{
+				inputSignals.Add(chipEditor.inputsEditor.signals[i]);
+			}
+		}
+
+		for (int i = 0; i < chipEditor.outputsEditor.signals.Count; i++)
+		{
+			if (chipEditor.outputsEditor.signals[i].outputPins[0].pinType == Pin.PinType.ChipOutput)
+			{
+				inputSignals.Add(chipEditor.outputsEditor.signals[i]);
+			}
+		}
 		// Tell all signal generators to send their signal out
 		for (int i = 0; i < inputSignals.Count; i++) {
-			((InputSignal) inputSignals[i]).SendSignal ();
+			((Signal) inputSignals[i]).SendSignal ();
 		}
 
 	}

@@ -1510,6 +1510,7 @@ MonoBehaviour:
   nameField: {fileID: 3488882055607390314}
   deleteButton: {fileID: 5708581670757464792}
   twosComplementToggle: {fileID: 256749248}
+  pinType: {fileID: 0}
   signalHolder: {fileID: 4750937600123747354}
   handleSize: {x: 0.15, y: 0.4}
   handleCol: {r: 0.22745098, g: 0.22745098, b: 0.22745098, a: 0}
@@ -1930,6 +1931,7 @@ MonoBehaviour:
   nameField: {fileID: 3488882055607390314}
   deleteButton: {fileID: 5708581670757464792}
   twosComplementToggle: {fileID: 256749248}
+  pinType: {fileID: 0}
   signalHolder: {fileID: 4750937600234680856}
   handleSize: {x: 0.15, y: 0.4}
   handleCol: {r: 0.22745098, g: 0.22745098, b: 0.22745098, a: 0}

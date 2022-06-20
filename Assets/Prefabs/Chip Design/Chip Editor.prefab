@@ -1642,13 +1642,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editorType: 0
   chipContainer: {fileID: 4750937599942273985}
-  signalPrefab: {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0,
+  signalPrefab: {fileID: 8412013996092826318, guid: 75a5f0272786182afad0c9396adcd7f6,
     type: 3}
   propertiesUI: {fileID: 7158024622068329609}
   nameField: {fileID: 3488882055607390314}
   deleteButton: {fileID: 3401836960351895843}
   twosComplementToggle: {fileID: 256749248}
-  pinType: {fileID: 0}
+  pinType: {fileID: 1098061026814429884}
   signalHolder: {fileID: 4750937600123747354}
   handleSize: {x: 0.15, y: 0.4}
   handleCol: {r: 0.22745098, g: 0.22745098, b: 0.22745098, a: 0}
@@ -2063,13 +2063,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editorType: 1
   chipContainer: {fileID: 4750937599942273985}
-  signalPrefab: {fileID: 1823947994495193734, guid: 808e12d27921848a59bac447b93aec0f,
+  signalPrefab: {fileID: 8412013996092826318, guid: 75a5f0272786182afad0c9396adcd7f6,
     type: 3}
   propertiesUI: {fileID: 7158024622068329609}
   nameField: {fileID: 3488882055607390314}
   deleteButton: {fileID: 3401836960351895843}
   twosComplementToggle: {fileID: 256749248}
-  pinType: {fileID: 0}
+  pinType: {fileID: 1098061026814429884}
   signalHolder: {fileID: 4750937600234680856}
   handleSize: {x: 0.15, y: 0.4}
   handleCol: {r: 0.22745098, g: 0.22745098, b: 0.22745098, a: 0}
