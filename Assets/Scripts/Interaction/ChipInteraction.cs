@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Generic; 
 using UnityEngine;
 
 public class ChipInteraction : InteractionHandler {
@@ -6,8 +6,10 @@ public class ChipInteraction : InteractionHandler {
 	public enum State { None, PlacingNewChips, MovingOldChips, SelectingChips }
 	public event System.Action<Chip> onDeleteChip;
 
+	public PinAndWireInteraction pinAndWireInteraction;
 	public BoxCollider2D chipArea;
 	public Transform chipHolder;
+	public Transform copiedChipsHolder;
 	public LayerMask chipMask;
 	public Material selectionBoxMaterial;
 	public float chipStackSpacing = 0.15f;
@@ -29,6 +31,8 @@ public class ChipInteraction : InteractionHandler {
 	Vector2 selectionBoxStartPos;
 	Mesh selectionMesh;
 	Vector3[] selectedChipsOriginalPos;
+	List<Chip> copiedChips = new List<Chip> ();
+	Vector2 copyPosition;
 
 	void Awake () {
 		newChipsToPlace = new List<Chip> ();
@@ -44,10 +48,13 @@ public class ChipInteraction : InteractionHandler {
 				HandleSelection ();
 				HandleDeletion ();
 				HandleRotation ();
+				HandleChipCopying ();
+				HandleChipPasting ();
 				break;
 			case State.PlacingNewChips:
 				HandleNewChipPlacement ();
 				HandleRotation ();
+				HandleChipCopying ();
 				break;
 			case State.SelectingChips:
 				HandleSelectionBox ();
@@ -55,6 +62,7 @@ public class ChipInteraction : InteractionHandler {
 			case State.MovingOldChips:
 				HandleChipMovement ();
 				HandleRotation ();
+				HandleChipCopying ();
 				break;
 		}
 		DrawSelectedChipBounds ();
@@ -78,6 +86,7 @@ public class ChipInteraction : InteractionHandler {
 			newChip.gameObject.SetActive (true);
 			selectedChips.Add (newChip);
 			newChipsToPlace.Add (newChip);
+			newChip.InitSimulationFrame();
 		}
 	}
 
@@ -154,6 +163,40 @@ public class ChipInteraction : InteractionHandler {
 		}
 	}
 
+	void HandleChipCopying () {
+		if (InputHelper.AnyOfTheseKeysHeld(KeyCode.LeftControl, KeyCode.RightControl) && Input.GetKeyDown(KeyCode.C)) {
+			if (selectedChips.Count == 0) {
+				return;
+			}
+			foreach (Chip chip in copiedChips) {
+				Destroy (chip.gameObject);
+			}
+			copiedChips.Clear ();
+			foreach (Chip chip in selectedChips) {
+				copyPosition += (Vector2)chip.transform.position;
+				Chip newChip = Instantiate (chip, chipHolder);
+				newChip.gameObject.SetActive (false);
+				copiedChips.Add (newChip);
+			}
+			copyPosition /= selectedChips.Count;
+		}
+	}
+
+	void HandleChipPasting () {
+		if (InputHelper.AnyOfTheseKeysHeld(KeyCode.LeftControl, KeyCode.RightControl) && Input.GetKeyDown(KeyCode.V)) {
+			selectedChips.Clear ();
+			Vector2 offset = InputHelper.MouseWorldPos - copyPosition;
+			foreach (Chip chip in copiedChips) {
+				Chip newChip = Instantiate(chip, chip.transform.position + (Vector3)offset, chip.transform.rotation, chipHolder);
+				newChip.gameObject.SetActive (true);
+				selectedChips.Add (newChip);
+				allChips.Add (newChip);
+				newChip.ResetConnections ();
+				newChip.InitSimulationFrame ();
+			}
+		}
+	}
+
 	void HandleSelectionBox () {
 		Vector2 mousePos = InputHelper.MouseWorldPos;
 		// While holding mouse down, keep drawing selection box
@@ -226,23 +269,22 @@ public class ChipInteraction : InteractionHandler {
 		// Cancel placement if esc or right mouse down
 		if (InputHelper.AnyOfTheseKeysDown (KeyCode.Escape, KeyCode.Backspace, KeyCode.Delete) || Input.GetMouseButtonDown (1)) {
 			CancelPlacement ();
+			return;
 		}
 		// Move selected chip/s and place them on left mouse down
-		else {
-			Vector2 mousePos = InputHelper.MouseWorldPos;
-			float offsetY = 0;
+		Vector2 mousePos = InputHelper.MouseWorldPos;
+		float offsetY = 0;
 
-			for (int i = 0; i < newChipsToPlace.Count; i++) {
-				Chip chipToPlace = newChipsToPlace[i];
-				chipToPlace.transform.position = mousePos + Vector2.down * offsetY;
-				SetDepth (chipToPlace, dragDepth);
-				offsetY += chipToPlace.BoundsSize.y + chipStackSpacing;
-			}
+		for (int i = 0; i < newChipsToPlace.Count; i++) {
+			Chip chipToPlace = newChipsToPlace[i];
+			chipToPlace.transform.position = mousePos + Vector2.down * offsetY;
+			SetDepth (chipToPlace, dragDepth);
+			offsetY += chipToPlace.BoundsSize.y + chipStackSpacing;
+		}
 
-			// Place object
-			if (Input.GetMouseButtonDown (0) && SelectedChipsWithinPlacementArea ()) {
-				PlaceNewChips ();
-			}
+		// Place object
+		if (Input.GetMouseButtonDown (0) && SelectedChipsWithinPlacementArea ()) {
+			PlaceNewChips ();
 		}
 	}
 
