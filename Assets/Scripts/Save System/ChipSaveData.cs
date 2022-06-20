@@ -29,7 +29,7 @@ public class ChipSaveData {
 			if (chip is Clock) {
 				clocks.Add(chip);
 				clockControlledPins.AddRange (chip.outputPins[0].childPins);
-				MonoBehaviour.Destroy (chip);
+				MonoBehaviour.Destroy (chip.gameObject);
 			}
 		}
 		if (clocks.Count > 0) {

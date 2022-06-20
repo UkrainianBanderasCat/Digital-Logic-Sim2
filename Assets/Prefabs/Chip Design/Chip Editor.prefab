@@ -994,8 +994,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2f6370dd4ea407badc66be4e2226f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pinAndWireInteraction: {fileID: 4750937600015594407}
   chipArea: {fileID: 4750937599942274015}
   chipHolder: {fileID: 4750937600419506468}
+  copiedChipsHolder: {fileID: 8670400249983904668}
   chipMask:
     serializedVersion: 2
     m_Bits: 256
@@ -1276,6 +1278,7 @@ Transform:
   - {fileID: 4750937599625716381}
   - {fileID: 4750937599942273985}
   - {fileID: 4750937600419506468}
+  - {fileID: 8670400249983904668}
   - {fileID: 2304848121685295537}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2472,3 +2475,34 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &9201322496723123575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8670400249983904668}
+  m_Layer: 0
+  m_Name: CopiedChips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8670400249983904668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201322496723123575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4750937599765430253}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
