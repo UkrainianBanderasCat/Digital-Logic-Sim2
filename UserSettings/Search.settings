@@ -10,6 +10,9 @@ scopes = {
 	"last_search.D6F0A2CA" = "ChipInteraction"
 	"OpenInspectorPreview.D6F0A2CA" = "0"
 	"currentGroup.D6F0A2CA" = "all"
+	"last_search.2D5C1488" = ""
+	"OpenInspectorPreview.2D5C1488" = "0"
+	"currentGroup.2D5C1488" = "asset"
 }
 providers = {
 	adb = {

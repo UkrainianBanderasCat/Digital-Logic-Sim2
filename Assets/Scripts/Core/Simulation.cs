@@ -91,9 +91,27 @@ public class Simulation : MonoBehaviour {
 		if (!debugMode)
 		{	
 			// Clear output signals
-			List<ChipSignal> outputSignals = chipEditor.outputsEditor.signals;
+			List<ChipSignal> outputSignals = new List<ChipSignal>();
+
+			for (int i = 0; i < chipEditor.inputsEditor.signals.Count; i++)
+			{
+				if (chipEditor.inputsEditor.signals[i].inputPins[0].pinType == Pin.PinType.ChipInput)
+				{
+					outputSignals.Add(chipEditor.inputsEditor.signals[i]);
+				}
+			}
+
+			for (int i = 0; i < chipEditor.outputsEditor.signals.Count; i++)
+			{
+				if (chipEditor.outputsEditor.signals[i].inputPins[0].pinType == Pin.PinType.ChipInput)
+				{
+					outputSignals.Add(chipEditor.outputsEditor.signals[i]);
+				}
+			}
+
 			for (int i = 0; i < outputSignals.Count; i++) {
-				outputSignals[i].SetDisplayState (0);
+				if (outputSignals[i].inputPins[0].pinType == Pin.PinType.ChipInput)
+					outputSignals[i].SetDisplayState (0);
 			}
 		}
 
@@ -104,10 +122,26 @@ public class Simulation : MonoBehaviour {
 		}
 
 		// Process inputs
-		List<ChipSignal> inputSignals = chipEditor.inputsEditor.signals;
+		List<ChipSignal> inputSignals = new List<ChipSignal>();
+
+		for (int i = 0; i < chipEditor.inputsEditor.signals.Count; i++)
+		{
+			if (chipEditor.inputsEditor.signals[i].outputPins[0].pinType == Pin.PinType.ChipOutput)
+			{
+				inputSignals.Add(chipEditor.inputsEditor.signals[i]);
+			}
+		}
+
+		for (int i = 0; i < chipEditor.outputsEditor.signals.Count; i++)
+		{
+			if (chipEditor.outputsEditor.signals[i].outputPins[0].pinType == Pin.PinType.ChipOutput)
+			{
+				inputSignals.Add(chipEditor.outputsEditor.signals[i]);
+			}
+		}
 		// Tell all signal generators to send their signal out
 		for (int i = 0; i < inputSignals.Count; i++) {
-			((InputSignal) inputSignals[i]).SendSignal ();
+			((Signal) inputSignals[i]).SendSignal ();
 		}
 
 	}
