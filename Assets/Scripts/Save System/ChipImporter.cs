@@ -76,7 +76,7 @@ public class ChipImporter : MonoBehaviour
             wireDestination = SaveSystem.CurrentSaveProfileWireLayoutDirectoryPath + "/" + thisChipName + ".txt";
             thisChipWireLayout = Path.Combine(SaveSystem.GlobalWireLayoutDirectoryPath, thisChipName + ".txt");
             path = Path.Combine(SaveSystem.GlobalDirectoryPath, thisChipName + ".txt");
-            if (thisChipName != "SIGNAL IN" && thisChipName != "SIGNAL OUT" && thisChipName != "NOT" && thisChipName != "AND" && !ChipLoader.GetLoadedChips.ContainsKey(thisChipName))
+            if (IsValidChipName(thisChipName) && !ChipLoader.GetLoadedChips.ContainsKey(thisChipName))
             {
 
                 try
@@ -110,10 +110,18 @@ public class ChipImporter : MonoBehaviour
             }
 
             
-        }
-
-     
-        
+        }   
     }
+
+    bool IsValidChipName (string chipName) {
+		string[] invalidNames = { "", "SIGNAL IN", "SIGNAL OUT", "AND", "NOT", "CLOCK", "SCREEN", "7SEG DISP", "SYMB" };
+		foreach (string invalidName in invalidNames)
+		{
+			if (chipName == invalidName) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 }
