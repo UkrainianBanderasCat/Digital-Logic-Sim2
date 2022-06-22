@@ -9,7 +9,7 @@ public class ChipInteraction : InteractionHandler {
 	public PinAndWireInteraction pinAndWireInteraction;
 	public BoxCollider2D chipArea;
 	public Transform chipHolder;
-	public Transform copiedChipsHolder;
+	public Transform copiedChipHolder;
 	public LayerMask chipMask;
 	public Material selectionBoxMaterial;
 	public float chipStackSpacing = 0.15f;
@@ -174,7 +174,7 @@ public class ChipInteraction : InteractionHandler {
 			copiedChips.Clear ();
 			foreach (Chip chip in selectedChips) {
 				copyPosition += (Vector2)chip.transform.position;
-				Chip newChip = Instantiate (chip, chipHolder);
+				Chip newChip = Instantiate (chip, copiedChipHolder);
 				newChip.gameObject.SetActive (false);
 				copiedChips.Add (newChip);
 			}
