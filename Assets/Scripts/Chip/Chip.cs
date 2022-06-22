@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Chip : MonoBehaviour {
@@ -25,19 +26,6 @@ public class Chip : MonoBehaviour {
 
 	protected virtual void Start () {
 		SetPinIndices ();
-	}
-
-	public void ResetConnections () {
-		foreach (Pin pin in inputPins) {
-			if (pin.parentPin is not null) {
-				Pin.RemoveConnection(pin.parentPin, pin);
-			}
-		}
-		foreach (Pin pin in outputPins) {
-			foreach (Pin childPin in pin.childPins.ToArray()) {
-				Pin.RemoveConnection(pin, childPin);
-			}
-		}
 	}
 
 	void StoreDebugInput () {

@@ -142,7 +142,6 @@ public class ChipImporter : MonoBehaviour
         }
     }
     
-
     //Get the useful info from components chip
     private void GetUsedChipsInfos(List<SavedComponentChip> usedChipsList)
     {
@@ -158,15 +157,5 @@ public class ChipImporter : MonoBehaviour
         }
     }
 
-    bool IsValidChipName (string chipName) {
-		string[] invalidNames = { "", "SIGNAL IN", "SIGNAL OUT", "AND", "NOT", "CLOCK", "SCREEN", "7SEG DISP", "SYMB" };
-		foreach (string invalidName in invalidNames)
-		{
-			if (chipName == invalidName) {
-				return false;
-			}
-		}
-		return true;
-	}
 
 }

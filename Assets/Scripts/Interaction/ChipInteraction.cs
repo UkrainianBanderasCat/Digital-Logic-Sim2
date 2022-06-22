@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic; 
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ChipInteraction : InteractionHandler {
@@ -6,7 +6,6 @@ public class ChipInteraction : InteractionHandler {
 	public enum State { None, PlacingNewChips, MovingOldChips, SelectingChips }
 	public event System.Action<Chip> onDeleteChip;
 
-	public PinAndWireInteraction pinAndWireInteraction;
 	public BoxCollider2D chipArea;
 	public Transform chipHolder;
 	public LayerMask chipMask;
@@ -30,8 +29,6 @@ public class ChipInteraction : InteractionHandler {
 	Vector2 selectionBoxStartPos;
 	Mesh selectionMesh;
 	Vector3[] selectedChipsOriginalPos;
-	List<Chip> copiedChips = new List<Chip> ();
-	Vector2 copyPosition;
 
 	void Awake () {
 		newChipsToPlace = new List<Chip> ();
@@ -47,13 +44,10 @@ public class ChipInteraction : InteractionHandler {
 				HandleSelection ();
 				HandleDeletion ();
 				HandleRotation ();
-				HandleChipCopying ();
-				HandleChipPasting ();
 				break;
 			case State.PlacingNewChips:
 				HandleNewChipPlacement ();
 				HandleRotation ();
-				HandleChipCopying ();
 				break;
 			case State.SelectingChips:
 				HandleSelectionBox ();
@@ -61,7 +55,6 @@ public class ChipInteraction : InteractionHandler {
 			case State.MovingOldChips:
 				HandleChipMovement ();
 				HandleRotation ();
-				HandleChipCopying ();
 				break;
 		}
 		DrawSelectedChipBounds ();
@@ -158,32 +151,6 @@ public class ChipInteraction : InteractionHandler {
 	void RotateSelectedChips (float degrees) {
 		foreach (Chip chip in selectedChips) {
 			chip.transform.Rotate(0, 0, degrees);
-		}
-	}
-
-	void HandleChipCopying () {
-		if (InputHelper.AnyOfTheseKeysHeld(KeyCode.LeftControl, KeyCode.RightControl) && Input.GetKeyDown(KeyCode.C)) {
-			if (selectedChips.Count == 0) {
-				return;
-			}
-			copiedChips = new List<Chip> ();
-			foreach (Chip chip in selectedChips) {
-				copiedChips.Add (chip);
-				copyPosition += (Vector2)chip.transform.position;
-			}
-			copyPosition /= selectedChips.Count;
-		}
-	}
-
-	void HandleChipPasting () {
-		if (InputHelper.AnyOfTheseKeysHeld(KeyCode.LeftControl, KeyCode.RightControl) && Input.GetKeyDown(KeyCode.V)) {
-			Vector2 offset = InputHelper.MouseWorldPos - copyPosition;
-			selectedChips.Clear ();
-			foreach (Chip chip in copiedChips) {
-				Chip newChip = Instantiate(chip, chip.transform.position + (Vector3)offset, chip.transform.rotation, chipHolder);
-				selectedChips.Add (newChip);
-				newChip.ResetConnections ();
-			}
 		}
 	}
 
