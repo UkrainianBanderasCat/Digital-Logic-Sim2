@@ -10,7 +10,7 @@ public class ChipInterfaceEditor : InteractionHandler {
 	public event System.Action<Chip> onDeleteChip;
 	public event System.Action onChipsAddedOrDeleted;
 
-	public enum EditorType { Input, Output }
+	public enum EditorType { Right, Left }
 	public enum HandleState { Default, Highlighted, Selected }
 	const float forwardDepth = -0.1f;
 
@@ -25,6 +25,7 @@ public class ChipInterfaceEditor : InteractionHandler {
 	public TMPro.TMP_InputField nameField;
 	public UnityEngine.UI.Button deleteButton;
 	public UnityEngine.UI.Toggle twosComplementToggle;
+	public TMPro.TMP_Dropdown pinType;
 	public Transform signalHolder;
 
 	[Header ("Appearance")]
@@ -60,6 +61,7 @@ public class ChipInterfaceEditor : InteractionHandler {
 	Dictionary<int, ChipSignal[]> groupsByID;
 
 	void Awake () {
+		pinType.onValueChanged.AddListener(delegate { DropdownValueChanged(pinType); });
 		signals = new List<ChipSignal> ();
 		selectedSignals = new List<ChipSignal> ();
 		groupsByID = new Dictionary<int, ChipSignal[]> ();
@@ -160,7 +162,6 @@ public class ChipInterfaceEditor : InteractionHandler {
 					}
 
 					HandleSpawning ();
-
 				}
 			}
 		}
@@ -198,7 +199,7 @@ public class ChipInterfaceEditor : InteractionHandler {
 	// Handles spawning if user clicks, otherwise displays preview
 	void HandleSpawning () {
 
-		float containerX = chipContainer.position.x + chipContainer.localScale.x / 2 * ((editorType == EditorType.Input) ? -1 : 1);
+		float containerX = chipContainer.position.x + chipContainer.localScale.x / 2 * ((editorType == EditorType.Right) ? -1 : 1);
 		float centreY = ClampY (InputHelper.MouseWorldPos.y);
 
 		// Spawn on mouse down
@@ -216,8 +217,16 @@ public class ChipInterfaceEditor : InteractionHandler {
 					spawnedSignal.displayGroupDecimalValue = true;
 				}
 				signals.Add (spawnedSignal);
-				spawnedSignals[i] = spawnedSignal;
 
+				if (editorType == EditorType.Left)
+					//spawnedSignal.gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
+					spawnedSignal.side = ChipSignal.Side.Left;
+
+				if (editorType == EditorType.Right)
+					//spawnedSignal.gameObject.transform.eulerAngles = new Vector3(0, 0, 180);
+					spawnedSignal.side = ChipSignal.Side.Right;
+
+				spawnedSignals[i] = spawnedSignal;
 			}
 
 			if (isGroup) {
@@ -238,6 +247,12 @@ public class ChipInterfaceEditor : InteractionHandler {
 				Vector3 spawnPos = new Vector3 (containerX, posY, chipContainer.position.z + forwardDepth);
 				DrawHandle (posY, HandleState.Highlighted);
 				if (showPreviewSignal) {
+					if (editorType == EditorType.Left)
+						previewSignals[i].gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
+
+					if (editorType == EditorType.Right)
+						previewSignals[i].gameObject.transform.eulerAngles = new Vector3(0, 0, 180);
+
 					previewSignals[i].gameObject.SetActive (true);
 					previewSignals[i].transform.position = spawnPos - Vector3.forward * forwardDepth;
 				}
@@ -427,5 +442,13 @@ public class ChipInterfaceEditor : InteractionHandler {
 		handleMat.color = handleCol;
 		highlightedHandleMat.color = highlightedHandleCol;
 		selectedHandleMat.color = selectedHandleCol;
+	}
+
+	void DropdownValueChanged(TMPro.TMP_Dropdown change)
+    {
+		for (int i = 0; i < selectedSignals.Count; i++)
+		{
+        	selectedSignals[i].pinType = (Signal.PinType)change.value; //Convert dropwdown value to enum
+		}
 	}
 }

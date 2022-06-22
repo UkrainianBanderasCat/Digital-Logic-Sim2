@@ -5,6 +5,9 @@ using UnityEngine;
 // Base class for input and output signals
 public class ChipSignal : Chip {
 
+	public enum Side { Left, Right }
+	public enum PinType { Input, Output }
+
 	public int currentState;
 
 	public Palette palette;
@@ -18,7 +21,10 @@ public class ChipSignal : Chip {
 
 	[HideInInspector]
 	public string signalName;
-	protected bool interactable = true;
+	public bool interactable = true;
+
+	public Side side;
+    public PinType pinType;
 
 	public virtual void SetInteractable (bool interactable) {
 		this.interactable = interactable;
