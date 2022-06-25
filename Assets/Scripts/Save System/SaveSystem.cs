@@ -25,7 +25,7 @@ public static class SaveSystem {
 		
 		ChipLoader.LoadAllChips (chipSavePaths, manager);
 		Debug.Log ("Load time: " + sw.ElapsedMilliseconds);
-		Debug.Log (CurrentSaveProfileDirectoryPath + GlobalDirectoryPath);
+		Debug.Log ("This directory path : " + CurrentSaveProfileDirectoryPath + ".The global directory path : " + GlobalDirectoryPath);
 
 	}
 

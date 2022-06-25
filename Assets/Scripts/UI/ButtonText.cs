@@ -29,7 +29,7 @@ public class ButtonText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 		buttonText.color = (button.interactable) ? col : nonInteractableCol;
 		if (Input.GetKeyDown(KeyCode.Delete) && highlighted)
 		{
-			_chipDelete.Delete(name);
+			_chipDelete.ConfirmDelete(name);
 		}
 	}
 
