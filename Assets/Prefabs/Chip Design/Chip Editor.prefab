@@ -1485,6 +1485,7 @@ MonoBehaviour:
   pinAndWireInteraction: {fileID: 0}
   chipArea: {fileID: 4750937599942274015}
   chipHolder: {fileID: 4750937600419506468}
+  copiedChipHolder: {fileID: 8670400249983904668}
   chipMask:
     serializedVersion: 2
     m_Bits: 256

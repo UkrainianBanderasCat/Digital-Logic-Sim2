@@ -8,6 +8,7 @@ public class ChipInteraction : InteractionHandler {
 
 	public BoxCollider2D chipArea;
 	public Transform chipHolder;
+	public Transform copiedChipHolder;
 	public LayerMask chipMask;
 	public Material selectionBoxMaterial;
 	public float chipStackSpacing = 0.15f;
@@ -154,6 +155,39 @@ public class ChipInteraction : InteractionHandler {
 		}
 	}
 
+	void HandleChipCopying () {
+		if (InputHelper.AnyOfTheseKeysHeld(KeyCode.LeftControl, KeyCode.RightControl) && Input.GetKeyDown(KeyCode.C)) {
+			if (selectedChips.Count == 0) {
+				return;
+			}
+			foreach (Chip chip in copiedChips) {
+				Destroy (chip.gameObject);
+			}
+			copiedChips.Clear ();
+			foreach (Chip chip in selectedChips) {
+				copyPosition += (Vector2)chip.transform.position;
+				Chip newChip = Instantiate (chip, copiedChipHolder);
+				newChip.gameObject.SetActive (false);
+				copiedChips.Add (newChip);
+			}
+			copyPosition /= selectedChips.Count;
+		}
+	}
+
+	void HandleChipPasting () {
+		if (InputHelper.AnyOfTheseKeysHeld(KeyCode.LeftControl, KeyCode.RightControl) && Input.GetKeyDown(KeyCode.V)) {
+			selectedChips.Clear ();
+			Vector2 offset = InputHelper.MouseWorldPos - copyPosition;
+			foreach (Chip chip in copiedChips) {
+				Chip newChip = Instantiate(chip, chip.transform.position + (Vector3)offset, chip.transform.rotation, chipHolder);
+				newChip.gameObject.SetActive (true);
+				selectedChips.Add (newChip);
+				allChips.Add (newChip);
+				newChip.ResetConnections ();
+				newChip.InitSimulationFrame ();
+			}
+		}
+	}
 	void HandleSelectionBox () {
 		Vector2 mousePos = InputHelper.MouseWorldPos;
 		// While holding mouse down, keep drawing selection box
