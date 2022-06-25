@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic; 
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ChipInteraction : InteractionHandler {
@@ -6,7 +6,6 @@ public class ChipInteraction : InteractionHandler {
 	public enum State { None, PlacingNewChips, MovingOldChips, SelectingChips }
 	public event System.Action<Chip> onDeleteChip;
 
-	public PinAndWireInteraction pinAndWireInteraction;
 	public BoxCollider2D chipArea;
 	public Transform chipHolder;
 	public Transform copiedChipHolder;
@@ -31,8 +30,6 @@ public class ChipInteraction : InteractionHandler {
 	Vector2 selectionBoxStartPos;
 	Mesh selectionMesh;
 	Vector3[] selectedChipsOriginalPos;
-	List<Chip> copiedChips = new List<Chip> ();
-	Vector2 copyPosition;
 
 	void Awake () {
 		newChipsToPlace = new List<Chip> ();
@@ -48,13 +45,10 @@ public class ChipInteraction : InteractionHandler {
 				HandleSelection ();
 				HandleDeletion ();
 				HandleRotation ();
-				HandleChipCopying ();
-				HandleChipPasting ();
 				break;
 			case State.PlacingNewChips:
 				HandleNewChipPlacement ();
 				HandleRotation ();
-				HandleChipCopying ();
 				break;
 			case State.SelectingChips:
 				HandleSelectionBox ();
@@ -62,7 +56,6 @@ public class ChipInteraction : InteractionHandler {
 			case State.MovingOldChips:
 				HandleChipMovement ();
 				HandleRotation ();
-				HandleChipCopying ();
 				break;
 		}
 		DrawSelectedChipBounds ();
@@ -86,7 +79,6 @@ public class ChipInteraction : InteractionHandler {
 			newChip.gameObject.SetActive (true);
 			selectedChips.Add (newChip);
 			newChipsToPlace.Add (newChip);
-			newChip.InitSimulationFrame();
 		}
 	}
 
@@ -196,7 +188,6 @@ public class ChipInteraction : InteractionHandler {
 			}
 		}
 	}
-
 	void HandleSelectionBox () {
 		Vector2 mousePos = InputHelper.MouseWorldPos;
 		// While holding mouse down, keep drawing selection box
@@ -269,22 +260,23 @@ public class ChipInteraction : InteractionHandler {
 		// Cancel placement if esc or right mouse down
 		if (InputHelper.AnyOfTheseKeysDown (KeyCode.Escape, KeyCode.Backspace, KeyCode.Delete) || Input.GetMouseButtonDown (1)) {
 			CancelPlacement ();
-			return;
 		}
 		// Move selected chip/s and place them on left mouse down
-		Vector2 mousePos = InputHelper.MouseWorldPos;
-		float offsetY = 0;
+		else {
+			Vector2 mousePos = InputHelper.MouseWorldPos;
+			float offsetY = 0;
 
-		for (int i = 0; i < newChipsToPlace.Count; i++) {
-			Chip chipToPlace = newChipsToPlace[i];
-			chipToPlace.transform.position = mousePos + Vector2.down * offsetY;
-			SetDepth (chipToPlace, dragDepth);
-			offsetY += chipToPlace.BoundsSize.y + chipStackSpacing;
-		}
+			for (int i = 0; i < newChipsToPlace.Count; i++) {
+				Chip chipToPlace = newChipsToPlace[i];
+				chipToPlace.transform.position = mousePos + Vector2.down * offsetY;
+				SetDepth (chipToPlace, dragDepth);
+				offsetY += chipToPlace.BoundsSize.y + chipStackSpacing;
+			}
 
-		// Place object
-		if (Input.GetMouseButtonDown (0) && SelectedChipsWithinPlacementArea ()) {
-			PlaceNewChips ();
+			// Place object
+			if (Input.GetMouseButtonDown (0) && SelectedChipsWithinPlacementArea ()) {
+				PlaceNewChips ();
+			}
 		}
 	}
 
