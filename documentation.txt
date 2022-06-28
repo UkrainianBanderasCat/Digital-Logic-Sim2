@@ -1,0 +1,19 @@
+Hello and welcome to Digital Logic Sim 2 reposiory, which is a project created by UkrainianBanderasCat using Sebastien Lague's original work, Digital Logic Sim.
+In this file, I will overview the currently existing files and explain some of their functions.
+
+SCRIPTS :
+
+1 - Save System
+
+a. ChipDelete.cs :
+      - ConfirmDelete : Is called when the delete key is pressed while hovering the chip name (in the lower bar) , opens a panel.
+          When cancel is clicked on this panel, it closes it. If Global is clicked, DeleteGlobal() is called. If Local is clicked, DeleteLocal() is called.
+         
+      - DeleteFile : Is called both in  DeleteGlobal and DeleteLocal functions. Check if a file exist and, if yes , deletes it and refresh (Manager.RefreshAll() )
+          the manager. Takes a string argument, which is the path of the file which needs to be deleted
+          
+      - DeleteLocal : Is called when "Local" is clicked on the panel. Find the paths of the chip and its wire layout save file and delete them by calling
+          DeleteFile(path) twice where path are the WireLayout path and the Chip path.
+          
+      - DeleteGlobal : Is called when "Global" is clicked on the panel. Find the global paths of the chip and its wire layout save file and delete them by calling
+          DeleteFile(path) twice where path are the WireLayout path and the Chip path. Then , calls DeleteLocal() to delete the files in the local project.
