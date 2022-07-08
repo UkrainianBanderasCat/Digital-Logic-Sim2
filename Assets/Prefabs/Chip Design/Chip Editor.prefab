@@ -1645,7 +1645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editorType: 0
   chipContainer: {fileID: 4750937599942273985}
-  signalPrefab: {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0,
+  signalPrefab: {fileID: 8412013996092826318, guid: 75a5f0272786182afad0c9396adcd7f6,
     type: 3}
   propertiesUI: {fileID: 7158024622068329609}
   nameField: {fileID: 3488882055607390314}
@@ -2066,7 +2066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editorType: 1
   chipContainer: {fileID: 4750937599942273985}
-  signalPrefab: {fileID: 6282636630335214463, guid: 808e12d27921848a59bac447b93aec0f,
+  signalPrefab: {fileID: 8412013996092826318, guid: 75a5f0272786182afad0c9396adcd7f6,
     type: 3}
   propertiesUI: {fileID: 7158024622068329609}
   nameField: {fileID: 3488882055607390314}
