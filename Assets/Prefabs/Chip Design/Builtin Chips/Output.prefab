@@ -242,6 +242,8 @@ MonoBehaviour:
   wireRenderer: {fileID: 4557980508572362864}
   signalName: 
   interactable: 1
+  side: 1
+  pinType: 1
 --- !u!1001 &4557980509974043434
 PrefabInstance:
   m_ObjectHideFlags: 0

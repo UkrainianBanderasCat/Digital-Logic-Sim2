@@ -5744,9 +5744,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.12423724
+    x: 0.12310201
     y: 0
-    width: 0.7515255
+    width: 0.753796
     height: 1
   near clip plane: 0.3
   far clip plane: 1500
@@ -11057,10 +11057,10 @@ MonoBehaviour:
   - {fileID: 8384850648039707066, guid: 796f6dc5291cbb9b799a2d9fad3f4ae7, type: 3}
   - {fileID: 5420785331373779543, guid: 9a33af9da745e1d41a6039634f18b4a2, type: 3}
   - {fileID: 7079573870702136499, guid: b185377573294c13eb8ec8037682b3e9, type: 3}
-  - {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0, type: 3}
-  - {fileID: 8412013996092826318, guid: 75a5f0272786182afad0c9396adcd7f6, type: 3}
   - {fileID: 8384850648039707066, guid: 64a24a3507ebe0f7697488ff84e1a1e0, type: 3}
   - {fileID: 557203502348323242, guid: 19bc8bd8dedb6d14dadfe08742189d98, type: 3}
+  - {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0, type: 3}
+  - {fileID: 6282636630335214463, guid: 808e12d27921848a59bac447b93aec0f, type: 3}
   inputSignalPf: {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0,
     type: 3}
   signalHolder: {fileID: 712979172}
@@ -13166,7 +13166,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 371857214}
   m_HandleRect: {fileID: 371857213}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -13797,7 +13797,7 @@ PrefabInstance:
         type: 3}
       propertyPath: signalPrefab
       value: 
-      objectReference: {fileID: 8412013996092826318, guid: 75a5f0272786182afad0c9396adcd7f6,
+      objectReference: {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0,
         type: 3}
     - target: {fileID: 4750937598926047525, guid: d48b4f02647794ac2aba95960c3d59ab,
         type: 3}
@@ -13888,7 +13888,7 @@ PrefabInstance:
         type: 3}
       propertyPath: signalPrefab
       value: 
-      objectReference: {fileID: 8412013996092826318, guid: 75a5f0272786182afad0c9396adcd7f6,
+      objectReference: {fileID: 6282636630335214463, guid: 808e12d27921848a59bac447b93aec0f,
         type: 3}
     - target: {fileID: 4750937600310344738, guid: d48b4f02647794ac2aba95960c3d59ab,
         type: 3}
