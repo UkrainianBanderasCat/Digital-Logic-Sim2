@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.38073987, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5744,9 +5744,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.12310201
+    x: 0.081367224
     y: 0
-    width: 0.753796
+    width: 0.83726555
     height: 1
   near clip plane: 0.3
   far clip plane: 1500
@@ -11061,6 +11061,7 @@ MonoBehaviour:
   - {fileID: 557203502348323242, guid: 19bc8bd8dedb6d14dadfe08742189d98, type: 3}
   - {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0, type: 3}
   - {fileID: 6282636630335214463, guid: 808e12d27921848a59bac447b93aec0f, type: 3}
+  - {fileID: 8412013996092826318, guid: 75a5f0272786182afad0c9396adcd7f6, type: 3}
   inputSignalPf: {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0,
     type: 3}
   signalHolder: {fileID: 712979172}
@@ -13166,7 +13167,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 371857214}
   m_HandleRect: {fileID: 371857213}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
