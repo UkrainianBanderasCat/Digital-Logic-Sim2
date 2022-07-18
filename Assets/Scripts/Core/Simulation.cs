@@ -62,8 +62,12 @@ public class Simulation : MonoBehaviour {
 	}
 
 	public void SetClockSpeed(float speed) {
+		if (speed == 0) {
+			clockEnabled = false;
+			return;
+		}
 		clockEnabled = true;
-		clockCycleDuration = speed;
+		clockCycleDuration = 1 / speed;
 	}
 
 	public void SetDebugMode (bool debug) {
@@ -89,13 +93,24 @@ public class Simulation : MonoBehaviour {
 			// Clear output signals
 			List<ChipSignal> outputSignals = new List<ChipSignal>();
 
+			for (int i = 0; i < chipEditor.inputsEditor.signals.Count; i++)
+			{
+				if (chipEditor.inputsEditor.signals[i].inputPins[0].pinType == Pin.PinType.ChipInput)
+				{
+					outputSignals.Add(chipEditor.inputsEditor.signals[i]);
+				}
+			}
+
 			for (int i = 0; i < chipEditor.outputsEditor.signals.Count; i++)
 			{
-				outputSignals.Add(chipEditor.outputsEditor.signals[i]);
+				if (chipEditor.outputsEditor.signals[i].inputPins[0].pinType == Pin.PinType.ChipInput)
+				{
+					outputSignals.Add(chipEditor.outputsEditor.signals[i]);
+				}
 			}
 
 			for (int i = 0; i < outputSignals.Count; i++) {
-				//if (outputSignals[i].inputPins[0].pinType == Pin.PinType.ChipInput)
+				if (outputSignals[i].inputPins[0].pinType == Pin.PinType.ChipInput)
 					outputSignals[i].SetDisplayState (0);
 			}
 		}
@@ -111,22 +126,22 @@ public class Simulation : MonoBehaviour {
 
 		for (int i = 0; i < chipEditor.inputsEditor.signals.Count; i++)
 		{
-			//if (chipEditor.inputsEditor.signals[i].outputPins[0].pinType == Pin.PinType.ChipOutput)
-			//{
+			if (chipEditor.inputsEditor.signals[i].outputPins[0].pinType == Pin.PinType.ChipOutput)
+			{
 				inputSignals.Add(chipEditor.inputsEditor.signals[i]);
-			//}
+			}
 		}
 
-		// for (int i = 0; i < chipEditor.outputsEditor.signals.Count; i++)
-		// {
-		// 	//if (chipEditor.outputsEditor.signals[i].outputPins[0].pinType == Pin.PinType.ChipOutput)
-		// 	//{
-		// 		inputSignals.Add(chipEditor.outputsEditor.signals[i]);
-		// 	//}
-		// }
+		for (int i = 0; i < chipEditor.outputsEditor.signals.Count; i++)
+		{
+			if (chipEditor.outputsEditor.signals[i].outputPins[0].pinType == Pin.PinType.ChipOutput)
+			{
+				inputSignals.Add(chipEditor.outputsEditor.signals[i]);
+			}
+		}
 		// Tell all signal generators to send their signal out
 		for (int i = 0; i < inputSignals.Count; i++) {
-			((InputSignal) inputSignals[i]).SendSignal();
+			((Signal) inputSignals[i]).SendSignal ();
 		}
 
 	}

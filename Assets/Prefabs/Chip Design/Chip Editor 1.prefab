@@ -1163,8 +1163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2f6370dd4ea407badc66be4e2226f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pinAndWireInteraction: {fileID: 0}
   chipArea: {fileID: 4750937599942274015}
   chipHolder: {fileID: 4750937600419506468}
+  copiedChipHolder: {fileID: 0}
+  copiedChipsHolder: {fileID: 0}
   chipMask:
     serializedVersion: 2
     m_Bits: 256
@@ -1351,12 +1354,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -0.0004992485, w: 0.011985421}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 4750937598567899854}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 4750937598567899854}
+  m_maskType: 0
 --- !u!1 &4750937598611645874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,7 +1505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d9bedf3df7e422eb308f6d36a2c0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editorType: 0
+  editorType: 1
   chipContainer: {fileID: 4750937599942273985}
   signalPrefab: {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0,
     type: 3}
@@ -1923,7 +1926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d9bedf3df7e422eb308f6d36a2c0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editorType: 1
+  editorType: 0
   chipContainer: {fileID: 4750937599942273985}
   signalPrefab: {fileID: 894826051406503273, guid: 808e12d27921848a59bac447b93aec0f,
     type: 3}
