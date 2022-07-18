@@ -199,7 +199,7 @@ public class ChipInterfaceEditor : InteractionHandler {
 	// Handles spawning if user clicks, otherwise displays preview
 	void HandleSpawning () {
 
-		float containerX = chipContainer.position.x + chipContainer.localScale.x / 2 * ((editorType == EditorType.Right) ? -1 : 1);
+		float containerX = chipContainer.position.x + chipContainer.localScale.x / 2 * ((editorType == EditorType.Left) ? -1 : 1);
 		float centreY = ClampY (InputHelper.MouseWorldPos.y);
 
 		// Spawn on mouse down
@@ -251,7 +251,7 @@ public class ChipInterfaceEditor : InteractionHandler {
 						previewSignals[i].gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
 
 					if (editorType == EditorType.Right)
-						previewSignals[i].gameObject.transform.eulerAngles = new Vector3(0, 0, 180);
+						previewSignals[i].gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
 
 					previewSignals[i].gameObject.SetActive (true);
 					previewSignals[i].transform.position = spawnPos - Vector3.forward * forwardDepth;
