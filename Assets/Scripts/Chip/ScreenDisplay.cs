@@ -13,7 +13,7 @@ public class ScreenDisplay : BuiltinChip
     private Image[] pixels;
 
     protected override void ProcessOutput (int[] input) {
-        bool clear = input[11] == 1;
+        bool clear = input[10] == 1;
         if (clear) {
             ClearScreen();
             return;
