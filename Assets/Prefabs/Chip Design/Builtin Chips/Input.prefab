@@ -59,9 +59,6 @@ MonoBehaviour:
   pinRenderer: {fileID: 3784613928615055263}
   wireRenderer: {fileID: 8004754418866402433}
   signalName: 
-  interactable: 1
-  side: 1
-  pinType: 0
 --- !u!58 &2072548877
 CircleCollider2D:
   m_ObjectHideFlags: 0
