@@ -243,7 +243,7 @@ MonoBehaviour:
   signalName: 
   interactable: 1
   side: 1
-  pinType: 0
+  pinType: 1
 --- !u!1001 &4557980509974043434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -345,7 +345,7 @@ PrefabInstance:
     - target: {fileID: 8774343771143846598, guid: 3f5693e72562648d19f39eace0ccffd6,
         type: 3}
       propertyPath: pinType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

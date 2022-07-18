@@ -169,7 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinType: 0
-  input: {fileID: 0}
   chip: {fileID: 8384850648039707066}
   pinName: D
   cyclic: 0
@@ -290,7 +289,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinType: 0
-  input: {fileID: 0}
   chip: {fileID: 8384850648039707066}
   pinName: E
   cyclic: 0
@@ -812,7 +810,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinType: 0
-  input: {fileID: 0}
   chip: {fileID: 8384850648039707066}
   pinName: A
   cyclic: 0
@@ -933,7 +930,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinType: 0
-  input: {fileID: 0}
   chip: {fileID: 8384850648039707066}
   pinName: C
   cyclic: 0
@@ -1054,7 +1050,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinType: 0
-  input: {fileID: 0}
   chip: {fileID: 8384850648039707066}
   pinName: F
   cyclic: 0
@@ -1341,7 +1336,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinType: 0
-  input: {fileID: 0}
   chip: {fileID: 8384850648039707066}
   pinName: G
   cyclic: 0
@@ -1661,7 +1655,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinType: 0
-  input: {fileID: 0}
   chip: {fileID: 8384850648039707066}
   pinName: B
   cyclic: 0
@@ -1793,7 +1786,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9111365338580938257, guid: dd4f20431fc94f610a2bede4c040ecc7, type: 2}
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1845,9 +1838,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 7SEG
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dd4f20431fc94f610a2bede4c040ecc7, type: 2}
-  m_sharedMaterial: {fileID: -9111365338580938257, guid: dd4f20431fc94f610a2bede4c040ecc7,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

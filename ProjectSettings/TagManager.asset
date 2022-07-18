@@ -8,7 +8,6 @@ TagManager:
   - Zoom
   - Interaction
   - ClockSpeedController
-  - Localization
   layers:
   - Default
   - TransparentFX
