@@ -1,0 +1,34 @@
+Version=-Version 1.3 <size=25><color=#505050>(dernière mise à jour le 18 juil 2022)</color></size>
+Created_By=-Crée par <color=#75ADFF><link="https://www.youtube.com/c/SebastianLague">Sebastian Lague</link> et <color=#05DDFF><link="https://www.youtube.com/channel/UCWWgp52Mkip5zeRU7GzXYUg">Lime inc.</link></color>
+New_Project=NOUVEAU PROJET
+Load_Project=CHARGER UN PROJET
+Instructions=INSTRUCTIONS
+Settings=PARAMÈTRES
+Quit=QUITTER
+Load_Project_Title=CHOISISSEZ UN PROJET
+Create=CRÉER
+Сreate_Title=CRÉER UNE PUCE
+Options=OPTIONS
+Options_Title=OPTIONS
+Options_Description=AFFICHER LE NOM DE LA BROCHE :
+Options_Alt_Mouse_Over=ALT + SOURIS
+Options_Mouse_Over=SOURIS
+Options_Always_Main=TOUJOURS POUR CELLES SUR LES BORDURES
+Options_Always_All=TOUJOURS
+Exit=SORTIR
+Debug=DEBUG
+Step=PAS
+Clock=HORLOGE
+Clock_Speed=VITESSE DE L'HORLOGE
+Import_Chip=IMPORTER UNE PUCE
+Reload_Chip=RECHARGER CETTE PUCE
+Delete_Confirmation=CONFIRMER LA SUPPRESSION 
+Delete_Description=Voulez vous supprimmer la puce : {0} si elle est utilisé dans d'autres puces, ce projet pourrait être endommagé.
+Cancel=ANNULER
+Done=TERMINER
+No=NON
+Confirm=CONFIRMER
+Local=LOCAL
+Global=GLOBAL
+Back=RETOUR
+Fullscreen=Plein Écran
