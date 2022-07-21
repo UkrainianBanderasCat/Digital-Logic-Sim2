@@ -9090,6 +9090,8 @@ MonoBehaviour:
     type: 3}
   OutputSignalPrefab: {fileID: 6282636630335214463, guid: 808e12d27921848a59bac447b93aec0f,
     type: 3}
+  wirePrefab: {fileID: 761973689955804731, guid: 98fe3bedff56c4adc844cd3884dbdc92,
+    type: 3}
 --- !u!1 &1843717162
 GameObject:
   m_ObjectHideFlags: 0
