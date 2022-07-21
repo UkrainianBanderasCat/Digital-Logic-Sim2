@@ -9,16 +9,22 @@ using SimpleFileBrowser;
 
 public class EditChips : MonoBehaviour
 {
+    [Header ("References")]
     public Transform implementationHolder;
     public GameObject manager;
+    public ChipSignal InputSignalPrefab;
+    public ChipSignal OutputSignalPrefab;
+    GameObject InputBar;
+    GameObject OutputBar;
+
+
     Vector2 chipPos;
     private IEnumerator coroutine;
-
 
     public void OpenFileBrowser()
     {
         FileBrowser.SetFilters(false, ".txt");
-        FileBrowser.ShowLoadDialog((path) => { AllMethod(path); }, null, FileBrowser.PickMode.Files, false, SaveSystem.SaveDataDirectoryPath, null, "Load Chip Save File", "Load") ;
+        FileBrowser.ShowLoadDialog((path) => { AllMethod(path); }, null, FileBrowser.PickMode.Files, false, SaveSystem.CurrentSaveProfileDirectoryPath, null, "Load Chip Save File", "Load") ;
 
     }
 
@@ -84,10 +90,59 @@ public class EditChips : MonoBehaviour
                 
                 
             }
+
+
+            else
+            {
+                InputBar = GameObject.Find("Input Bar");
+                OutputBar = GameObject.Find("Output Bar");
+                if (chipName == "SIGNAL IN")
+                {
+                    chipPos = new Vector2((float)componentChip.posX, (float)componentChip.posY);
+                    ChipSignal spawnedSignal = Instantiate (InputSignalPrefab, chipPos, Quaternion.identity, GameObject.FindWithTag("ImplementationHolder").transform.Find("Inputs"));
+                    InputBar.GetComponent<ChipInterfaceEditor>().signals.Add(spawnedSignal);
+                    spawnedSignal.side = ChipSignal.Side.Left;
+
+                }
+
+                if (chipName == "SIGNAL OUT")
+                {
+                    chipPos = new Vector2((float)componentChip.posX, (float)componentChip.posY);
+                    ChipSignal spawnedSignal = Instantiate(OutputSignalPrefab, chipPos, Quaternion.identity, GameObject.FindWithTag("ImplementationHolder").transform.Find("Inputs"));
+                    OutputBar.GetComponent<ChipInterfaceEditor>().signals.Add(spawnedSignal);
+                    spawnedSignal.side = ChipSignal.Side.Right;
+
+                }
+
+            }
+
             
 
         }
     }
+
+
+    void DisplayWires(string[] path)
+    {
+        SavedWireLayout savedWireLayout;
+        string wirePath = SaveSystem.GetPathToWireSaveFile(path[0]);
+        using (StreamReader reader = new StreamReader(wirePath))
+            {
+                string wireSaveString = reader.ReadToEnd();
+                savedWireLayout = JsonUtility.FromJson<SavedWireLayout>(wireSaveString);
+            }
+        foreach (SavedWire wire in savedWireLayout.serializableWires)
+        {
+
+        }
+
+
+    }
+
+
+
+
+
 
     //Piece of code I found on stackoverflow by https://stackoverflow.com/users/3785314/programmer
     GameObject[] FindInActiveObjectsByName(string name)
