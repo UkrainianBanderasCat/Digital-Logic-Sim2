@@ -2133,7 +2133,7 @@ GameObject:
   - component: {fileID: 4750937600419506468}
   m_Layer: 0
   m_Name: Implementation Holder
-  m_TagString: Untagged
+  m_TagString: ImplementationHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
