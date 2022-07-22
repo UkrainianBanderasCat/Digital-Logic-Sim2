@@ -1478,8 +1478,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Version 1.3 <size=25><color=#505050>(Last update 16 June 2022)</color></size>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dd4f20431fc94f610a2bede4c040ecc7, type: 2}
+  m_sharedMaterial: {fileID: 6154631586329146020, guid: dd4f20431fc94f610a2bede4c040ecc7,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1644,8 +1645,9 @@ MonoBehaviour:
     Lague</link> & <link="https://www.youtube.com/channel/UCWWgp52Mkip5zeRU7GzXYUg">Lime
     inc.</link></color>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dd4f20431fc94f610a2bede4c040ecc7, type: 2}
+  m_sharedMaterial: {fileID: 6154631586329146020, guid: dd4f20431fc94f610a2bede4c040ecc7,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5464,7 +5466,6 @@ GameObject:
   - component: {fileID: 1883004879}
   - component: {fileID: 1883004878}
   - component: {fileID: 1883004877}
-  - component: {fileID: 1883004880}
   m_Layer: 5
   m_Name: About text
   m_TagString: Untagged
@@ -5668,19 +5669,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883004875}
   m_CullTransparentMesh: 0
---- !u!114 &1883004880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1883004875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f71cf934d6eab57f84cfe7da75a17fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: About
 --- !u!1 &1955160431
 GameObject:
   m_ObjectHideFlags: 0

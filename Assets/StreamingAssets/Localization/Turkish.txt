@@ -1,0 +1,34 @@
+Version=-Versiyon 1.5 <size=25><color=#505050>(Son güncelleme 18 July 2022)</color></size>
+Created_By=-Olusturan kisi <color=#75ADFF><link="https://www.youtube.com/c/SebastianLague">Sebastian Lague</link> & <color=#05DDFF><link="https://www.youtube.com/channel/UCWWgp52Mkip5zeRU7GzXYUg">Lime inc.</link></color>
+New_Project=Yeni Proje
+Load_Project=Proje Yükle
+Instructions=Açıklamalar
+Settings=Ayarlar
+Quit=Çıkıs Yap
+Load_Project_Title=BİR PROJE SEÇİN
+Create=Olustur
+Сreate_Title=Çip Olustur
+Options=Ayarlar
+Options_Title=Ayarlar
+Options_Description=Pin adlarını görüntüle:
+Options_Alt_Mouse_Over=ALT + MOUSE OVER
+Options_Mouse_Over=MOUSE OVER
+Options_Always_Main=Her zaman ana
+Options_Always_All=Her zaman hepsi
+Exit=Çıkıs
+Debug=Seçenekler
+Step=Adım
+Clock=Saat
+Clock_Speed=Saaat Hızı
+Import_Chip=Çip Ekle
+Reload_Chip=Çipi Yeniden Yükle
+Delete_Confirmation=Sil Onay
+Delete_Description=Çipi silmek istiyor musunuz: {0} baska çiplerde kullanılıyorsa bu projeyi bozabilir
+Cancel=İptal
+Done=Tamamlandı
+No=Hayır
+Confirm=Onay
+Local=Yerel
+Global=Evrensel
+Back=Geri
+Fullscreen=Tam Ekran
