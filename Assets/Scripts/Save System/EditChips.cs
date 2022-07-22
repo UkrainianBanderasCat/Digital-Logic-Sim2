@@ -25,17 +25,18 @@ public class EditChips : MonoBehaviour
     public void OpenFileBrowser()
     {
         FileBrowser.SetFilters(false, ".txt");
-        FileBrowser.ShowLoadDialog((path) => { AllMethod(path); }, null, FileBrowser.PickMode.Files, false, SaveSystem.CurrentSaveProfileDirectoryPath, null, "Load Chip Save File", "Load") ;
+        FileBrowser.ShowLoadDialog((path) => { DisplayAll(path); }, null, FileBrowser.PickMode.Files, false, SaveSystem.CurrentSaveProfileDirectoryPath, null, "Load Chip Save File", "Load") ;
 
     }
 
 
-    void AllMethod(string[] path)
+    void DisplayAll(string[] paths)
     {
+        string path = paths[0];
         DisplayChips(path);
     }
 
-    void DisplayChips(string[] chipPath)
+    public void DisplayChips(string chipPath)
     {
         
         ChipInteraction chipInteraction = GameObject.Find("Interaction").transform.Find("Chip Interaction").gameObject.GetComponent<ChipInteraction>() ;
@@ -43,7 +44,7 @@ public class EditChips : MonoBehaviour
         Chip loadingChip;
         List<Chip> loadedChips = new List<Chip>();
 
-        using (StreamReader reader = new StreamReader (chipPath[0])) {
+        using (StreamReader reader = new StreamReader (chipPath)) {
 				string chipSaveString = reader.ReadToEnd ();
 				savedChip = JsonUtility.FromJson<SavedChip> (chipSaveString);
 			}
@@ -121,7 +122,7 @@ public class EditChips : MonoBehaviour
                 if (chipName == "SIGNAL OUT")
                 {
                     chipPos = new Vector2((float)componentChip.posX, (float)componentChip.posY);
-                    ChipSignal spawnedSignal = Instantiate(OutputSignalPrefab, chipPos, Quaternion.identity, GameObject.FindWithTag("ImplementationHolder").transform.Find("Inputs"));
+                    ChipSignal spawnedSignal = Instantiate(OutputSignalPrefab, chipPos, Quaternion.identity, GameObject.FindWithTag("ImplementationHolder").transform.Find("Outputs"));
                     loadedChips.Add(spawnedSignal.GetComponent<Chip>());
                     OutputBar.GetComponent<ChipInterfaceEditor>().signals.Add(spawnedSignal);
                     spawnedSignal.side = ChipSignal.Side.Right;
@@ -130,7 +131,7 @@ public class EditChips : MonoBehaviour
             }
         }
 
-        Dictionary<SavedWire, int[] > savedWires = new Dictionary<SavedWire, int[]>();
+        /*Dictionary<SavedWire, int[] > savedWires = new Dictionary<SavedWire, int[]>();                Will maybe do later (useful only for below)
 
         string wirePath = SaveSystem.GetPathToWireSaveFile(originalChipName);
         SavedWireLayout savedWireLayout;
@@ -143,7 +144,7 @@ public class EditChips : MonoBehaviour
         foreach (SavedWire savedWire in savedWireLayout.serializableWires)
         {
             savedWires.Add(savedWire, new int[] { savedWire.parentChipIndex, savedWire.parentChipOutputIndex });
-        }
+        }*/
 
         //Code from ChipLoader.cs arranged to work here
         for (int chipIndex = 0; chipIndex < savedChip.savedComponentChips.Length; chipIndex++)
@@ -167,7 +168,7 @@ public class EditChips : MonoBehaviour
                         Wire loadedWire = GameObject.Instantiate (wirePrefab, parent : GameObject.FindWithTag("ImplementationHolder").transform.Find("Wires"));
                         loadedWire.Connect (connectedPin, loadedComponentChip.inputPins[inputPinIndex]);
 
-                        /*foreach (SavedWire savedWire in savedWires.Keys)                      DOESN'T WORK FOR NOW
+                        /*foreach (SavedWire savedWire in savedWires.Keys)                      Will maybe do later
                         {
                             if (savedWires[savedWire][0] == chipIndex && savedWires[savedWire][1] == inputPinIndex)
                             {
