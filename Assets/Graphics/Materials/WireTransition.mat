@@ -86,7 +86,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Exposure: 1
-    - _Fill: 5.099995
+    - _Fill: 5.0836954
     - _Filled: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -99,7 +99,7 @@ Material:
     - _Rotation: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 10
+    - _Speed: 9.79
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1

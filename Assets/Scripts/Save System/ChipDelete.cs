@@ -18,7 +18,9 @@ public class ChipDelete : MonoBehaviour
 
     public void ConfirmDelete(string _name) {
         deleteConfirmation.SetActive(true);
-        confirmText.text = "Do you want to delete chip:" + "\n" + _name + "\n" + "If it used in other chips," + "\n" + "it can break this project";
+        Localiation transl = GameObject.Find("Translation").GetComponent<Localiation>();
+        string text = string.Format(transl.GetText("Delete_Description"), _name);
+        confirmText.text = text;
         name = _name;
     }
 

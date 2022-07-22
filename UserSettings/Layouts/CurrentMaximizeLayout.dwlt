@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 11590
+  controlID: 23433
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 11591
+  controlID: 23434
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 11592
+  controlID: 23435
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -194,8 +194,8 @@ MonoBehaviour:
     y: 0
     width: 258
     height: 373
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -233,9 +233,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7acec6ff
-      m_LastClickedID: -3748230
-      m_ExpandedIDs: 96eac6ff7220c7ff7620c7ff8620c7ffd820c7ff2a6dc7ff3a6dc7ff8c6dc7ffa4cdc7fff8cdc7ff12d1c7ff5ad1c7ff8e74c9ffe074c9ffb0b6c9ffc4b6c9ff16b7c9ffd06ccaffe06ccaff326dcaff1ef8ffff66f8ffff6af8ffff70f8ffff9af8ffffe6f8ffff24f9ffffe4faffff6aff0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 521a0dffb81c0dff321e0dffe0aac6ff96eac6ff7220c7ff7620c7ff8620c7ffd820c7ff2a6dc7ff3a6dc7ff8c6dc7ffa4cdc7fff8cdc7ff12d1c7ff5ad1c7ff8e74c9ffe074c9ffb0b6c9ffc4b6c9ff16b7c9ffd06ccaffe06ccaff326dcaff1ef8ffff66f8ffff6af8ffff70f8ffff9af8ffffe6f8ffff24f9ffffe4faffff6aff0000d23c0100da3c0100ee3c01001e3d0100323d0100603d0100ae3d0100e83d0100843e0100c23e0100ce3e01000e3f0100183f0100203f0100343f01004e3f0100883f01009a3f0100b83f01001c4001002c400100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -286,7 +286,7 @@ MonoBehaviour:
   - {fileID: 2}
   - {fileID: 9}
   m_Selected: 1
-  m_LastSelected: 2
+  m_LastSelected: 0
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -546,9 +546,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 42.89038, y: 1.5404696, z: 9.677425}
+    m_Target: {x: 2.3050349, y: 2.3130589, z: 8.021587}
     speed: 2
-    m_Value: {x: 42.89038, y: 1.5404696, z: 9.677425}
+    m_Value: {x: 2.3050349, y: 2.3130589, z: 8.021587}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -598,9 +598,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.266939, y: 0.02514669, z: -0.006967881, w: -0.9633601}
   m_Size:
-    m_Target: 34.00037
+    m_Target: 13.483118
     speed: 2
-    m_Value: 34.00037
+    m_Value: 13.483118
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -662,7 +662,6 @@ MonoBehaviour:
     },\n        {\n            \"m_Id\": \"068fc9b47f8f4ef1b18f8ecae78595b1\"\n       
     },\n        {\n            \"m_Id\": \"b1835ad57a934294915cbb4fa7770761\"\n       
     },\n        {\n            \"m_Id\": \"08d8b9f10d6a4710baac64111ab0db47\"\n       
-    },\n        {\n            \"m_Id\": \"f079cd6c2a0840d290e664980cf1d21a\"\n       
     }\n    ],\n    \"m_Keywords\": [],\n    \"m_Dropdowns\": [],\n    \"m_CategoryData\":
     [\n        {\n            \"m_Id\": \"f1a757e0f9604d71a49f3fdf77ba1b7b\"\n       
     }\n    ],\n    \"m_Nodes\": [\n        {\n            \"m_Id\": \"8e86e33de4a84c659415bcb248532cbb\"\n       
@@ -829,8 +828,8 @@ MonoBehaviour:
     \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_UseCustomSlotLabel\":
     false,\n    \"m_CustomSlotLabel\": \"\",\n    \"m_DismissedVersion\": 0,\n   
     \"m_Precision\": 0,\n    \"overrideHLSLDeclaration\": false,\n    \"hlslDeclarationOverride\":
-    2,\n    \"m_Hidden\": false,\n    \"m_Value\": -2.0,\n    \"m_FloatType\": 1,\n   
-    \"m_RangeValues\": {\n        \"x\": -2.0,\n        \"y\": 2.0\n    }\n}\n\n{\n   
+    2,\n    \"m_Hidden\": false,\n    \"m_Value\": 0.0,\n    \"m_FloatType\": 1,\n   
+    \"m_RangeValues\": {\n        \"x\": -20.0,\n        \"y\": 20.0\n    }\n}\n\n{\n   
     \"m_SGVersion\": 1,\n    \"m_Type\": \"UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty\",\n   
     \"m_ObjectId\": \"08d8b9f10d6a4710baac64111ab0db47\",\n    \"m_Guid\": {\n       
     \"m_GuidSerialized\": \"1bc1102e-cfe0-4da5-81da-5188134a4184\"\n    },\n    \"m_Name\":
@@ -1482,23 +1481,13 @@ MonoBehaviour:
     }\n    ],\n    \"synonyms\": [\n        \"curve\"\n    ],\n    \"m_Precision\":
     0,\n    \"m_PreviewExpanded\": true,\n    \"m_DismissedVersion\": 0,\n    \"m_PreviewMode\":
     0,\n    \"m_CustomColors\": {\n        \"m_SerializableColors\": []\n    }\n}\n\n{\n   
-    \"m_SGVersion\": 0,\n    \"m_Type\": \"UnityEditor.ShaderGraph.Internal.BooleanShaderProperty\",\n   
-    \"m_ObjectId\": \"f079cd6c2a0840d290e664980cf1d21a\",\n    \"m_Guid\": {\n       
-    \"m_GuidSerialized\": \"7958479f-d9d6-42d4-bad9-35e68ae073c2\"\n    },\n    \"m_Name\":
-    \"Filled\",\n    \"m_DefaultRefNameVersion\": 1,\n    \"m_RefNameGeneratedByDisplayName\":
-    \"Filled\",\n    \"m_DefaultReferenceName\": \"_Filled\",\n    \"m_OverrideReferenceName\":
-    \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_UseCustomSlotLabel\":
-    false,\n    \"m_CustomSlotLabel\": \"\",\n    \"m_DismissedVersion\": 0,\n   
-    \"m_Precision\": 0,\n    \"overrideHLSLDeclaration\": false,\n    \"hlslDeclarationOverride\":
-    0,\n    \"m_Hidden\": false,\n    \"m_Value\": false\n}\n\n{\n    \"m_SGVersion\":
-    0,\n    \"m_Type\": \"UnityEditor.ShaderGraph.CategoryData\",\n    \"m_ObjectId\":
-    \"f1a757e0f9604d71a49f3fdf77ba1b7b\",\n    \"m_Name\": \"\",\n    \"m_ChildObjectList\":
-    [\n        {\n            \"m_Id\": \"e347af78c3164c0897356e96aa8c3cf5\"\n       
+    \"m_SGVersion\": 0,\n    \"m_Type\": \"UnityEditor.ShaderGraph.CategoryData\",\n   
+    \"m_ObjectId\": \"f1a757e0f9604d71a49f3fdf77ba1b7b\",\n    \"m_Name\": \"\",\n   
+    \"m_ChildObjectList\": [\n        {\n            \"m_Id\": \"e347af78c3164c0897356e96aa8c3cf5\"\n       
     },\n        {\n            \"m_Id\": \"9be6e91e1df1478fba02466496e7841e\"\n       
     },\n        {\n            \"m_Id\": \"068fc9b47f8f4ef1b18f8ecae78595b1\"\n       
     },\n        {\n            \"m_Id\": \"b1835ad57a934294915cbb4fa7770761\"\n       
     },\n        {\n            \"m_Id\": \"08d8b9f10d6a4710baac64111ab0db47\"\n       
-    },\n        {\n            \"m_Id\": \"f079cd6c2a0840d290e664980cf1d21a\"\n       
     }\n    ]\n}\n\n{\n    \"m_SGVersion\": 0,\n    \"m_Type\": \"UnityEditor.ShaderGraph.PropertyNode\",\n   
     \"m_ObjectId\": \"f301b04a6c6d431cae3f8f9256c7c275\",\n    \"m_Group\": {\n       
     \"m_Id\": \"\"\n    },\n    \"m_Name\": \"Property\",\n    \"m_DrawState\": {\n       
@@ -1602,22 +1591,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Graphics/Materials
+    - Assets/Scripts/Save System
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Graphics/Materials
+  - Assets/Scripts/Save System
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /home/yura/DigitalLogicCurrent/Digital-Logic-Sim2-master(11)vv/Digital-Logic-Sim2-master
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 126f0000
-    m_LastClickedID: 28434
-    m_ExpandedIDs: 00000000584e00005a4e0000744e000000ca9a3b
+    m_SelectedIDs: 844e0000
+    m_LastClickedID: 20100
+    m_ExpandedIDs: 00000000584e00005a4e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1670,9 +1659,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 7acec6ff
-    m_LastClickedInstanceID: -3748230
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1697,7 +1686,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 19}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -1749,8 +1738,8 @@ MonoBehaviour:
     y: 0
     width: 323
     height: 629
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -1792,7 +1781,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 255
+  m_LastVerticalScrollValue: 134
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

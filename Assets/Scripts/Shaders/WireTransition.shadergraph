@@ -17,9 +17,6 @@
         },
         {
             "m_Id": "08d8b9f10d6a4710baac64111ab0db47"
-        },
-        {
-            "m_Id": "f079cd6c2a0840d290e664980cf1d21a"
         }
     ],
     "m_Keywords": [],
@@ -519,7 +516,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 2,
     "m_Hidden": false,
-    "m_Value": -20.0,
+    "m_Value": 0.0,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": -20.0,
@@ -2734,29 +2731,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.BooleanShaderProperty",
-    "m_ObjectId": "f079cd6c2a0840d290e664980cf1d21a",
-    "m_Guid": {
-        "m_GuidSerialized": "7958479f-d9d6-42d4-bad9-35e68ae073c2"
-    },
-    "m_Name": "Filled",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Filled",
-    "m_DefaultReferenceName": "_Filled",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": false
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.CategoryData",
     "m_ObjectId": "f1a757e0f9604d71a49f3fdf77ba1b7b",
     "m_Name": "",
@@ -2775,9 +2749,6 @@
         },
         {
             "m_Id": "08d8b9f10d6a4710baac64111ab0db47"
-        },
-        {
-            "m_Id": "f079cd6c2a0840d290e664980cf1d21a"
         }
     ]
 }
