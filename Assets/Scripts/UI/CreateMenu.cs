@@ -26,7 +26,6 @@ public class CreateMenu : MonoBehaviour {
 	void Start () {
 		doneButton.onClick.AddListener (FinishCreation);
 		menuOpenButton.onClick.AddListener (OpenMenu);
-		cancelButton.onClick.AddListener (CloseMenu);
 
 		chipNameField.onValueChanged.AddListener (ChipNameFieldChanged);
 		suggestedColourIndex = Random.Range (0, suggestedColours.Length);
@@ -78,13 +77,8 @@ public class CreateMenu : MonoBehaviour {
 		SetSuggestedColour ();
 	}
 
-	void CloseMenu () {
-		menuHolder.SetActive (false);
-	}
-
 	void FinishCreation () {
 		onChipCreatePressed?.Invoke ();
-		CloseMenu ();
 	}
 
 	void SetSuggestedColour () {
