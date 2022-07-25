@@ -5,6 +5,7 @@
 - **UkrainianBanderasCat**
 - **AlphaCodingPilot**
 - **firecerne**
+- **TheRiggedDev**
 
 **Ideas to add:**
 - **Bus**
