@@ -6,6 +6,7 @@
 - **AlphaCodingPilot**
 - **firecerne**
 - **TheRiggedDev**
+- **3m1l10_ha**
 
 **Ideas to add:**
 - **Bus**
