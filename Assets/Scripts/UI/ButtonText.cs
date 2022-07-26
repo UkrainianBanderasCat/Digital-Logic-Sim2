@@ -20,14 +20,16 @@ public class ButtonText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 	public ChipDelete _chipDelete;
 
 	void Start () {
-		_chipDelete = GameObject.FindWithTag("Manager").GetComponent<ChipDelete>();
+		if (GameObject.FindWithTag("Manager") != null)
+			_chipDelete = GameObject.FindWithTag("Manager").GetComponent<ChipDelete>();
+		
 		name = gameObject.name;
 	}
 
 	void Update () {
 		Color col = (highlighted) ? highlightedCol : normalCol;
 		buttonText.color = (button.interactable) ? col : nonInteractableCol;
-		if (Input.GetKeyDown(KeyCode.Delete) && highlighted)
+		if (Input.GetKeyDown(KeyCode.Delete) && highlighted && _chipDelete != null)
 		{
 			_chipDelete.ConfirmDelete(name);
 		}
