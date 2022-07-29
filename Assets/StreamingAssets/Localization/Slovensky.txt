@@ -32,3 +32,4 @@ Local=LOKÁLNE
 Global=GLOBÁLNE 
 Back=NASPÄŤ 
 Fullscreen=Fullscreen
+Credits=CREDITS
