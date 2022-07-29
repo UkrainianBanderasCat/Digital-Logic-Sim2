@@ -20,6 +20,8 @@ public class ChipInteraction : InteractionHandler {
 	public KeyCode clockwiseRotationKey;
 	public KeyCode counterclockwiseRotationKey;
 
+	public GameObject chipMenu;
+
 	const float dragDepth = -50;
 	const float chipDepth = -0.2f;
 	const float rotationAmount = 90;
@@ -30,7 +32,7 @@ public class ChipInteraction : InteractionHandler {
 	List<Chip> newChipsToPlace;
 	List<Chip> selectedChips;
 	List<Chip> copiedChips = new List<Chip> ();
-	Vector2 selectionBoxStartPos;
+	public Vector2 selectionBoxStartPos;
 	Vector2 copyPosition;
 	Mesh selectionMesh;
 	Vector3[] selectedChipsOriginalPos;
@@ -40,6 +42,39 @@ public class ChipInteraction : InteractionHandler {
 		selectedChips = new List<Chip> ();
 		allChips = new List<Chip> ();
 		MeshShapeCreator.CreateQuadMesh (ref selectionMesh);
+	}
+
+	#if UNITY_ANDROID
+	void Update()
+	{
+		if(Input.GetTouch(0).tapCount == 2)
+		{
+			chipMenu.SetActive(true);
+  		}
+
+		if(selectedChips.Count == 0)
+		{
+			chipMenu.SetActive(false);
+		}
+
+		if (selectedChipsOriginalPos.Length > 0)
+		{
+			chipMenu.transform.position = selectedChipsOriginalPos[0];
+			chipMenu.transform.position += new Vector3(0.8f, 0.5f, 0.0f);
+			chipMenu.transform.position -= new Vector3(-(selectedChips[0].BoundsSize.x/2), selectedChips[0].BoundsSize.y/2, 0);
+		}
+	}
+	#endif
+
+	public void DeleteSelectedChips()
+	{
+		for (int i = selectedChips.Count - 1; i >= 0; i--) 
+		{
+			DeleteChip (selectedChips[i]);
+			selectedChips.RemoveAt (i);
+		}
+
+		newChipsToPlace.Clear ();
 	}
 
 	public override void OrderedUpdate () {

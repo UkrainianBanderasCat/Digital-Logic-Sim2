@@ -15,6 +15,12 @@ public class ButtonText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 	public Color highlightedCol = Color.white;
 	bool highlighted;
 
+	string directoryPath = "";
+    public FileInfo[] info;
+	AudioSource audioSource;
+	List<AudioClip> clips = new List<AudioClip>();
+	List<string> files = new List<string>();
+
 	new string name;
 
 	public ChipDelete _chipDelete;
@@ -24,6 +30,28 @@ public class ButtonText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 			_chipDelete = GameObject.FindWithTag("Manager").GetComponent<ChipDelete>();
 		
 		name = gameObject.name;
+
+		// directoryPath = Application.dataPath + "/StreamingAssets/Sounds/Click";
+        
+		// string[] f;
+        // f = Directory.GetFiles(directoryPath);
+
+		// for (int i = 0; i < f.Length; i++)
+        // {
+        //     if (f[i].EndsWith(".wav"))
+        //     {
+        //         files.Add(f[i]);
+        //         clips.Add(new WWW(f[i]).GetAudioClip(false, true, AudioType.WAV));
+        //     }
+        // }
+
+		// if (gameObject.GetComponent<AudioSource>() != null) 
+		// 	audioSource = gameObject.GetComponent<AudioSource>();
+		// else	
+		// 	audioSource = gameObject.AddComponent<AudioSource>();
+
+		// Button btn = button.GetComponent<Button>();
+		// btn.onClick.AddListener(PlaySound);
 	}
 
 	void Update () {
@@ -57,4 +85,10 @@ public class ButtonText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 			buttonText = transform.GetComponentInChildren<TMPro.TMP_Text> ();
 		}
 	}
+
+	// void PlaySound()
+	// {
+	// 	audioSource.clip = clips[Random.Range(0, clips.Count)];
+	// 	audioSource.Play();	
+	// }
 }

@@ -4,11 +4,23 @@
 // When designing a chip, this input signal can be manually set to 0 or 1 by the player.
 public class InputSignal : ChipSignal {
 
+	public bool clicked;
 
 	protected override void Start () {
 		base.Start ();
 		SetCol ();
 	}
+
+	// public void Update()
+	// {
+    //     if (Input.touchCount == 1) 
+	// 	{
+    //         if(Input.GetTouch(0).phase == TouchPhase.Began)
+	// 		{
+	// 			ToggleActive();
+	// 		}
+    //     }
+ 	// }
 
 	public void ToggleActive () {
 		currentState = 1 - currentState;
@@ -36,7 +48,7 @@ public class InputSignal : ChipSignal {
 	}
 
 	void OnMouseDown () {
-		Debug.Log("Stop");
+		//Debug.Log("Stop");
 		ToggleActive ();
 	}
 }
