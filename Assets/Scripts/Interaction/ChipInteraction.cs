@@ -49,20 +49,21 @@ public class ChipInteraction : InteractionHandler {
 	{
 		if(Input.GetTouch(0).tapCount == 2)
 		{
-			chipMenu.SetActive(true);
+			//chipMenu.SetActive(true);
+			DeleteSelectedChips();
   		}
 
-		if(selectedChips.Count == 0)
-		{
-			chipMenu.SetActive(false);
-		}
+		// if(selectedChips.Count == 0)
+		// {
+		// 	chipMenu.SetActive(false);
+		// }
 
-		if (selectedChipsOriginalPos.Length > 0)
-		{
-			chipMenu.transform.position = selectedChipsOriginalPos[0];
-			chipMenu.transform.position += new Vector3(0.8f, 0.5f, 0.0f);
-			chipMenu.transform.position -= new Vector3(-(selectedChips[0].BoundsSize.x/2), selectedChips[0].BoundsSize.y/2, 0);
-		}
+		// if (selectedChipsOriginalPos.Length > 0)
+		// {
+		// 	chipMenu.transform.position = selectedChipsOriginalPos[0];
+		// 	chipMenu.transform.position += new Vector3(0.8f, 0.5f, 0.0f);
+		// 	chipMenu.transform.position -= new Vector3(-(selectedChips[0].BoundsSize.x/2), selectedChips[0].BoundsSize.y/2, 0);
+		// }
 	}
 	#endif
 
