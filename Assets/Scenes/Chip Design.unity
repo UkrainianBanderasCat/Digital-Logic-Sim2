@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3708984, g: 0.37837005, b: 0.3572252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4426,9 +4426,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.12182233
     y: 0
-    width: 1
+    width: 0.75635535
     height: 1
   near clip plane: 0.3
   far clip plane: 1500
@@ -9387,7 +9387,6 @@ MonoBehaviour:
   - {fileID: 8869523655109081479, guid: 2296358475ab14fa7a35e4117255096a, type: 3}
   - {fileID: 1267900139923996690, guid: b19a100a3d81b4c6e9a0c3c1362706c3, type: 3}
   - {fileID: 8384850648039707066, guid: 796f6dc5291cbb9b799a2d9fad3f4ae7, type: 3}
-  - {fileID: 5420785331373779543, guid: 9a33af9da745e1d41a6039634f18b4a2, type: 3}
   - {fileID: 7079573870702136499, guid: b185377573294c13eb8ec8037682b3e9, type: 3}
   - {fileID: 8384850648039707066, guid: 64a24a3507ebe0f7697488ff84e1a1e0, type: 3}
   - {fileID: 557203502348323242, guid: 19bc8bd8dedb6d14dadfe08742189d98, type: 3}
