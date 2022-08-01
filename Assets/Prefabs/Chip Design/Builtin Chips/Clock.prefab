@@ -231,11 +231,7 @@ MonoBehaviour:
   outputPins:
   - {fileID: 2075130120421150586}
   bounds: {fileID: 0}
-<<<<<<< Updated upstream
   packageColour: {r: 0.8509804, g: 0.7019608, b: 0.44313726, a: 0}
-=======
-  packageColour: {r: 0.32694018, g: 0.67473865, b: 0.8773585, a: 0}
->>>>>>> Stashed changes
 --- !u!1 &2886115464730570706
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +291,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6154631586329146020, guid: dd4f20431fc94f610a2bede4c040ecc7, type: 2}
+  - {fileID: -9111365338580938257, guid: dd4f20431fc94f610a2bede4c040ecc7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -348,7 +344,7 @@ MonoBehaviour:
   m_text: CLOCK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd4f20431fc94f610a2bede4c040ecc7, type: 2}
-  m_sharedMaterial: {fileID: 6154631586329146020, guid: dd4f20431fc94f610a2bede4c040ecc7,
+  m_sharedMaterial: {fileID: -9111365338580938257, guid: dd4f20431fc94f610a2bede4c040ecc7,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
