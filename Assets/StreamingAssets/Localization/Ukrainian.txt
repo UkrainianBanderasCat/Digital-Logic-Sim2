@@ -32,4 +32,3 @@ Local=ЛОКАЛЬНО
 Global=ГЛОБАЛЬНО
 Back=Назад
 Fullscreen=Fullscreen
-Credits=КРЕДИТИ
