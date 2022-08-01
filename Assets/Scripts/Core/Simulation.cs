@@ -19,7 +19,7 @@ public class Simulation : MonoBehaviour {
 	float clockCycleDuration = 0.5f;
 	bool clockEnabled = true;
     float cycleTimeLeft;
-	int currentClockState = 0;
+	public int currentClockState = 0;
 
 	void Awake () {
 		simulationFrame = 0;
@@ -35,6 +35,7 @@ public class Simulation : MonoBehaviour {
         }
 
         UpdateClocks();
+		onClockCycle?.Invoke(currentClockState);
     }
 
     private void UpdateClocks()
@@ -49,10 +50,10 @@ public class Simulation : MonoBehaviour {
         }
 		
         cycleTimeLeft -= Time.deltaTime;
-        if (cycleTimeLeft <= 0)
+        if (cycleTimeLeft < 0)
         {
-            currentClockState = 1 - currentClockState;
             onClockCycle?.Invoke(currentClockState);
+            currentClockState = 1 - currentClockState;
             cycleTimeLeft = clockCycleDuration;
         }
     }
