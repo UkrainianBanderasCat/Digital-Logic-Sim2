@@ -18,20 +18,25 @@ public class ChipDelete : MonoBehaviour
 
     public void ConfirmDelete(string _name) {
         deleteConfirmation.SetActive(true);
-        confirmText.text = "Do you want to delete chip:" + "\n" + _name + "\n" + "If it used in other chips," + "\n" + "it can break this project";
+        Localiation transl = GameObject.Find("Translation").GetComponent<Localiation>();
+        string text = string.Format(transl.GetText("Delete_Description"), _name);
+        confirmText.text = text;
         name = _name;
     }
 
     public void DeleteLocal()
     {
+        _manager.SaveWorkspace();
         string deletePath = SaveSystem.GetPathToSaveFile(name);
         string wireDeletePath = SaveSystem.GetPathToWireSaveFile(name);
         DeleteFile(deletePath);
         DeleteFile(wireDeletePath);
+        GameObject.Find("Manager").GetComponent<EditChips>().DisplayChips(SaveSystem.GetPathToWorkspaceSaveFile());
     }
    
     public void DeleteGlobal()
     {
+        _manager.SaveWorkspace();
         string deleteGlobalPath = SaveSystem.GetPathToGlobalSaveFile(name);
         string wireDeleteGlobalPath = SaveSystem.GetPathToGlobalWireSaveFile(name);
 
@@ -39,6 +44,7 @@ public class ChipDelete : MonoBehaviour
         DeleteFile(wireDeleteGlobalPath);
 
         DeleteLocal();
+        GameObject.Find("Manager").GetComponent<EditChips>().DisplayChips(SaveSystem.GetPathToWorkspaceSaveFile());
     }
 
     void DeleteFile(string path)
@@ -46,7 +52,10 @@ public class ChipDelete : MonoBehaviour
         if (File.Exists(path))
         {
             File.Delete(path);
-            _manager.RefreshAll();
+            
+            _manager.RefreshAll(); 
+            
+
         }
     }
 }

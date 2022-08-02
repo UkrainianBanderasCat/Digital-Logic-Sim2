@@ -86,6 +86,17 @@ public class ChipInterfaceEditor : InteractionHandler {
 		deleteButton.onClick.AddListener (DeleteSelected);
 	}
 
+	void Update() 
+	{
+		if (signalHolder.childCount > signals.Count)
+		{
+			for (int i = signalHolder.childCount-signals.Count-1; i < signalHolder.childCount; i++)
+			{
+				signals.Add(signalHolder.GetChild(i).GetComponent<ChipSignal>());
+			}
+		}
+	}
+
 	public override void OrderedUpdate () {
 		if (!InputHelper.MouseOverUIObject ()) {
 			UpdateColours ();
