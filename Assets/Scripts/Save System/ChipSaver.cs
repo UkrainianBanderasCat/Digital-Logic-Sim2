@@ -7,10 +7,9 @@ public static class ChipSaver {
 
 	const bool usePrettyPrint = true;
 
-	public static void Save (ChipEditor chipEditor, ChipSignal inputSignalPf, Transform signalHolder, string chipName = null) {
-		ChipSaveData chipSaveData = new ChipSaveData (chipEditor, inputSignalPf, signalHolder, chipName);
+	public static void Save (ChipEditor chipEditor, ChipSignal inputSignalPf, Transform signalHolder) {
+		ChipSaveData chipSaveData = new ChipSaveData (chipEditor, inputSignalPf, signalHolder);
 
-		if (chipName == null) { chipName = chipEditor.chipName; }
 		// Generate new chip save string
 		var compositeChip = new SavedChip (chipSaveData);
 		string saveString = JsonUtility.ToJson (compositeChip, usePrettyPrint);
@@ -20,24 +19,24 @@ public static class ChipSaver {
 		string wiringSaveString = JsonUtility.ToJson (wiringSystem, usePrettyPrint);
 
 		// Write to file
-		string savePath = SaveSystem.GetPathToSaveFile (chipName);
+		string savePath = SaveSystem.GetPathToSaveFile (chipEditor.chipName);
 		using (StreamWriter writer = new StreamWriter (savePath)) {
 			writer.Write (saveString);
 		}
 
-		string wireLayoutSavePath = SaveSystem.GetPathToWireSaveFile (chipName);
+		string wireLayoutSavePath = SaveSystem.GetPathToWireSaveFile (chipEditor.chipName);
 		using (StreamWriter writer = new StreamWriter (wireLayoutSavePath)) {
 			writer.Write (wiringSaveString);
 		}
 
 		// Write to Global Save File
-		string globalSavePath = SaveSystem.GetPathToGlobalSaveFile(chipName);
+		string globalSavePath = SaveSystem.GetPathToGlobalSaveFile(chipEditor.chipName);
 		using (StreamWriter writer = new StreamWriter(globalSavePath))
 		{
 			writer.Write(saveString);
 		}
 
-		string globalWireLayoutSavePath = SaveSystem.GetPathToGlobalWireSaveFile(chipName);
+		string globalWireLayoutSavePath = SaveSystem.GetPathToGlobalWireSaveFile(chipEditor.chipName);
 		using (StreamWriter writer = new StreamWriter(globalWireLayoutSavePath))
 		{
 			writer.Write(wiringSaveString);

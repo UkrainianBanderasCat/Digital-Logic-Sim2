@@ -16,6 +16,7 @@ public class Wire : MonoBehaviour {
 	public float thickness = 1;
 	public float selectedThickness = 1.2f;
 	bool selected;
+
 	bool wireConnected;
 	[HideInInspector] public Pin startPin;
 	[HideInInspector] public Pin endPin;
@@ -106,9 +107,7 @@ public class Wire : MonoBehaviour {
 				offCol = palette.highZCol;
 			}
 			mat.color = (ChipOutputPin.State == 0) ? offCol : onCol;
-		}
-
-		else {
+		} else {
 			mat.color = Color.black;
 		}
 	}

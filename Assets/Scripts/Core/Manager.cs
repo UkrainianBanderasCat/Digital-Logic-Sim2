@@ -29,14 +29,7 @@ public class Manager : MonoBehaviour {
 	void Start () {
 		SaveSystem.Init ();
 		SaveSystem.LoadAll (this);
-		
-
 	}
-
-	void OnApplicationQuit()
-    {
-		SaveWorkspace();
-    }
 
 	public static ChipEditor ActiveChipEditor {
 		get {
@@ -59,10 +52,6 @@ public class Manager : MonoBehaviour {
 		LoadNewEditor ();
 	}
 
-	public void SaveWorkspace()
-    {
-		SaveAndPackageChip();
-	}
 	Chip PackageChip () {
 		ChipPackage package = Instantiate (chipPackagePrefab, parent : transform);
 		package.PackageCustomChip (activeChipEditor);
@@ -91,10 +80,7 @@ public class Manager : MonoBehaviour {
 	}
 
 	public void LoadMainMenu () {
-
-		SaveWorkspace();
 		UnityEngine.SceneManagement.SceneManager.LoadScene (0);
-		
 	}
 
 }
