@@ -1,33 +1,33 @@
-Version=-Verzia 1.3 <size=25><color=#505050>(Posledna aktualizacia: 17.7.2022)</color></size> 
+Version=-Verzia 1.3 <size=25><color=#505050>(Posledni aktualizace: 17.7.2022)</color></size> 
 Created_By=-Vytvoril <color=#75ADFF><link="https://www.youtube.com/c/SebastianLague">Sebastian Lague</link> & <color=#05DDFF><link="https://www.youtube.com/channel/UCWWgp52Mkip5zeRU7GzXYUg">Lime inc.</link></color> 
 New_Project=NOVY PROJEKT
 Load_Project=NACITAT PROJEKT 
-Instructions=INSTRUKCIE 
-Settings=NASTAVENIA 
-Quit=ODIST 
+Instructions=INSTRUKCE 
+Settings=NASTAVENI 
+Quit=ODEJIT 
 Load_Project_Title=VYBER SI PROJEKT 
-Create=CREATE Create_Title=VYTVORIT CIP 
+Create=VYTVORIT Create_Title=VYTVORIT CIP 
 Options=MOZNOSTI 
 Options_Title=MOZNOSTI 
-Options_Description=ZOBRAZ NAZOV PINU 
+Options_Description=ZOBRAZ NAZEV PINU 
 NAMES: Options_Alt_Mouse_Over=ALT + MYS NAD 
 Options_Mouse_Over=MYS NAD 
-Options_Always_Main=VZDY HLAVNE 
-Options_Always_All=VZDY VETKY 
-Exit=ODIST 
+Options_Always_Main=VZDY HLAVNI 
+Options_Always_All=VZDY VSECHNI 
+Exit=ODEJIT 
 Debug=DEBUG 
 Step=KROK 
 Clock=HODINY 
 Clock_Speed=RYCHLOST HODIN 
 Import_Chip=VLOZ CIP 
 Reload_Chip=OBNOV CIP 
-Delete_Confirmation=POTVRDENIE ODSTRANENIA 
-Delete_Description=Naozaj chceS odstranit cip: {0} ak je pouzity v inom cipe môze to znicit cely projekt.  
+Delete_Confirmation=POTVRDENI ODSTRANENI 
+Delete_Description=Skutecne chces odstranit cip: {0} ak je pouzity v inom cipe muze to znicit cely projekt.  
 Cancel=ZRUSIT 
 Done=HOTOVO 
-No=NIE 
+No=NE 
 Confirm=POTVRDIT 
 Local=LOKALNE 
 Global=GLOBALNE 
-Back=NASPAT 
+Back=ZPET 
 Fullscreen=Fullscreen
