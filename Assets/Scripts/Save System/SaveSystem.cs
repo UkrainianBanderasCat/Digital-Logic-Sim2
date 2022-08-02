@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class SaveSystem {
 
-	public static string activeProjectName = "Untitled";
+	static string activeProjectName = "Untitled";
 	const string fileExtension = ".txt";
 
 	public static void SetActiveProject (string projectName) {
@@ -24,16 +24,10 @@ public static class SaveSystem {
 		string[] chipSavePaths = Directory.GetFiles (CurrentSaveProfileDirectoryPath, "*" + fileExtension);
 		
 		ChipLoader.LoadAllChips (chipSavePaths, manager);
-
-		GameObject.Find("Manager").GetComponent<EditChips>().DisplayChips(GetPathToWorkspaceSaveFile());
 		Debug.Log ("Load time: " + sw.ElapsedMilliseconds);
 		Debug.Log ("This directory path : " + CurrentSaveProfileDirectoryPath + ".The global directory path : " + GlobalDirectoryPath);
 
-
-
 	}
-
-
 
 	public static void LoadGlobal(Manager manager)
     {
@@ -41,17 +35,6 @@ public static class SaveSystem {
 		ChipLoader.LoadAllChips(globalChipSavePaths, manager);
 	}
 
-	public static string GetNameOfProject()
-	{
-		return activeProjectName;
-	}
-
-	public static string GetPathToWorkspaceSaveFile()
-	{
-		return Path.Combine(CurrentSaveProfileDirectoryPath, fileExtension);
-
-	}
-	 
 	public static string GetPathToSaveFile (string saveFileName) {
 		return Path.Combine (CurrentSaveProfileDirectoryPath, saveFileName + fileExtension);
 	}
