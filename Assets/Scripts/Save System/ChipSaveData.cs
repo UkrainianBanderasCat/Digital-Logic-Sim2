@@ -17,9 +17,9 @@ public class ChipSaveData {
 
 	}
 
-	public ChipSaveData (ChipEditor chipEditor, ChipSignal inputSignalPf, Transform signalHolder, string chipSaveDataName) {
+	public ChipSaveData (ChipEditor chipEditor, ChipSignal inputSignalPf, Transform signalHolder) {
 		List<Chip> componentChipList = new List<Chip> ();
-		if (chipSaveDataName == null) { chipSaveDataName = chipEditor.chipName; }
+
 		var sortedInputs = chipEditor.inputsEditor.signals;
 		sortedInputs.Sort ((a, b) => b.transform.position.y.CompareTo (a.transform.position.y));
 
@@ -32,7 +32,6 @@ public class ChipSaveData {
 				MonoBehaviour.Destroy (chip.gameObject);
 			}
 		}
-
 		if (clocks.Count > 0) {
 			ChipSignal clockInputSignal = MonoBehaviour.Instantiate (inputSignalPf, signalHolder);
 			clockInputSignal.UpdateSignalName("CLOCK");
@@ -52,7 +51,7 @@ public class ChipSaveData {
 		componentChips = componentChipList.ToArray ();
 
 		wires = chipEditor.pinAndWireInteraction.allWires.ToArray ();
-		chipName = chipSaveDataName;
+		chipName = chipEditor.chipName;
 		chipColour = chipEditor.chipColour;
 		chipNameColour = chipEditor.chipNameColour;
 		creationIndex = chipEditor.creationIndex;

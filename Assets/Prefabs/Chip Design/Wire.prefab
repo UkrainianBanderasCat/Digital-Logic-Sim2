@@ -53,8 +53,6 @@ MonoBehaviour:
   curveSize: 0.3
   resolution: 30
   thickness: 0.5
-  travelTime: 0.8
-  wirePrefab: {fileID: 2681663008006153501}
   selectedThickness: 0.85
   startPin: {fileID: 0}
   endPin: {fileID: 0}

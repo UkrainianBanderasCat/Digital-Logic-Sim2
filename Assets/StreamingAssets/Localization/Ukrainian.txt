@@ -1,4 +1,4 @@
-Version=-Версія 1.5 <size=25><color=#505050>(останє обновлення 23 Лип 2022)</color></size>
+Version=-Версія 1.3 <size=25><color=#505050>(останє обновлення 18 Лип 2022)</color></size>
 Created_By=-Створено <color=#75ADFF><link="https://www.youtube.com/c/SebastianLague">Sebastian Lague</link> & <color=#05DDFF><link="https://www.youtube.com/channel/UCWWgp52Mkip5zeRU7GzXYUg">Lime inc.</link></color>
 New_Project=НОВИЙ ПРОЕКТ
 Load_Project=ЗАВАНТАЖИТИ ПРОЕКТ
