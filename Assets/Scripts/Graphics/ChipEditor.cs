@@ -30,6 +30,10 @@ public class ChipEditor : MonoBehaviour {
 		GetComponentInChildren<Canvas> ().worldCamera = Camera.main;
 	}
 
+	void Start()
+    {
+
+    }
 	void LateUpdate () {
 		inputsEditor.OrderedUpdate ();
 		outputsEditor.OrderedUpdate ();
