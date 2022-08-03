@@ -50,6 +50,29 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
+=======
+    "com.unity.render-pipelines.core": {
+      "version": "13.1.7",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.searcher": {
+      "version": "4.9.2",
+      "depth": 1,
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.0.2",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+>>>>>>> 2a655fdbdef6f7ba923f72de60771725721bca6b
     "com.unity.services.core": {
       "version": "1.0.1",
       "depth": 1,
@@ -58,6 +81,15 @@
         "com.unity.modules.unitywebrequest": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.unity.shadergraph": {
+      "version": "13.1.7",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "13.1.7",
+        "com.unity.searcher": "4.9.2"
+      }
     },
     "com.unity.sysroot": {
       "version": "2.0.0",
