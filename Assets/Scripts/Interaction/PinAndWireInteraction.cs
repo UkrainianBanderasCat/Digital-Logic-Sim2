@@ -34,6 +34,16 @@ public class PinAndWireInteraction : InteractionHandler {
 		outputEditor.onDeleteChip += DeleteChipWires;
 	}
 
+	// #if UNITY_ANDROID & !UNITY_EDITOR
+	// public void Update()
+	// {
+	// 	if(Input.GetTouch(0).tapCount == 2)
+	// 	{
+    //   		StopPlacingWire();
+  	// 	}
+	// }
+	// #endif
+
 	public override void OrderedUpdate () {
 		bool mouseOverUI = InputHelper.MouseOverUIObject ();
 

@@ -1,4 +1,5 @@
 public class Clock : BuiltinChip {
+
     protected override void Awake () {
         Simulation.onClockCycle += UpdateClockSignals;
         base.Awake();

@@ -30,46 +30,46 @@ public class Localiation : MonoBehaviour
             selectedLanguage = PlayerPrefs.GetString("selectedLanguage");
 
         directoryPath = Application.dataPath + "/StreamingAssets/Localization/";
+
         DirectoryInfo dir = new DirectoryInfo(directoryPath);
         info = dir.GetFiles("*.txt");
-
         //Debug.Log(info);
-        //Debug.Log(info.Length);
-        
-        foreach (FileInfo f in info) 
-        {   
-            string filePath = f.ToString();
-            //Debug.Log(filePath);
+        //Debug.Log(info.Length);  
+           
+            foreach (FileInfo f in info) 
+            {   
+                string filePath = f.ToString();
+                //Debug.Log(filePath);
 
-            //string fileNameWithTxt = filePath.Replace(directoryPath, "");
-            //avaibleLanguages.Add(fileNameWithTxt.Substring(0, fileNameWithTxt.Length - 4));
+                //string fileNameWithTxt = filePath.Replace(directoryPath, "");
+                //avaibleLanguages.Add(fileNameWithTxt.Substring(0, fileNameWithTxt.Length - 4));
 
-            avaibleLanguages.Add(Path.GetFileNameWithoutExtension(filePath));
+                avaibleLanguages.Add(Path.GetFileNameWithoutExtension(filePath));
 
-            StreamReader reader = new StreamReader(filePath); 
-            Debug.Log(reader.ReadToEnd());
-            reader.Close();
-        } 
+                StreamReader reader = new StreamReader(filePath); 
+                //Debug.Log(reader.ReadToEnd());
+                reader.Close();
+            } 
 
-        //int lines = File.ReadAllLines(directoryPath + selectedLanguage + ".txt").Length;
-        string[] lines = System.IO.File.ReadAllLines(directoryPath + selectedLanguage + ".txt");
-        for (int i = 0; i < lines.Length; i++)
-        {
-            Translation translation = new Translation();
+            //int lines = File.ReadAllLines(directoryPath + selectedLanguage + ".txt").Length;
+            string[] lines = System.IO.File.ReadAllLines(directoryPath + selectedLanguage + ".txt");
+            for (int i = 0; i < lines.Length; i++)
+            {
+                Translation translation = new Translation();
             
-            //Debug.Log(lines[i]);
-            string[] normalText = lines[i].Split(char.Parse("="));
-            string[] colorfulText = Regex.Split(lines[i], @"\=\-");
+                //Debug.Log(lines[i]);
+                string[] normalText = lines[i].Split(char.Parse("="));
+                string[] colorfulText = Regex.Split(lines[i], @"\=\-");
 
-            translation.id = normalText[0];
-            if (normalText.Length == 2)
-                translation.text = normalText[1];
+                translation.id = normalText[0];
+                if (normalText.Length == 2)
+                    translation.text = normalText[1];
             
-            else if (normalText.Length > 2)
-                translation.text = colorfulText[1];
+                else if (normalText.Length > 2)
+                    translation.text = colorfulText[1];
 
-            translations.Add(translation); 
-        }    
+                translations.Add(translation); 
+            }  
 
         langButton.transform.GetComponentInChildren<TMPro.TMP_Text> ().text = selectedLanguage;
     }
