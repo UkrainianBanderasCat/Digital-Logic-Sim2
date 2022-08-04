@@ -77,7 +77,7 @@ public class CreateMenu : MonoBehaviour {
 		SetSuggestedColour ();
 	}
 
-	void FinishCreation () {
+	public void FinishCreation () {
 		onChipCreatePressed?.Invoke ();
 	}
 

@@ -11,6 +11,7 @@ public class ChipDelete : MonoBehaviour
     Manager _manager;
     public GameObject deleteConfirmation;
     public TextMeshProUGUI confirmText;
+    public GameObject create;
 
     void Start() {
         _manager = GameObject.FindWithTag("Manager").GetComponent<Manager>();
@@ -18,7 +19,7 @@ public class ChipDelete : MonoBehaviour
 
     public void ConfirmDelete(string _name) {
         deleteConfirmation.SetActive(true);
-        Localiation transl = GameObject.Find("Translation").GetComponent<Localiation>();
+        Localiation transl = GameObject.Find("Translation").GetComponent<Localiation>(); // This doesn't work
         string text = string.Format(transl.GetText("Delete_Description"), _name);
         confirmText.text = text;
         name = _name;
@@ -31,7 +32,10 @@ public class ChipDelete : MonoBehaviour
         string wireDeletePath = SaveSystem.GetPathToWireSaveFile(name);
         DeleteFile(deletePath);
         DeleteFile(wireDeletePath);
-        GameObject.Find("Manager").GetComponent<EditChips>().DisplayChips(SaveSystem.GetPathToWorkspaceSaveFile());
+        create.GetComponent<CreateMenu>().FinishCreation();
+        deleteConfirmation.SetActive(false);
+        DeleteFile(SaveSystem.GetPathToSaveFile(""));
+        
     }
    
     public void DeleteGlobal()
@@ -44,7 +48,8 @@ public class ChipDelete : MonoBehaviour
         DeleteFile(wireDeleteGlobalPath);
 
         DeleteLocal();
-        GameObject.Find("Manager").GetComponent<EditChips>().DisplayChips(SaveSystem.GetPathToWorkspaceSaveFile());
+        deleteConfirmation.SetActive(false);
+        DeleteFile(SaveSystem.GetPathToSaveFile(""));
     }
 
     void DeleteFile(string path)
@@ -52,9 +57,6 @@ public class ChipDelete : MonoBehaviour
         if (File.Exists(path))
         {
             File.Delete(path);
-            
-            _manager.RefreshAll(); 
-            
 
         }
     }

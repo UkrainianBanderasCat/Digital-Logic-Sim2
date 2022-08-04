@@ -13,6 +13,7 @@ public class Manager : MonoBehaviour {
 	public ChipSignal inputSignalPf;
 	public Transform signalHolder;
 	public bool DebugMode;
+	public GameObject create;
 
 	ChipEditor activeChipEditor;
 	int currentChipCreationIndex;
@@ -61,7 +62,7 @@ public class Manager : MonoBehaviour {
 
 	public void SaveWorkspace()
     {
-		SaveAndPackageChip();
+		create.GetComponent<CreateMenu>().FinishCreation();
 	}
 	Chip PackageChip () {
 		ChipPackage package = Instantiate (chipPackagePrefab, parent : transform);
