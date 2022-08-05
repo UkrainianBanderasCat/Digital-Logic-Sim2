@@ -86,7 +86,7 @@ public class ChipInterfaceEditor : InteractionHandler {
 		deleteButton.onClick.AddListener (DeleteSelected);
 	}
 
-	void Update() 
+	void LateUpdate() 
 	{
 		if (signalHolder.childCount > signals.Count)
 		{
