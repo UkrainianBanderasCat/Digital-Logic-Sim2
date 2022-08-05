@@ -12,6 +12,7 @@ public class EditChips : MonoBehaviour
     [Header ("References")]
     public Transform implementationHolder;
     public GameObject manager;
+    public GameObject create;
     public ChipSignal InputSignalPrefab;
     public ChipSignal OutputSignalPrefab;
     public Wire wirePrefab;
@@ -32,6 +33,7 @@ public class EditChips : MonoBehaviour
 
     void DisplayAll(string[] paths)
     {
+        create.GetComponent<CreateMenu>().FinishCreation();
         string path = paths[0];
         DisplayChips(path);
     }
