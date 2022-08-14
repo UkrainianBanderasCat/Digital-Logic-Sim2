@@ -29,7 +29,11 @@ public class Localiation : MonoBehaviour
         if (PlayerPrefs.GetString("selectedLanguage") != "")
             selectedLanguage = PlayerPrefs.GetString("selectedLanguage");
 
-        directoryPath = Application.dataPath + "/StreamingAssets/Localization/";
+        #if UNITY_STANDALONE_WIN & UNITY_STANDALONE_LINUX & UNITY_EDITOR
+            directoryPath = Application.dataPath + "/StreamingAssets/Localization/";
+        #else if UNITY_STANDALONE_OSX
+            directoryPath = Application.dataPath + "/Resources/Data/StreamingAssets/Localization/"
+        #endif
 
         DirectoryInfo dir = new DirectoryInfo(directoryPath);
         info = dir.GetFiles("*.txt");
