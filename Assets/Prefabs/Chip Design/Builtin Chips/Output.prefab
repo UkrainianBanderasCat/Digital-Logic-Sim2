@@ -243,7 +243,7 @@ MonoBehaviour:
   signalName: 
   interactable: 1
   side: 1
-  pinType: 0
+  pinType: 1
 --- !u!1001 &4557980509974043434
 PrefabInstance:
   m_ObjectHideFlags: 0

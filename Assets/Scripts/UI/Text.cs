@@ -9,12 +9,12 @@ public class Text : MonoBehaviour
 
     void Update()
     {
-        #if UNITY_STANDALONE
+        /* #if UNITY_STANDALONE                             DOESN'T WORK
         Localiation transl = GameObject.Find("Translation").GetComponent<Localiation>();
         TMP_Text text = GetComponent<TMP_Text>();
-        //text.font = 
+        text.font =  -- Originally a Comment 
 
         text.text = transl.GetText(id);
-        #endif
+        #endif */
     }
 }

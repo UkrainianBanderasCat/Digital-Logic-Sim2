@@ -12,6 +12,7 @@ public class EditChips : MonoBehaviour
     [Header ("References")]
     public Transform implementationHolder;
     public GameObject manager;
+    public GameObject create;
     public ChipSignal InputSignalPrefab;
     public ChipSignal OutputSignalPrefab;
     public Wire wirePrefab;
@@ -32,6 +33,7 @@ public class EditChips : MonoBehaviour
 
     void DisplayAll(string[] paths)
     {
+        create.GetComponent<CreateMenu>().FinishCreation();
         string path = paths[0];
         DisplayChips(path);
     }
@@ -111,22 +113,26 @@ public class EditChips : MonoBehaviour
                 OutputBar = GameObject.Find("Output Bar");
                 if (chipName == "SIGNAL IN")
                 {
-                    chipPos = new Vector2((float)componentChip.posX, (float)componentChip.posY);
-                    ChipSignal spawnedSignal = Instantiate (InputSignalPrefab, chipPos, Quaternion.identity, GameObject.FindWithTag("ImplementationHolder").transform.Find("Inputs"));
-                    loadedChips.Add(spawnedSignal.GetComponent<Chip>());
-                    InputBar.GetComponent<ChipInterfaceEditor>().signals.Add(spawnedSignal);
-                    spawnedSignal.side = ChipSignal.Side.Left;
+                    //chipPos = new Vector2((float)componentChip.posX, (float)componentChip.posY);
+                    //ChipSignal spawnedSignal = Instantiate (InputSignalPrefab, chipPos, Quaternion.identity, GameObject.FindWithTag("ImplementationHolder").transform.Find("Inputs"));
+                    //InputBar.GetComponent<ChipInterfaceEditor>().signals.Add(spawnedSignal);
+                    //loadedChips.Add(spawnedSignal.GetComponent<Chip>());
+                    //spawnedSignal.side = ChipSignal.Side.Left;
 
+                    //loadedChips.Add(InputBar.GetComponent<ChipInterfaceEditor>().HandleCreation((float)componentChip.posY, (float)componentChip.posX).GetComponent<Chip>());
+                    InputBar.GetComponent<ChipInterfaceEditor>().HandleCreation((float)componentChip.posY, (float)componentChip.posX);
                 }
 
                 if (chipName == "SIGNAL OUT")
                 {
-                    chipPos = new Vector2((float)componentChip.posX, (float)componentChip.posY);
-                    ChipSignal spawnedSignal = Instantiate(OutputSignalPrefab, chipPos, Quaternion.identity, GameObject.FindWithTag("ImplementationHolder").transform.Find("Outputs"));
-                    loadedChips.Add(spawnedSignal.GetComponent<Chip>());
-                    OutputBar.GetComponent<ChipInterfaceEditor>().signals.Add(spawnedSignal);
-                    spawnedSignal.side = ChipSignal.Side.Right;
-
+                    //chipPos = new Vector2((float)componentChip.posX, (float)componentChip.posY);
+                    //ChipSignal spawnedSignal = Instantiate(OutputSignalPrefab, chipPos, Quaternion.identity, GameObject.FindWithTag("ImplementationHolder").transform.Find("Outputs"));
+                    //OutputBar.GetComponent<ChipInterfaceEditor>().signals.Add(spawnedSignal);
+                    //loadedChips.Add(spawnedSignal.GetComponent<Chip>());
+                    //spawnedSignal.side = ChipSignal.Side.Right; 
+                    
+                    //loadedChips.Add(OutputBar.GetComponent<ChipInterfaceEditor>().HandleCreation((float)componentChip.posY, (float)componentChip.posX).GetComponent<Chip>());
+                    OutputBar.GetComponent<ChipInterfaceEditor>().HandleCreation((float)componentChip.posY, (float)componentChip.posX);
                 }
             }
         }
@@ -147,6 +153,9 @@ public class EditChips : MonoBehaviour
         }*/
 
         //Code from ChipLoader.cs arranged to work here
+        InputBar.GetComponent<ChipInterfaceEditor>().RefreshCreatedHandles();
+        OutputBar.GetComponent<ChipInterfaceEditor>().RefreshCreatedHandles();
+
         for (int chipIndex = 0; chipIndex < savedChip.savedComponentChips.Length; chipIndex++)
         {
             

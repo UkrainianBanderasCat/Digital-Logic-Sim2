@@ -231,11 +231,7 @@ MonoBehaviour:
   outputPins:
   - {fileID: 2075130120421150586}
   bounds: {fileID: 0}
-<<<<<<< Updated upstream
   packageColour: {r: 0.8509804, g: 0.7019608, b: 0.44313726, a: 0}
-=======
-  packageColour: {r: 0.32694018, g: 0.67473865, b: 0.8773585, a: 0}
->>>>>>> Stashed changes
 --- !u!1 &2886115464730570706
 GameObject:
   m_ObjectHideFlags: 0

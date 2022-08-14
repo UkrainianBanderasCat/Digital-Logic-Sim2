@@ -25,7 +25,7 @@ public static class SaveSystem {
 		
 		ChipLoader.LoadAllChips (chipSavePaths, manager);
 
-		GameObject.Find("Manager").GetComponent<EditChips>().DisplayChips(GetPathToWorkspaceSaveFile());
+		GameObject.Find("Manager").GetComponent<EditChips>().DisplayChips(GetPathToSaveFile(""));
 		Debug.Log ("Load time: " + sw.ElapsedMilliseconds);
 		Debug.Log ("This directory path : " + CurrentSaveProfileDirectoryPath + ".The global directory path : " + GlobalDirectoryPath);
 

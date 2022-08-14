@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 // Allows player to add/remove/move/rename inputs or outputs of a chip.
 public class ChipInterfaceEditor : InteractionHandler {
@@ -24,6 +25,7 @@ public class ChipInterfaceEditor : InteractionHandler {
 	public RectTransform propertiesUI;
 	public TMPro.TMP_InputField nameField;
 	public UnityEngine.UI.Button deleteButton;
+	public UnityEngine.UI.Button toggleButton;
 	public UnityEngine.UI.Toggle twosComplementToggle;
 	public TMPro.TMP_Dropdown pinType;
 	public Transform signalHolder;
@@ -60,6 +62,8 @@ public class ChipInterfaceEditor : InteractionHandler {
 	int currentGroupID;
 	Dictionary<int, ChipSignal[]> groupsByID;
 
+	private List<ChipSignal> createdPins;
+
 	void Awake () {
 		pinType.onValueChanged.AddListener(delegate { DropdownValueChanged(pinType); });
 		signals = new List<ChipSignal> ();
@@ -84,17 +88,19 @@ public class ChipInterfaceEditor : InteractionHandler {
 
 		propertiesUI.gameObject.SetActive (false);
 		deleteButton.onClick.AddListener (DeleteSelected);
+		toggleButton.onClick.AddListener (ToggleSelected);
 	}
 
 	void LateUpdate() 
-	{
-		if (signalHolder.childCount > signals.Count)
-		{
-			for (int i = signalHolder.childCount-signals.Count-1; i < signalHolder.childCount; i++)
-			{
-				signals.Add(signalHolder.GetChild(i).GetComponent<ChipSignal>());
-			}
-		}
+	{	
+		Debug.Log(signals.Count);
+	// 	if (signalHolder.childCount-1 > signals.Count)
+	// 	{
+	// 		for (int i = signalHolder.childCount-signals.Count-1; i < signalHolder.childCount; i++)
+	// 		{
+	// 			signals.Add(signalHolder.GetChild(i).GetComponent<ChipSignal>());
+	// 		}
+	// 	}
 	}
 
 	public override void OrderedUpdate () {
@@ -271,6 +277,46 @@ public class ChipInterfaceEditor : InteractionHandler {
 		}
 	}
 
+	public void HandleCreation (float inptY, float inptX) 
+	{
+		ChipSignal[] spawnedSignals = new ChipSignal[currentGroupSize];
+
+		float containerX = chipContainer.position.x + chipContainer.localScale.x / 2 * ((editorType == EditorType.Left) ? -1 : 1);;
+		float posY = inptY;
+		Debug.Log("X " + inptX);
+		Debug.Log("Y " + inptY);
+
+		Vector3 spawnPos = new Vector3 (containerX, posY, chipContainer.position.z + forwardDepth);
+
+		ChipSignal spawnedSignal = Instantiate (signalPrefab, spawnPos, Quaternion.identity);
+		Debug.Log(spawnedSignal);
+
+
+		if (editorType == EditorType.Left)
+			//spawnedSignal.gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
+			spawnedSignal.side = ChipSignal.Side.Left;
+
+		if (editorType == EditorType.Right)
+			//spawnedSignal.gameObject.transform.eulerAngles = new Vector3(0, 0, 180);
+			spawnedSignal.side = ChipSignal.Side.Right;
+
+		createdPins.Add(spawnedSignal);
+		onChipsAddedOrDeleted?.Invoke ();
+		//SelectSignal (signals[signals.Count - 1]);
+		//return spawnedSignal;
+	}
+
+	public void RefreshCreatedHandles()
+	{
+		foreach(ChipSignal signal in createdPins)
+		{
+			signal.transform.parent = signalHolder;
+			signals.Add (signal);
+		}
+
+		createdPins.Clear();
+	}
+
 	void HidePreviews () {
 		for (int i = 0; i < previewSignals.Length; i++) {
 			previewSignals[i].gameObject.SetActive (false);
@@ -294,13 +340,18 @@ public class ChipInterfaceEditor : InteractionHandler {
 	}
 
 	protected override bool CanReleaseFocus () {
-		if (isDragging) {
-			return false;
+		if (!EventSystem.current.IsPointerOverGameObject())
+		{
+			if (isDragging) {
+				return false;
+			}
+			if (mouseInInputBounds) {
+				return false;
+			}
+			return true;
 		}
-		if (mouseInInputBounds) {
-			return false;
-		}
-		return true;
+
+		return false;
 	}
 
 	protected override void FocusLost () {
@@ -397,6 +448,11 @@ public class ChipInterfaceEditor : InteractionHandler {
 		nameField.Select ();
 		nameField.caretPosition = nameField.text.Length;
 		twosComplementToggle.gameObject.SetActive (isGroup);
+		if (selectedSignals[0].pinType == ChipSignal.PinType.Output)
+			toggleButton.gameObject.SetActive(false);
+
+		if (selectedSignals[0].pinType == ChipSignal.PinType.Input)
+			toggleButton.gameObject.SetActive(true);
 		twosComplementToggle.isOn = selectedSignals[0].useTwosComplement;
 		UpdateUIProperties ();
 
@@ -415,6 +471,28 @@ public class ChipInterfaceEditor : InteractionHandler {
 		onChipsAddedOrDeleted?.Invoke ();
 		selectedSignals.Clear ();
 		FocusLost ();
+	}
+
+	void ToggleSelected () {
+		Debug.Log("Log!");
+		for (int i = selectedSignals.Count - 1; i >= 0; i--) 
+		{
+			ChipSignal signalToToggle = selectedSignals[i];
+			if (signalToToggle.pinType == ChipSignal.PinType.Input)
+			{
+				if (signalToToggle.currentState == 0)
+				{
+					signalToToggle.currentState = 1 - signalToToggle.currentState;
+					signalToToggle.SetDisplayState(signalToToggle.currentState);
+				}
+				
+				else if (signalToToggle.currentState == 1)
+				{
+					signalToToggle.currentState = 1 - signalToToggle.currentState;
+					signalToToggle.SetDisplayState(signalToToggle.currentState);
+				}
+			}
+		}
 	}
 
 	void DrawHandle (float y, HandleState handleState = HandleState.Default) {

@@ -44,14 +44,16 @@ public class ChipInteraction : InteractionHandler {
 		MeshShapeCreator.CreateQuadMesh (ref selectionMesh);
 	}
 
-	// #if UNITY_ANDROID
-	// void Update()
-	// {
-	// 	// if(Input.GetTouch(0).tapCount == 2)
-	// 	// {
-	// 	// 	//chipMenu.SetActive(true);
-	// 	// 	DeleteSelectedChips();
-  	// 	// }
+	#if UNITY_ANDROID
+	void Update()
+	{
+		if(Input.GetTouch(0).tapCount == 2)
+		{
+			//chipMenu.SetActive(true);
+			DeleteSelectedChips();
+  		}
+	}
+	#endif
 
 	// 	// if(selectedChips.Count == 0)
 	// 	// {
@@ -65,7 +67,6 @@ public class ChipInteraction : InteractionHandler {
 	// 	// 	chipMenu.transform.position -= new Vector3(-(selectedChips[0].BoundsSize.x/2), selectedChips[0].BoundsSize.y/2, 0);
 	// 	// }
 	// }
-	// #endif
 
 	public void DeleteSelectedChips()
 	{
