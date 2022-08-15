@@ -37,10 +37,13 @@ public class PinAndWireInteraction : InteractionHandler {
 	#if UNITY_ANDROID
 	public void Update()
 	{
-		if(Input.GetTouch(0).tapCount == 2)
-		{
-      		StopPlacingWire();
-  		}
+		if (Input.touchCount > 0)
+        {
+			if(Input.GetTouch(0).tapCount == 2)
+			{
+      			StopPlacingWire();
+  			}
+		}
 	}
 	#endif
 

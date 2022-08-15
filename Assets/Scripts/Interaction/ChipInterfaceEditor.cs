@@ -93,7 +93,7 @@ public class ChipInterfaceEditor : InteractionHandler {
 
 	void LateUpdate() 
 	{	
-		Debug.Log(signals.Count);
+	//	Debug.Log(signals.Count);
 	// 	if (signalHolder.childCount-1 > signals.Count)
 	// 	{
 	// 		for (int i = signalHolder.childCount-signals.Count-1; i < signalHolder.childCount; i++)
@@ -356,11 +356,17 @@ public class ChipInterfaceEditor : InteractionHandler {
 
 	protected override void FocusLost () {
 		highlightedSignal = null;
-		selectedSignals.Clear ();
-		propertiesUI.gameObject.SetActive (false);
+		StartCoroutine(HideProperties());
 
 		HidePreviews ();
 		currentGroupSize = 1;
+	}
+
+	IEnumerator HideProperties()
+	{
+		yield return new WaitForSeconds(0.1f);
+		selectedSignals.Clear ();
+		propertiesUI.gameObject.SetActive (false);
 	}
 
 	void UpdateUIProperties () {
@@ -458,7 +464,7 @@ public class ChipInterfaceEditor : InteractionHandler {
 
 	}
 
-	void DeleteSelected () {
+	public void DeleteSelected () {
 		for (int i = selectedSignals.Count - 1; i >= 0; i--) {
 			ChipSignal signalToDelete = selectedSignals[i];
 			if (groupsByID.ContainsKey (signalToDelete.GroupID)) {
@@ -473,8 +479,8 @@ public class ChipInterfaceEditor : InteractionHandler {
 		FocusLost ();
 	}
 
-	void ToggleSelected () {
-		Debug.Log("Log!");
+	public void ToggleSelected () {
+		Debug.Log("Selected Signals: " + selectedSignals.Count + "\n");
 		for (int i = selectedSignals.Count - 1; i >= 0; i--) 
 		{
 			ChipSignal signalToToggle = selectedSignals[i];
@@ -492,6 +498,9 @@ public class ChipInterfaceEditor : InteractionHandler {
 					signalToToggle.SetDisplayState(signalToToggle.currentState);
 				}
 			}
+
+			selectedSignals.Clear ();
+			FocusLost ();
 		}
 	}
 

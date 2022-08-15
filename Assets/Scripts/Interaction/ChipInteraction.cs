@@ -47,11 +47,14 @@ public class ChipInteraction : InteractionHandler {
 	#if UNITY_ANDROID
 	void Update()
 	{
-		if(Input.GetTouch(0).tapCount == 2)
-		{
-			//chipMenu.SetActive(true);
-			DeleteSelectedChips();
-  		}
+		if (Input.touchCount > 0)
+        {
+			if(Input.GetTouch(0).tapCount == 2)
+			{
+				//chipMenu.SetActive(true);
+				DeleteSelectedChips();
+  			}
+		}
 	}
 	#endif
 
