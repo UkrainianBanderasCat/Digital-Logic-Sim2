@@ -1,13 +1,13 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
-using System.IO;
-using System;
 
-public class TestScript : MonoBehaviour
-{
+public class Sound : BuiltinChip {
+
+	[Range(0,2000)]
     public float frequency1;
  
+	[Range(0,2000)]
     public float frequency2;
  
     public float sampleRate = 44100;
@@ -15,32 +15,27 @@ public class TestScript : MonoBehaviour
  
     AudioSource audioSource;
     int timeIndex = 0;
- 
-    void Start()
+	int prevInput;
+
+	void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
         audioSource.spatialBlend = 0; //force 2D sound
         audioSource.Stop(); //avoids audiosource from starting to play automatically
     }
-   
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            if(!audioSource.isPlaying)
-            {
-                timeIndex = 0;  //resets timer before playing sound
-                audioSource.Play();
-            }
-            else
-            {
-                audioSource.Stop();
-            }
-        }
-    }
-   
-    void OnAudioFilterRead(float[] data, int channels)
+
+	protected override void ProcessOutput (int[] input) {
+		if (input[0] != prevInput)
+		{
+			timeIndex = 0;
+            audioSource.Play();
+		}
+
+		prevInput = input[0];
+	}
+
+	void OnAudioFilterRead(float[] data, int channels)
     {
         for(int i = 0; i < data.Length; i+= channels)
         {          
@@ -64,4 +59,5 @@ public class TestScript : MonoBehaviour
     {
         return Mathf.Sign(Mathf.Sin(2 * Mathf.PI * timeIndex * frequency / sampleRate));
     }
+
 }

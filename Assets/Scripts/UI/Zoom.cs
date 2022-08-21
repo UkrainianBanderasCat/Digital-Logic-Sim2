@@ -10,20 +10,33 @@ public class Zoom : MonoBehaviour
     public float max;
     float interactionNum = 0.25f;
     public GameObject[] objectsToZoom;
+    public ChipInterfaceEditor[] _pinsInterfaces;
     public ChipInteraction _chipInteraction;
 
     void Update()
     {
         _chipInteraction = GameObject.FindWithTag("Interaction").GetComponent<ChipInteraction>(); 
+        _pinsInterfaces = GameObject.FindObjectsOfType<ChipInterfaceEditor>();
+
         objectsToZoom = GameObject.FindGameObjectsWithTag("Zoom");
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown("=") && scale.x < max) {
             scale += scaleChange;
             interactionNum += 0.1f;
+
+            for (int i = 0; i < _pinsInterfaces.Length; i++)
+            {
+                _pinsInterfaces[i].groupSpacing += 0.04f;
+            }
         }
 
         else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown("-") && scale.x > min) {
             scale -= scaleChange;
             interactionNum -= 0.1f;
+
+            for (int i = 0; i < _pinsInterfaces.Length; i++)
+            {
+                _pinsInterfaces[i].groupSpacing -= 0.04f;
+            }
         }
 
         _chipInteraction.selectionBoundsBorderPadding = interactionNum;

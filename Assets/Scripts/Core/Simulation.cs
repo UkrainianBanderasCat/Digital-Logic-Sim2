@@ -16,9 +16,9 @@ public class Simulation : MonoBehaviour {
 
 	public float minStepTime = 0.075f;
 	float lastStepTime;
-	float clockCycleDuration = 0.5f;
+	public float clockCycleDuration = 0.005f;
 	bool clockEnabled = true;
-    float cycleTimeLeft;
+    public float cycleTimeLeft;
 	public int currentClockState = 0;
 
 	void Awake () {
@@ -30,13 +30,16 @@ public class Simulation : MonoBehaviour {
     {
         if (Time.time - lastStepTime > minStepTime)
         {
-            lastStepTime = Time.time;
+            lastStepTime = Time.deltaTime;
             StepSimulation();
         }
-
-        UpdateClocks();
-		onClockCycle?.Invoke(currentClockState);
     }
+
+	void FixedUpdate()
+	{
+		UpdateClocks();
+		onClockCycle?.Invoke(currentClockState);
+	}
 
     private void UpdateClocks()
     {
@@ -49,12 +52,12 @@ public class Simulation : MonoBehaviour {
             return;
         }
 		
-        cycleTimeLeft -= Time.deltaTime;
+        cycleTimeLeft -= Time.fixedDeltaTime;
         if (cycleTimeLeft < 0)
         {
             onClockCycle?.Invoke(currentClockState);
             currentClockState = 1 - currentClockState;
-            cycleTimeLeft = clockCycleDuration;
+            cycleTimeLeft = clockCycleDuration / 100;
         }
     }
 
@@ -64,7 +67,7 @@ public class Simulation : MonoBehaviour {
 
 	public void SetClockSpeed(float speed) {
 		clockEnabled = true;
-		clockCycleDuration = speed;
+		clockCycleDuration = speed / 100;
 	}
 
 	public void SetDebugMode (bool debug) {

@@ -4426,9 +4426,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.12310201
+    x: 0.12196681
     y: 0
-    width: 0.753796
+    width: 0.7560664
     height: 1
   near clip plane: 0.3
   far clip plane: 1500
@@ -4972,6 +4972,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minStepTime: 0.025
+  clockCycleDuration: 0.005
+  cycleTimeLeft: 0
   currentClockState: 0
 --- !u!4 &1119697276
 Transform:
@@ -9358,7 +9360,6 @@ GameObject:
   - component: {fileID: 1830893912}
   - component: {fileID: 1830893913}
   - component: {fileID: 1830893914}
-  - component: {fileID: 1830893915}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Manager
@@ -9395,6 +9396,7 @@ MonoBehaviour:
   - {fileID: 8384850648039707066, guid: 64a24a3507ebe0f7697488ff84e1a1e0, type: 3}
   - {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0, type: 3}
   - {fileID: 6282636630335214463, guid: 808e12d27921848a59bac447b93aec0f, type: 3}
+  - {fileID: 3348858008986698877, guid: e8ed03ea6ecc82dfda93c7f5d462ac15, type: 3}
   inputSignalPf: {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0,
     type: 3}
   signalHolder: {fileID: 712979172}
@@ -9459,6 +9461,7 @@ MonoBehaviour:
   min: 0.6
   max: 1.3
   objectsToZoom: []
+  _pinsInterfaces: []
   _chipInteraction: {fileID: 0}
 --- !u!114 &1830893913
 MonoBehaviour:
@@ -9493,18 +9496,6 @@ MonoBehaviour:
     type: 3}
   wirePrefab: {fileID: 761973689955804731, guid: 98fe3bedff56c4adc844cd3884dbdc92,
     type: 3}
---- !u!114 &1830893915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1830893907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e01774d10afe7d721978fca1c907bb8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1843717162
 GameObject:
   m_ObjectHideFlags: 0
@@ -11638,6 +11629,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4750937598926047525, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.155003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750937598926047525, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -31.170044
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750937598926047529, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChipInterface
+      objectReference: {fileID: 0}
     - target: {fileID: 4750937599765430253, guid: d48b4f02647794ac2aba95960c3d59ab,
         type: 3}
       propertyPath: m_RootOrder
@@ -11697,6 +11703,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chip Editor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750937600310344742, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.145996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750937600310344742, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.100037
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750937600310344745, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChipInterface
       objectReference: {fileID: 0}
     - target: {fileID: 5969557054817401872, guid: d48b4f02647794ac2aba95960c3d59ab,
         type: 3}

@@ -2446,7 +2446,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Version 1.3 <size=25><color=#505050>(Last update 16 June 2022)</color></size>
+  m_text: Version 1..6 <size=25><color=#505050>(Last update 16 June 2022)</color></size>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd4f20431fc94f610a2bede4c040ecc7, type: 2}
   m_sharedMaterial: {fileID: 6154631586329146020, guid: dd4f20431fc94f610a2bede4c040ecc7,
@@ -5046,9 +5046,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.121166736
+    x: 0.12310201
     y: 0
-    width: 0.7576665
+    width: 0.753796
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
