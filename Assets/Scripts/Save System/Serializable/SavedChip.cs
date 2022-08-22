@@ -11,7 +11,7 @@ public class SavedChip {
 	public int creationIndex;
 	public Color colour;
 	public Color nameColour;
-	public bool sevenSegmentDisp;
+	public int sevenSegmentDisp;
 
 	// Names of all chips used as components in this new chip (each name appears only once)
 	public string[] componentNameList;

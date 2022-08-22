@@ -13,7 +13,7 @@ public class OnChipSevenSegementDisp : MonoBehaviour
 
     void Start()
     {
-        sevenSegmentDisp = gameObject.transform.parent.parent.parent.GetChild(2).GetComponentInChildren(typeof(SegmentDisplay), true) as SegmentDisplay;
+        
     }
 
     // Update is called once per frame

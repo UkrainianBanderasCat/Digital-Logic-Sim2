@@ -7,7 +7,7 @@ public class ChipSaveData {
 	public Color chipColour;
 	public Color chipNameColour;
 	public int creationIndex;
-	public bool sevenSegmentDisp;
+	public int sevenSegmentDisp;
 
 	// All chips used as components in this new chip (including input and output signals)
 	public Chip[] componentChips;
@@ -36,7 +36,7 @@ public class ChipSaveData {
 			if (chip.chipName == "7SEG DISP")
 			{
 				Debug.Log("Contain 7 segment display");
-				sevenSegmentDisp = true; 
+				sevenSegmentDisp += 1; 
 			}
 		}
 

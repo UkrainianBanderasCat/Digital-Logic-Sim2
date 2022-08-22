@@ -19,7 +19,7 @@ public class ChipEditor : MonoBehaviour {
 	[HideInInspector]
 	public int creationIndex;
 	[HideInInspector]
-	public bool sevenSegmentDisp;
+	public int sevenSegmentDisp;
 
 	void Awake () {
 		InteractionHandler[] allHandlers = { inputsEditor, outputsEditor, chipInteraction, pinAndWireInteraction };
