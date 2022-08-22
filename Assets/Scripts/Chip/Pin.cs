@@ -21,7 +21,7 @@ public class Pin : MonoBehaviour {
 	// The pins which this pin forwards its signal to
 	[HideInInspector] public List<Pin> childPins = new List<Pin> ();
 	// Current state of the pin: 0 == LOW, 1 == HIGH
-	int currentState;
+	public int currentState;
 
 	// Appearance
 	Color defaultCol = Color.black;

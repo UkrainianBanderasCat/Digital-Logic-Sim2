@@ -7,6 +7,7 @@ public class ChipSaveData {
 	public Color chipColour;
 	public Color chipNameColour;
 	public int creationIndex;
+	public bool sevenSegmentDisp;
 
 	// All chips used as components in this new chip (including input and output signals)
 	public Chip[] componentChips;
@@ -30,6 +31,12 @@ public class ChipSaveData {
 				clocks.Add(chip);
 				clockControlledPins.AddRange (chip.outputPins[0].childPins);
 				MonoBehaviour.Destroy (chip.gameObject);
+			}
+
+			if (chip.chipName == "7SEG DISP")
+			{
+				Debug.Log("Contain 7 segment display");
+				sevenSegmentDisp = true; 
 			}
 		}
 

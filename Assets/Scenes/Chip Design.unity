@@ -9402,6 +9402,8 @@ MonoBehaviour:
   signalHolder: {fileID: 712979172}
   DebugMode: 0
   create: {fileID: 1737033740}
+  onChipSevenSegmentDisp: {fileID: 4998385166773776207, guid: 2dc0fa935845ef3b6a8b83e00a9b80cd,
+    type: 3}
   chipBar: {fileID: 606875003}
 --- !u!4 &1830893909
 Transform:

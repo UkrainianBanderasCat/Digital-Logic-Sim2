@@ -228,6 +228,9 @@ MonoBehaviour:
   container: {fileID: 6886087423236142444}
   chipPinPrefab: {fileID: 8774343771143846598, guid: 3f5693e72562648d19f39eace0ccffd6,
     type: 3}
+  onChipSevenSegmentDisp: {fileID: 4998385166773776207, guid: 2dc0fa935845ef3b6a8b83e00a9b80cd,
+    type: 3}
+  sevenSegmentDisp: 0
 --- !u!61 &6336459448720122718
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class Manager : MonoBehaviour {
 	public Transform signalHolder;
 	public bool DebugMode;
 	public GameObject create;
+	public GameObject onChipSevenSegmentDisp;
 
 	ChipEditor activeChipEditor;
 	int currentChipCreationIndex;

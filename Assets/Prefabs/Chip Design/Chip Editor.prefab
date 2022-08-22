@@ -2474,6 +2474,7 @@ MonoBehaviour:
   chipColour: {r: 0, g: 0, b: 0, a: 0}
   chipNameColour: {r: 0, g: 0, b: 0, a: 0}
   creationIndex: 0
+  sevenSegmentDisp: 0
 --- !u!1 &4750937599942273984
 GameObject:
   m_ObjectHideFlags: 0

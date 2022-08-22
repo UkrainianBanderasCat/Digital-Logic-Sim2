@@ -44,6 +44,7 @@ public class ChipLoader {
 		loadedChipData.chipName = chipToLoad.name;
 		loadedChipData.chipColour = chipToLoad.colour;
 		loadedChipData.chipNameColour = chipToLoad.nameColour;
+		loadedChipData.sevenSegmentDisp = chipToLoad.sevenSegmentDisp;
 		loadedChipData.creationIndex = chipToLoad.creationIndex;
 
 		// Spawn component chips (the chips used to create this chip)

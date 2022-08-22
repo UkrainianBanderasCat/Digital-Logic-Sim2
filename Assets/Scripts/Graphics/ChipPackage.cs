@@ -8,6 +8,9 @@ public class ChipPackage : MonoBehaviour {
 	public TMPro.TextMeshPro nameText;
 	public Transform container;
 	public Pin chipPinPrefab;
+	public GameObject onChipSevenSegmentDisp;
+
+	public bool sevenSegmentDisp;
 
 	int rotate;
 	bool interacting;
@@ -21,12 +24,16 @@ public class ChipPackage : MonoBehaviour {
 			SetSizeAndSpacing (GetComponent<Chip> ());
 			SetColour (builtinChip.packageColour);
 		}
+
+		onChipSevenSegmentDisp = GameObject.Find("Manager").transform.GetComponent<Manager>().onChipSevenSegmentDisp;
 	}
 
 	public void PackageCustomChip (ChipEditor chipEditor) {
 		gameObject.name = chipEditor.chipName;
 		nameText.text = chipEditor.chipName;
 		nameText.color = chipEditor.chipNameColour;
+		sevenSegmentDisp = chipEditor.sevenSegmentDisp;
+		
 		SetColour (chipEditor.chipColour);
 
 		// Add and set up the custom chip component
@@ -126,6 +133,27 @@ public class ChipPackage : MonoBehaviour {
 		}
 
 		// Set container size
+		if (sevenSegmentDisp)
+		{
+			containerWidth += 0.5f;
+			containerHeight += 0.7f;
+			nameText.transform.position += new Vector3(0f, 0.35f, 0f);
+
+			for (int i = 0; i < chip.inputPins.Length; i++)
+			{
+				chip.inputPins[i].transform.localPosition -= new Vector3(0.25f, 0f, 0f);
+			}
+
+			for (int i = 0; i < chip.outputPins.Length; i++)
+			{
+				chip.outputPins[i].transform.localPosition += new Vector3(0.25f, 0f, 0f);
+			}
+
+			GameObject newOnChipSegmentDisplay = Instantiate(onChipSevenSegmentDisp);
+			newOnChipSegmentDisplay.transform.parent = container;
+			newOnChipSegmentDisplay.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+			newOnChipSegmentDisplay.transform.localPosition = new Vector3(0f, -0.15f, -1f);
+		}
 		container.transform.localScale = new Vector3 (containerWidth, containerHeight, 1);
 
 		GetComponent<BoxCollider2D> ().size = new Vector2 (containerWidth, containerHeight);

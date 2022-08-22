@@ -328,9 +328,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7239231081913411360}
   - component: {fileID: 6336459448720122718}
+  - component: {fileID: 1235758548315077375}
   m_Layer: 8
   m_Name: OnChipSegmentDisplay
-  m_TagString: Zoom
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -344,7 +345,7 @@ Transform:
   m_GameObject: {fileID: 4998385166773776207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.06935847, y: -0.41493428, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8578607437049329950}
@@ -379,6 +380,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.4}
   m_EdgeRadius: 0
+--- !u!114 &1235758548315077375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4998385166773776207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0b3c4d975a71650aebdf4ba9cfc4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sevenSegmentDisp: {fileID: 0}
+  leds:
+  - {fileID: 7512425524324302815}
+  - {fileID: 3516322372660034469}
+  - {fileID: 860422103977689262}
+  - {fileID: 6848594491124698471}
+  - {fileID: 5399537594379667947}
+  - {fileID: 6895826421491618007}
+  - {fileID: 4056600250310927013}
+  on: {fileID: 2100000, guid: 9ac44f9639489e0cfa182a9a03a83abe, type: 2}
+  off: {fileID: 2100000, guid: ea0d71518effd76dcb1b36145bee92de, type: 2}
 --- !u!1 &5399537594379667947
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +547,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fdcb15ce46186484cb99dad2b41c44be, type: 2}
+  - {fileID: 2100000, guid: 0fdd58582f815890cb1ca2274b4f6884, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

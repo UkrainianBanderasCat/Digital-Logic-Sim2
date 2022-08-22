@@ -18,6 +18,8 @@ public class ChipEditor : MonoBehaviour {
 	public Color chipNameColour;
 	[HideInInspector]
 	public int creationIndex;
+	[HideInInspector]
+	public bool sevenSegmentDisp;
 
 	void Awake () {
 		InteractionHandler[] allHandlers = { inputsEditor, outputsEditor, chipInteraction, pinAndWireInteraction };
@@ -50,6 +52,7 @@ public class ChipEditor : MonoBehaviour {
 		chipColour = saveData.chipColour;
 		chipNameColour = saveData.chipNameColour;
 		creationIndex = saveData.creationIndex;
+		sevenSegmentDisp = saveData.sevenSegmentDisp;
 
 		// Load component chips
 		for (int i = 0; i < saveData.componentChips.Length; i++) {
