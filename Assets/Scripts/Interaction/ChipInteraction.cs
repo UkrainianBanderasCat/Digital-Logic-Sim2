@@ -196,7 +196,16 @@ public class ChipInteraction : InteractionHandler {
 
 	void RotateSelectedChips (float degrees) {
 		foreach (Chip chip in selectedChips) {
+			if (Input.GetKey(KeyCode.LeftShift))
+			{
+				degrees /= 2;
+			}
+			if (Input.GetKey(KeyCode.LeftControl))
+			{
+				degrees /= 2;
+			}
 			chip.transform.Rotate(0, 0, degrees);
+
 		}
 	}
 

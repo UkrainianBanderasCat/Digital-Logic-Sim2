@@ -6,6 +6,7 @@ public class Manager : MonoBehaviour {
 
 	public event System.Action<Chip> customChipCreated;
 
+	public SceneLoader sceneLoader;
 	public ChipEditor chipEditorPrefab;
 	public ChipPackage chipPackagePrefab;
 	public Wire wirePrefab;
@@ -30,8 +31,6 @@ public class Manager : MonoBehaviour {
 	void Start () {
 		SaveSystem.Init ();
 		SaveSystem.LoadAll (this);
-		
-
 	}
 
 	void OnApplicationQuit()
@@ -94,8 +93,7 @@ public class Manager : MonoBehaviour {
 	public void LoadMainMenu () {
 
 		SaveWorkspace();
-		UnityEngine.SceneManagement.SceneManager.LoadScene (0);
-		
+		sceneLoader.LoadScene("Menu");
 	}
 
 }

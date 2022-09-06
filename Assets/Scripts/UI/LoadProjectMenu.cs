@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class LoadProjectMenu : MonoBehaviour {
 	public Button projectButtonPrefab;
 	public Transform scrollHolder;
+	public SceneLoader sceneLoader;
 	[SerializeField, HideInInspector]
 	List<Button> loadButtons;
 	void OnEnable () {
@@ -25,7 +26,7 @@ public class LoadProjectMenu : MonoBehaviour {
 
 	public void LoadProject (string projectName) {
 		SaveSystem.SetActiveProject (projectName);
-		UnityEngine.SceneManagement.SceneManager.LoadScene (1);
+		sceneLoader.LoadScene("Chip Design");
 	}
 
 }
