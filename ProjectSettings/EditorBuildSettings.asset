@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chip Design.unity
     guid: 4a2668c0fd8aa460391ad9a3abfe710e
+  - enabled: 1
+    path: Assets/Scenes/Loading Screen.unity
+    guid: 4241006b42dc18043ac0f79425e64abd
   m_configObjects: {}

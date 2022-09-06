@@ -9,6 +9,7 @@ public class OutputSignal : ChipSignal {
 	}
 
 	public override void ReceiveInputSignal (Pin inputPin) {
+		gameObject.tag = "Zoom";
 		currentState = inputPin.State;
 		SetDisplayState (inputPin.State);
 	}

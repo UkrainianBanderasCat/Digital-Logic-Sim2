@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 // Allows player to add/remove/move/rename inputs or outputs of a chip.
 public class ChipInterfaceEditor : InteractionHandler {
 
-	const int maxGroupSize = 8;
+	const int maxGroupSize = 16;
 
 	public event System.Action<Chip> onDeleteChip;
 	public event System.Action onChipsAddedOrDeleted;

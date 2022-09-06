@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour {
 	public TMP_InputField projectNameField;
 	public Button confirmProjectButton;
 	public Toggle fullscreenToggle;
+	public SceneLoader sceneLoader;
 
 	void Awake () {
 		fullscreenToggle.onValueChanged.AddListener (SetFullScreen);
@@ -30,7 +31,7 @@ public class MainMenu : MonoBehaviour {
 			return;
         }
 		SaveSystem.SetActiveProject (projectName);
-		UnityEngine.SceneManagement.SceneManager.LoadScene (1);
+		sceneLoader.LoadScene("Chip Design");
 	}
 
 	public void SetResolution16x9 (int width) {

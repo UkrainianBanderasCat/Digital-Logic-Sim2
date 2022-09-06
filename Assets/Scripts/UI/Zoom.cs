@@ -19,23 +19,32 @@ public class Zoom : MonoBehaviour
         _pinsInterfaces = GameObject.FindObjectsOfType<ChipInterfaceEditor>();
 
         objectsToZoom = GameObject.FindGameObjectsWithTag("Zoom");
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown("=") && scale.x < max) {
-            scale += scaleChange;
-            interactionNum += 0.1f;
-
-            for (int i = 0; i < _pinsInterfaces.Length; i++)
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            if (Input.GetKeyDown(KeyCode.R))
             {
-                _pinsInterfaces[i].groupSpacing += 0.04f;
+                scale = Vector3.one;
+                interactionNum += 0.25f;
             }
-        }
-
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown("-") && scale.x > min) {
-            scale -= scaleChange;
-            interactionNum -= 0.1f;
-
-            for (int i = 0; i < _pinsInterfaces.Length; i++)
+            if (Input.GetKeyDown("=") && scale.x < max)
             {
-                _pinsInterfaces[i].groupSpacing -= 0.04f;
+                scale += scaleChange;
+                interactionNum += 0.1f;
+            }
+            else if (Input.GetKeyDown("-") && scale.x > min)
+            {
+                scale -= scaleChange;
+                interactionNum -= 0.1f;
+            }
+            else if (Input.GetAxis("Mouse ScrollWheel") > 0f && scale.x < max) // forward
+            {
+                scale += scaleChange;
+                interactionNum += 0.1f;
+            }
+            else if (Input.GetAxis("Mouse ScrollWheel") < 0f && scale.x > min) // backwards
+            {
+                scale -= scaleChange;
+                interactionNum -= 0.1f;
             }
         }
 
