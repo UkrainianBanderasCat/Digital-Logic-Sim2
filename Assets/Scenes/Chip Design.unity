@@ -8303,6 +8303,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: Reload_Chip
+--- !u!1 &1572054471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4750937600419506471, guid: d48b4f02647794ac2aba95960c3d59ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 3008879100212563310}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1579521356
 GameObject:
   m_ObjectHideFlags: 0
@@ -9556,6 +9562,7 @@ GameObject:
   - component: {fileID: 1830893912}
   - component: {fileID: 1830893913}
   - component: {fileID: 1830893914}
+  - component: {fileID: 1830893915}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Manager
@@ -9694,6 +9701,19 @@ MonoBehaviour:
     type: 3}
   wirePrefab: {fileID: 761973689955804731, guid: 98fe3bedff56c4adc844cd3884dbdc92,
     type: 3}
+--- !u!114 &1830893915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830893907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc156d42473a3d6ec964d948e59acc0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  implementionHolder: {fileID: 1572054471}
 --- !u!1 &1843717162
 GameObject:
   m_ObjectHideFlags: 0
