@@ -28,18 +28,15 @@ public class Simulation : MonoBehaviour {
 
 	void Update ()
     {
-        if (Time.time - lastStepTime > minStepTime)
+        if (Time.fixedTime - lastStepTime > minStepTime)
         {
             lastStepTime = Time.deltaTime;
             StepSimulation();
         }
-    }
-
-	void FixedUpdate()
-	{
+		
 		UpdateClocks();
 		onClockCycle?.Invoke(currentClockState);
-	}
+    }
 
     private void UpdateClocks()
     {
