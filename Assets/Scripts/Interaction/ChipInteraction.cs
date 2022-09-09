@@ -214,6 +214,9 @@ public class ChipInteraction : InteractionHandler {
 	}
 
 	void HandleChipCopying () {
+		if (copiedChipHolder == null)
+			copiedChipHolder = GameObject.Find("CopiedChips").transform;
+		
 		if (InputHelper.AnyOfTheseKeysHeld(KeyCode.LeftControl, KeyCode.RightControl) && Input.GetKeyDown(KeyCode.C)) {
 			if (selectedChips.Count == 0) {
 				return;
@@ -225,6 +228,7 @@ public class ChipInteraction : InteractionHandler {
 			foreach (Chip chip in selectedChips) {
 				copyPosition += (Vector2)chip.transform.position;
 				Chip newChip = Instantiate (chip, copiedChipHolder);
+				newChip.name = chip.name;
 				newChip.gameObject.SetActive (false);
 				copiedChips.Add (newChip);
 			}
@@ -239,10 +243,16 @@ public class ChipInteraction : InteractionHandler {
 			foreach (Chip chip in copiedChips) {
 				Chip newChip = Instantiate(chip, chip.transform.position + (Vector3)offset, chip.transform.rotation, chipHolder);
 				newChip.gameObject.SetActive (true);
+				newChip.name = chip.name;
+				// selectedChips.Add (newChip);
+				// allChips.Add (newChip);
+				// newChip.ResetConnections ();
+				// newChip.InitSimulationFrame ();
 				selectedChips.Add (newChip);
-				allChips.Add (newChip);
-				newChip.ResetConnections ();
-				newChip.InitSimulationFrame ();
+				newChipsToPlace.Add (newChip);
+				allChips.Add(newChip);
+				newChip.InitSimulationFrame();
+				//currentState = State.None;			
 			}
 		}
 	}

@@ -4471,10 +4471,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.17615002
-    y: 0
-    width: 0.64769995
-    height: 1
+    x: 0
+    y: 0.068596005
+    width: 1
+    height: 0.862808
   near clip plane: 0.3
   far clip plane: 1500
   field of view: 60
@@ -6740,6 +6740,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: Import_Chip
+--- !u!1 &1359439759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1359439760}
+  m_Layer: 0
+  m_Name: CopiedChips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1359439760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359439759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1364955287
 GameObject:
   m_ObjectHideFlags: 0
@@ -9714,6 +9745,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   implementionHolder: {fileID: 1572054471}
+  inputs: {fileID: 0}
+  outputs: {fileID: 0}
 --- !u!1 &1843717162
 GameObject:
   m_ObjectHideFlags: 0
@@ -11847,21 +11880,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4750937598926047525, guid: d48b4f02647794ac2aba95960c3d59ab,
+    - target: {fileID: 4750937598426732714, guid: d48b4f02647794ac2aba95960c3d59ab,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.155003
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750937598926047525, guid: d48b4f02647794ac2aba95960c3d59ab,
+      propertyPath: copiedChipHolder
+      value: 
+      objectReference: {fileID: 1359439760}
+    - target: {fileID: 4750937598426732714, guid: d48b4f02647794ac2aba95960c3d59ab,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -31.170044
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750937598926047529, guid: d48b4f02647794ac2aba95960c3d59ab,
-        type: 3}
-      propertyPath: m_TagString
-      value: ChipInterface
-      objectReference: {fileID: 0}
+      propertyPath: copiedChipsHolder
+      value: 
+      objectReference: {fileID: 1359439760}
     - target: {fileID: 4750937599765430253, guid: d48b4f02647794ac2aba95960c3d59ab,
         type: 3}
       propertyPath: m_RootOrder
@@ -11921,21 +11949,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chip Editor
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750937600310344742, guid: d48b4f02647794ac2aba95960c3d59ab,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.145996
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750937600310344742, guid: d48b4f02647794ac2aba95960c3d59ab,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.100037
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750937600310344745, guid: d48b4f02647794ac2aba95960c3d59ab,
-        type: 3}
-      propertyPath: m_TagString
-      value: ChipInterface
       objectReference: {fileID: 0}
     - target: {fileID: 5969557054817401872, guid: d48b4f02647794ac2aba95960c3d59ab,
         type: 3}

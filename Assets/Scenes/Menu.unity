@@ -3034,7 +3034,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Version 1..6 <size=25><color=#505050>(Last update 16 June 2022)</color></size>
+  m_text: Version 1.7 <size=25><color=#505050>(Last update 6 Sep 2022)</color></size>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd4f20431fc94f610a2bede4c040ecc7, type: 2}
   m_sharedMaterial: {fileID: 6154631586329146020, guid: dd4f20431fc94f610a2bede4c040ecc7,
