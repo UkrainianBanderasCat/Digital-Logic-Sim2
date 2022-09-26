@@ -54,7 +54,7 @@ public class Simulation : MonoBehaviour {
         {
             onClockCycle?.Invoke(currentClockState);
             currentClockState = 1 - currentClockState;
-            cycleTimeLeft = clockCycleDuration / 100;
+            cycleTimeLeft = clockCycleDuration;
         }
     }
 
@@ -64,7 +64,7 @@ public class Simulation : MonoBehaviour {
 
 	public void SetClockSpeed(float speed) {
 		clockEnabled = true;
-		clockCycleDuration = speed / 100;
+		clockCycleDuration = speed;
 	}
 
 	public void SetDebugMode (bool debug) {
