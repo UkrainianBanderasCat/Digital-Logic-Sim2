@@ -2289,7 +2289,7 @@ GameObject:
   - component: {fileID: 1932019319}
   m_Layer: 0
   m_Name: Input Bar
-  m_TagString: Untagged
+  m_TagString: ChipInterface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2302,7 +2302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4750937598926047529}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.155004, y: 0.23, z: -31.17}
+  m_LocalPosition: {x: -8.155003, y: 0.23, z: -31.170044}
   m_LocalScale: {x: 0.4473893, y: 7.975262, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2712,7 +2712,7 @@ GameObject:
   - component: {fileID: 4750937600310344741}
   m_Layer: 0
   m_Name: Output Bar
-  m_TagString: Untagged
+  m_TagString: ChipInterface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2725,7 +2725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4750937600310344745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.146001, y: 0.23, z: 10.1}
+  m_LocalPosition: {x: 8.145996, y: 0.23, z: 10.100037}
   m_LocalScale: {x: 0.43046072, y: 7.975262, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

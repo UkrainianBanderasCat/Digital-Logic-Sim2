@@ -93,14 +93,15 @@ public class ChipInterfaceEditor : InteractionHandler {
 
 	void LateUpdate() 
 	{	
-	//	Debug.Log(signals.Count);
-	// 	if (signalHolder.childCount-1 > signals.Count)
-	// 	{
-	// 		for (int i = signalHolder.childCount-signals.Count-1; i < signalHolder.childCount; i++)
-	// 		{
-	// 			signals.Add(signalHolder.GetChild(i).GetComponent<ChipSignal>());
-	// 		}
-	// 	}
+		if (signalHolder.childCount > signals.Count)
+		{
+			int _signalsCount = signals.Count;
+			signals.Clear();
+			for (int i = 0; i < signalHolder.childCount; i++)
+			{
+				signals.Add(signalHolder.GetChild(i).GetComponent<ChipSignal>());
+			}
+		}
 	}
 
 	public override void OrderedUpdate () {
