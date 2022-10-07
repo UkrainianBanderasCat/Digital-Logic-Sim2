@@ -137,7 +137,7 @@ public class EditChips : MonoBehaviour
             }
         }
 
-        /*Dictionary<SavedWire, int[] > savedWires = new Dictionary<SavedWire, int[]>();                Will maybe do later (useful only for below)
+        Dictionary<SavedWire, int[] > savedWires = new Dictionary<SavedWire, int[]>();                //Will maybe do later (useful only for below)
 
         string wirePath = SaveSystem.GetPathToWireSaveFile(originalChipName);
         SavedWireLayout savedWireLayout;
@@ -150,7 +150,7 @@ public class EditChips : MonoBehaviour
         foreach (SavedWire savedWire in savedWireLayout.serializableWires)
         {
             savedWires.Add(savedWire, new int[] { savedWire.parentChipIndex, savedWire.parentChipOutputIndex });
-        }*/
+        }
 
         //Code from ChipLoader.cs arranged to work here
         InputBar.GetComponent<ChipInterfaceEditor>().RefreshCreatedHandles();
@@ -193,6 +193,21 @@ public class EditChips : MonoBehaviour
                     }
                 }
             }   
+        }
+    }
+
+    void DisplayWires(string[] path)
+    {
+        SavedWireLayout savedWireLayout;
+        string wirePath = SaveSystem.GetPathToWireSaveFile(path[0]);
+        using (StreamReader reader = new StreamReader(wirePath))
+            {
+                string wireSaveString = reader.ReadToEnd();
+                savedWireLayout = JsonUtility.FromJson<SavedWireLayout>(wireSaveString);
+            }
+        foreach (SavedWire wire in savedWireLayout.serializableWires)
+        {
+
         }
     }
 

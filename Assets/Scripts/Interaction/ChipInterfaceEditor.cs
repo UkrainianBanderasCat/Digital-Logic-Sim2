@@ -292,7 +292,6 @@ public class ChipInterfaceEditor : InteractionHandler {
 		ChipSignal spawnedSignal = Instantiate (signalPrefab, spawnPos, Quaternion.identity);
 		Debug.Log(spawnedSignal);
 
-
 		if (editorType == EditorType.Left)
 			//spawnedSignal.gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
 			spawnedSignal.side = ChipSignal.Side.Left;

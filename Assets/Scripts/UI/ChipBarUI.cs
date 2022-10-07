@@ -41,6 +41,10 @@ public class ChipBarUI : MonoBehaviour {
 		}
 		CustomButton button = Instantiate (buttonPrefab);
 		button.gameObject.name = chip.chipName;
+		if (button.gameObject.name == "")
+		{
+			button.gameObject.SetActive(false);
+		}
 		// Set button text
 		var buttonTextUI = button.GetComponentInChildren<TMP_Text> ();
 		buttonTextUI.text = chip.chipName;

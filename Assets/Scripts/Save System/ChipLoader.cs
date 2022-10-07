@@ -30,6 +30,7 @@ public class ChipLoader {
 			ChipSaveData loadedChipData = LoadChip (chipToTryLoad, loadedChips, manager.wirePrefab);
 			Chip loadedChip = manager.LoadChip (loadedChipData);
 			loadedChips.Add (loadedChip.chipName, loadedChip);
+			Debug.Log(loadedChip.gameObject.name);
 		}
 			
 		
