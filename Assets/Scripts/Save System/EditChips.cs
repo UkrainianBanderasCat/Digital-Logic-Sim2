@@ -137,20 +137,22 @@ public class EditChips : MonoBehaviour
             }
         }
 
-        Dictionary<SavedWire, int[] > savedWires = new Dictionary<SavedWire, int[]>();                //Will maybe do later (useful only for below)
+        //*Dictionary<SavedWire, int[] > savedWires = new Dictionary<SavedWire, int[]>();                Will maybe do later (useful only for below)
 
-        string wirePath = SaveSystem.GetPathToWireSaveFile(originalChipName);
-        SavedWireLayout savedWireLayout;
-        using (StreamReader reader = new StreamReader(wirePath))
-        {
-            string wireSaveString = reader.ReadToEnd();
-            savedWireLayout = JsonUtility.FromJson<SavedWireLayout>(wireSaveString);
-        }
+        //string wirePath = SaveSystem.GetPathToWireSaveFile(originalChipName);
+        //SavedWireLayout savedWireLayout;
+        //using (StreamReader reader = new StreamReader(wirePath))
+        //{
+        //    string wireSaveString = reader.ReadToEnd();
+        //    savedWireLayout = JsonUtility.FromJson<SavedWireLayout>(wireSaveString);
+        //}
 
-        foreach (SavedWire savedWire in savedWireLayout.serializableWires)
-        {
-            savedWires.Add(savedWire, new int[] { savedWire.parentChipIndex, savedWire.parentChipOutputIndex });
-        }
+        //foreach (SavedWire savedWire in savedWireLayout.serializableWires)
+        //{
+        //    savedWires.Add(savedWire, new int[] { savedWire.parentChipIndex, savedWire.parentChipOutputIndex });
+        //}
+	
+	
 
         //Code from ChipLoader.cs arranged to work here
         InputBar.GetComponent<ChipInterfaceEditor>().RefreshCreatedHandles();
