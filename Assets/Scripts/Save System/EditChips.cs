@@ -9,7 +9,7 @@ using SimpleFileBrowser;
 
 public class EditChips : MonoBehaviour
 {
-    [Header ("References")]
+    [Header("References")]
     public Transform implementationHolder;
     public GameObject manager;
     public GameObject create;
@@ -26,7 +26,7 @@ public class EditChips : MonoBehaviour
     public void OpenFileBrowser()
     {
         FileBrowser.SetFilters(false, ".txt");
-        FileBrowser.ShowLoadDialog((path) => { DisplayAll(path); }, null, FileBrowser.PickMode.Files, false, SaveSystem.CurrentSaveProfileDirectoryPath, null, "Load Chip Save File", "Load") ;
+        FileBrowser.ShowLoadDialog((path) => { DisplayAll(path); }, null, FileBrowser.PickMode.Files, false, SaveSystem.CurrentSaveProfileDirectoryPath, null, "Load Chip Save File", "Load");
 
     }
 
@@ -40,30 +40,31 @@ public class EditChips : MonoBehaviour
 
     public void DisplayChips(string chipPath)
     {
-        
-        ChipInteraction chipInteraction = GameObject.Find("Interaction").transform.Find("Chip Interaction").gameObject.GetComponent<ChipInteraction>() ;
+
+        ChipInteraction chipInteraction = GameObject.Find("Interaction").transform.Find("Chip Interaction").gameObject.GetComponent<ChipInteraction>();
         SavedChip savedChip;
         Chip loadingChip;
         List<Chip> loadedChips = new List<Chip>();
 
-        using (StreamReader reader = new StreamReader (chipPath)) {
-				string chipSaveString = reader.ReadToEnd ();
-				savedChip = JsonUtility.FromJson<SavedChip> (chipSaveString);
-			}
+        using (StreamReader reader = new StreamReader(chipPath))
+        {
+            string chipSaveString = reader.ReadToEnd();
+            savedChip = JsonUtility.FromJson<SavedChip>(chipSaveString);
+        }
 
         string originalChipName = savedChip.name;
-        foreach(SavedComponentChip componentChip in savedChip.savedComponentChips)
+        foreach (SavedComponentChip componentChip in savedChip.savedComponentChips)
         {
-            
+
             string chipName = componentChip.chipName;
-            if((chipName != "SIGNAL IN" )&&( chipName != "SIGNAL OUT") )
+            if ((chipName != "SIGNAL IN") && (chipName != "SIGNAL OUT"))
             {
-                
+
                 if (IsBuiltInChipName(chipName))
                 {
                     for (int i = 0; i < manager.GetComponent<Manager>().builtinChips.Length; i++)
                     {
-                        if(chipName == manager.GetComponent<Manager>().builtinChips[i].name)
+                        if (chipName == manager.GetComponent<Manager>().builtinChips[i].name)
                         {
                             chipPos = new Vector2((float)componentChip.posX, (float)componentChip.posY);
                             loadingChip = (GameObject.Instantiate(manager.GetComponent<Manager>().builtinChips[i], chipPos, Quaternion.identity, GameObject.FindWithTag("ImplementationHolder").transform).GetComponent<Chip>());
@@ -73,7 +74,7 @@ public class EditChips : MonoBehaviour
                         }
                     }
 
-                    
+
                 }
 
 
@@ -102,8 +103,8 @@ public class EditChips : MonoBehaviour
                         gameObject.SetActive(false);
                     }
                 }
-                
-                
+
+
             }
 
 
@@ -114,53 +115,42 @@ public class EditChips : MonoBehaviour
                 if (chipName == "SIGNAL IN")
                 {
                     chipPos = new Vector2((float)componentChip.posX, (float)componentChip.posY);
-                    ChipSignal spawnedSignal = Instantiate (InputSignalPrefab, chipPos, Quaternion.identity, GameObject.FindWithTag("ImplementationHolder").transform.Find("Inputs"));
-                    InputBar.GetComponent<ChipInterfaceEditor>().signals.Add(spawnedSignal);
+                    ChipSignal spawnedSignal = Instantiate(InputSignalPrefab, chipPos, Quaternion.identity, GameObject.FindWithTag("ImplementationHolder").transform.Find("Inputs"));
                     loadedChips.Add(spawnedSignal.GetComponent<Chip>());
+                    InputBar.GetComponent<ChipInterfaceEditor>().signals.Add(spawnedSignal);
                     spawnedSignal.side = ChipSignal.Side.Left;
 
-                    //loadedChips.Add(InputBar.GetComponent<ChipInterfaceEditor>().HandleCreation((float)componentChip.posY, (float)componentChip.posX).GetComponent<Chip>());
-                    //InputBar.GetComponent<ChipInterfaceEditor>().HandleCreation((float)componentChip.posY, (float)componentChip.posX);
                 }
 
                 if (chipName == "SIGNAL OUT")
                 {
                     chipPos = new Vector2((float)componentChip.posX, (float)componentChip.posY);
                     ChipSignal spawnedSignal = Instantiate(OutputSignalPrefab, chipPos, Quaternion.identity, GameObject.FindWithTag("ImplementationHolder").transform.Find("Outputs"));
-                    OutputBar.GetComponent<ChipInterfaceEditor>().signals.Add(spawnedSignal);
                     loadedChips.Add(spawnedSignal.GetComponent<Chip>());
-                    spawnedSignal.side = ChipSignal.Side.Right; 
-                    
-                    //loadedChips.Add(OutputBar.GetComponent<ChipInterfaceEditor>().HandleCreation((float)componentChip.posY, (float)componentChip.posX).GetComponent<Chip>());
-                    //OutputBar.GetComponent<ChipInterfaceEditor>().HandleCreation((float)componentChip.posY, (float)componentChip.posX);
+                    OutputBar.GetComponent<ChipInterfaceEditor>().signals.Add(spawnedSignal);
+                    spawnedSignal.side = ChipSignal.Side.Right;
+
                 }
             }
         }
 
-        //*Dictionary<SavedWire, int[] > savedWires = new Dictionary<SavedWire, int[]>();                Will maybe do later (useful only for below)
-
-        //string wirePath = SaveSystem.GetPathToWireSaveFile(originalChipName);
-        //SavedWireLayout savedWireLayout;
-        //using (StreamReader reader = new StreamReader(wirePath))
-        //{
-        //    string wireSaveString = reader.ReadToEnd();
-        //    savedWireLayout = JsonUtility.FromJson<SavedWireLayout>(wireSaveString);
-        //}
-
-        //foreach (SavedWire savedWire in savedWireLayout.serializableWires)
-        //{
-        //    savedWires.Add(savedWire, new int[] { savedWire.parentChipIndex, savedWire.parentChipOutputIndex });
-        //}
-	
-	
+        /*Dictionary<SavedWire, int[] > savedWires = new Dictionary<SavedWire, int[]>();                Will maybe do later (useful only for below)
+        string wirePath = SaveSystem.GetPathToWireSaveFile(originalChipName);
+        SavedWireLayout savedWireLayout;
+        using (StreamReader reader = new StreamReader(wirePath))
+        {
+            string wireSaveString = reader.ReadToEnd();
+            savedWireLayout = JsonUtility.FromJson<SavedWireLayout>(wireSaveString);
+        }
+        foreach (SavedWire savedWire in savedWireLayout.serializableWires)
+        {
+            savedWires.Add(savedWire, new int[] { savedWire.parentChipIndex, savedWire.parentChipOutputIndex });
+        }*/
 
         //Code from ChipLoader.cs arranged to work here
-        InputBar.GetComponent<ChipInterfaceEditor>().RefreshCreatedHandles();
-        OutputBar.GetComponent<ChipInterfaceEditor>().RefreshCreatedHandles();
-
         for (int chipIndex = 0; chipIndex < savedChip.savedComponentChips.Length; chipIndex++)
         {
-            
+
             loadedChips.ToArray();
             Chip loadedComponentChip = loadedChips[chipIndex];
             for (int inputPinIndex = 0; inputPinIndex < loadedComponentChip.inputPins.Length; inputPinIndex++)
@@ -171,13 +161,14 @@ public class EditChips : MonoBehaviour
                 // If this pin should receive input from somewhere, then wire it up to that pin
                 if (savedPin.parentChipIndex != -1)
                 {
-                    
+
                     Pin connectedPin = loadedChips[savedPin.parentChipIndex].outputPins[savedPin.parentChipOutputIndex];
                     pin.cyclic = savedPin.isCylic;
                     Pin.TryConnect(connectedPin, pin);
-                    if (Pin.TryConnect (connectedPin, pin)) {
-                        Wire loadedWire = GameObject.Instantiate (wirePrefab, parent : GameObject.FindWithTag("ImplementationHolder").transform.Find("Wires"));
-                        loadedWire.Connect (connectedPin, loadedComponentChip.inputPins[inputPinIndex]);
+                    if (Pin.TryConnect(connectedPin, pin))
+                    {
+                        Wire loadedWire = GameObject.Instantiate(wirePrefab, parent: GameObject.FindWithTag("ImplementationHolder").transform.Find("Wires"));
+                        loadedWire.Connect(connectedPin, loadedComponentChip.inputPins[inputPinIndex]);
 
                         /*foreach (SavedWire savedWire in savedWires.Keys)                      Will maybe do later
                         {
@@ -194,22 +185,7 @@ public class EditChips : MonoBehaviour
                         }*/
                     }
                 }
-            }   
-        }
-    }
-
-    void DisplayWires(string[] path)
-    {
-        SavedWireLayout savedWireLayout;
-        string wirePath = SaveSystem.GetPathToWireSaveFile(path[0]);
-        using (StreamReader reader = new StreamReader(wirePath))
-            {
-                string wireSaveString = reader.ReadToEnd();
-                savedWireLayout = JsonUtility.FromJson<SavedWireLayout>(wireSaveString);
             }
-        foreach (SavedWire wire in savedWireLayout.serializableWires)
-        {
-
         }
     }
 
@@ -233,7 +209,7 @@ public class EditChips : MonoBehaviour
 
     bool IsBuiltInChipName(string chipName)
     {
-        string[] builInNames = {"AND", "NOT", "CLOCK", "SCREEN", "7SEG DISP", "SYMB", "KEY", "RAND" };
+        string[] builInNames = { "AND", "NOT", "CLOCK", "SCREEN", "7SEG DISP", "SYMB", "KEY", "RAND" };
         foreach (string builInName in builInNames)
         {
             if (chipName == builInName)
