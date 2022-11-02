@@ -33,3 +33,4 @@ Global=ГЛОБАЛЬНО
 Back=Назад
 Fullscreen=Fullscreen
 Credits=ТИТР
+Changelog=Кредити

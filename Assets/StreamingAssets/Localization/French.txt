@@ -33,3 +33,4 @@ Global=GLOBAL
 Back=RETOUR
 Fullscreen=Plein Écran
 Credits=CRÉDITS
+Changelog=journal des modifications
