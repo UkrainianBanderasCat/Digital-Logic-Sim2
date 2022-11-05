@@ -44,12 +44,12 @@ public class Simulation : MonoBehaviour {
         {
             return;
         }
-        if (!clockEnabled)
-        {
-            return;
-        }
+        // if (!clockEnabled)
+        // {
+        //     return;
+        // }
 		
-        cycleTimeLeft -= Time.fixedDeltaTime;
+        cycleTimeLeft -= Time.deltaTime;
         if (cycleTimeLeft < 0)
         {
             onClockCycle?.Invoke(currentClockState);
