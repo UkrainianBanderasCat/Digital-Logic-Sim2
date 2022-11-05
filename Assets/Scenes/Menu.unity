@@ -993,6 +993,7 @@ MonoBehaviour:
     - Macerator
     - rtyyyyb
     - R&MC Team
+    - jagkirat
   creditsTextUI: {fileID: 628814414}
 --- !u!114 &111305412
 MonoBehaviour:
@@ -1024,6 +1025,8 @@ MonoBehaviour:
   - I have not failed, I've just found 10,000 ways that don't work.
   - 1 + 1 = 0
   - Logic gates forever
+  - Never stop
+  - What do we do today? Splash TEXT!!!
   splashTextUI: {fileID: 627859330}
   showSplashText: 1
   showSplashTextToggle: {fileID: 831448331}
@@ -3921,7 +3924,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Version 1..6 <size=25><color=#505050>(Last update 16 June 2022)</color></size>
+  m_text: Version 1.8 <size=25><color=#505050>(Last update 16 June 2022)</color></size>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd4f20431fc94f610a2bede4c040ecc7, type: 2}
   m_sharedMaterial: {fileID: 6154631586329146020, guid: dd4f20431fc94f610a2bede4c040ecc7,
@@ -5068,18 +5071,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684069874}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.99992, y: 0.99992, z: 0.99992}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 900798041}
+  m_Father: {fileID: 2020343031}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -47.72}
-  m_SizeDelta: {x: 1350, y: 655}
+  m_AnchoredPosition: {x: 0.049988, y: 0.00073242}
+  m_SizeDelta: {x: 1350, y: 654.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &684069876
 MonoBehaviour:
@@ -5101,25 +5104,30 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit
-    lectus elit, id tempus magna ultricies a. Nullam id nisi vitae urna scelerisque
-    facilisis. Sed urna ex, molestie eget luctus vel, rhoncus eget nunc. Suspendisse
-    at iaculis neque. Donec quis turpis vulputate, convallis mi eget, luctus nulla.
-    Sed a ultricies dolor, ut bibendum turpis. Etiam mollis sodales porttitor.
+  m_text: 'Brand new update with lots of new Features! We are hoping to try and scale
+    up our updates. Here is a list of all the new added Features and changes.
 
 
-    Nunc
-    luctus pulvinar massa quis maximus. Phasellus luctus arcu at mi aliquet interdum.
-    Maecenas ullamcorper est at orci sagittis, rutrum gravida velit scelerisque.
-    Aliquam eleifend metus lacus, eget sagittis nunc tincidunt quis. Maecenas blandit
-    gravida arcu, a efficitur eros interdum sit amet. Curabitur venenatis dignissim
-    elit. Vestibulum rutrum ultricies commodo. Suspendisse sodales tempor mollis.
-    Vestibulum a erat lobortis, dictum nisi sed, porta justo.
+    -
+    <b>Changelog</b>: From now on, Everytime you update the game you are informed
+    about the new features and changes once. This can be disabled from the Settings.
 
+    -
+    <b>Splash text</b>: This is one of the main features of the update. From now
+    on, there is a Text under the game logo in the Main menu with sometimes Funny
+    jokes or motivational lines everytime you enter the Main menu. Splash texts can
+    be disabled from settings.
 
-    Donec maximus
-    rutrum facilisis. Phasellus varius augue at orci elementum, sit amet pretium
-    lectus sagittis.'
+    - Improved Credits Menu UI
+
+    - Toggle for
+    FPS Display in settings
+
+    - Clock Fix
+
+    - Edit Chips Fix
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5153,8 +5161,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6398,7 +6406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &900798041
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6414,7 +6422,7 @@ RectTransform:
   - {fileID: 1577787486}
   - {fileID: 1235986652}
   - {fileID: 7903804}
-  - {fileID: 684069875}
+  - {fileID: 1585465177}
   - {fileID: 1930569925}
   m_Father: {fileID: 1575525457}
   m_RootOrder: -1
@@ -10591,6 +10599,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577787485}
   m_CullTransparentMesh: 1
+--- !u!1 &1585465176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1585465177}
+  - component: {fileID: 1585465178}
+  m_Layer: 5
+  m_Name: Mask
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1585465177
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585465176}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.00008, y: 1.00008, z: 1.00008}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2020343031}
+  m_Father: {fileID: 900798041}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -47.609}
+  m_SizeDelta: {x: 1349.9, y: 654.73}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1585465178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585465176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 250}
 --- !u!1 &1606973366
 GameObject:
   m_ObjectHideFlags: 0
@@ -13780,6 +13840,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998518141}
   m_CullTransparentMesh: 0
+--- !u!1 &2020343030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2020343031}
+  - component: {fileID: 2020343032}
+  m_Layer: 5
+  m_Name: ScrollBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2020343031
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020343030}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 684069875}
+  m_Father: {fileID: 1585465177}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1349.9, y: 654.73}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2020343032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020343030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 684069875}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 1
+  m_Viewport: {fileID: 0}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 0}
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 0
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2024642936
 GameObject:
   m_ObjectHideFlags: 0
