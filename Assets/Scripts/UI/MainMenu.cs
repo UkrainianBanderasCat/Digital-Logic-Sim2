@@ -9,10 +9,13 @@ public class MainMenu : MonoBehaviour {
 	public TMP_InputField projectNameField;
 	public Button confirmProjectButton;
 	public Toggle fullscreenToggle;
+	public Toggle showFPSToggle;
+	public ShowFPS showFPS;
 	public SceneLoader sceneLoader;
 
 	void Awake () {
 		fullscreenToggle.onValueChanged.AddListener (SetFullScreen);
+		showFPSToggle.isOn = PlayerPrefs.GetInt("showFPS") == 0 ? false : true;
 	}
 
 	void LateUpdate () {
@@ -51,6 +54,11 @@ public class MainMenu : MonoBehaviour {
 			Screen.SetResolution (16 * m, 9 * m, FullScreenMode.Windowed);
 		}
 
+	}
+	public void SetFPSDisplay(bool display)
+	{
+		showFPS.showFPS = display;
+		PlayerPrefs.SetInt("showFPS", display ? 1 : 0);
 	}
 
 	public void Quit () {

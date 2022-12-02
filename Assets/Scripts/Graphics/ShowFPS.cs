@@ -22,6 +22,10 @@ public class ShowFPS : MonoBehaviour
     // {
     //     DontDestroyOnLoad(gameObject);
     // }
+    void Start()
+    {
+        showFPS = PlayerPrefs.GetInt("showFPS") == 0 ? false : true;
+    }
 
     void Update()
     {

@@ -33,3 +33,4 @@ Global=GLOBAL
 Back=BACK
 Fullscreen=Fullscreen
 Credits=CREDITS
+Changelog=CHANGELOG
