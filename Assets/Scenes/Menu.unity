@@ -775,6 +775,7 @@ GameObject:
   - component: {fileID: 111305410}
   - component: {fileID: 111305411}
   - component: {fileID: 111305412}
+  - component: {fileID: 111305413}
   m_Layer: 0
   m_Name: Menu Manager
   m_TagString: Untagged
@@ -865,6 +866,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ee60cf0f8df07e058aa3d384e3ba8d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &111305413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111305407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633c2012b408f25e0a255f09466d948d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &126922263
@@ -6164,9 +6177,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.020452201
+    x: 0.06686002
     y: 0
-    width: 0.9590956
+    width: 0.86627996
     height: 1
   near clip plane: 0.3
   far clip plane: 1000

@@ -1301,6 +1301,8 @@ MonoBehaviour:
   invalidPlacementCol: {r: 0.990566, g: 0.35978103, b: 0.35978103, a: 0.29803923}
   clockwiseRotationKey: 0
   counterclockwiseRotationKey: 0
+  chipMenu: {fileID: 0}
+  selectionBoxStartPos: {x: 0, y: 0}
 --- !u!1 &4750937598567899890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,6 +1636,7 @@ MonoBehaviour:
   propertiesUI: {fileID: 0}
   nameField: {fileID: 3488882055607390314}
   deleteButton: {fileID: 5708581670757464792}
+  toggleButton: {fileID: 0}
   twosComplementToggle: {fileID: 256749248}
   pinType: {fileID: 0}
   signalHolder: {fileID: 4750937600123747354}
@@ -1778,6 +1781,7 @@ MonoBehaviour:
   chipColour: {r: 0, g: 0, b: 0, a: 0}
   chipNameColour: {r: 0, g: 0, b: 0, a: 0}
   creationIndex: 0
+  sevenSegmentDisp: 0
 --- !u!1 &4750937599942273984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,6 +2059,7 @@ MonoBehaviour:
   propertiesUI: {fileID: 0}
   nameField: {fileID: 3488882055607390314}
   deleteButton: {fileID: 5708581670757464792}
+  toggleButton: {fileID: 0}
   twosComplementToggle: {fileID: 256749248}
   pinType: {fileID: 0}
   signalHolder: {fileID: 4750937600234680856}
