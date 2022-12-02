@@ -15,7 +15,7 @@ public class CreditManager : MonoBehaviour
     {
         foreach(Credits credit in credits)
         {
-            creditsText += "<line-height=50%>\n</line-height><color=#D9D9D9><size=150%>" + credit.creditHeader + "</size></color><line-height=130%>\n</line-height>";
+            creditsText += "<line-height=75%>\n</line-height><color=#D9D9D9><size=150%>" + credit.creditHeader + "</size></color><line-height=150%>\n</line-height>";
             foreach(string name in credit.names)
             {
                 creditsText += name + "\n";
