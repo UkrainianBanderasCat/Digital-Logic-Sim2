@@ -11,6 +11,8 @@ TagManager:
   - Localization
   - ImplementationHolder
   - ChipInterface
+  - Input
+  - Output
   layers:
   - Default
   - TransparentFX

@@ -32,3 +32,5 @@ Local=Yerel
 Global=Evrensel
 Back=Geri
 Fullscreen=Tam Ekran
+Credits=Kredi
+Changelog=Değişiklik günlüğü

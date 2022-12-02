@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2072548877}
   m_Layer: 0
   m_Name: Input
-  m_TagString: Untagged
+  m_TagString: Input
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,6 +62,7 @@ MonoBehaviour:
   interactable: 1
   side: 1
   pinType: 0
+  clicked: 0
 --- !u!58 &2072548877
 CircleCollider2D:
   m_ObjectHideFlags: 0
