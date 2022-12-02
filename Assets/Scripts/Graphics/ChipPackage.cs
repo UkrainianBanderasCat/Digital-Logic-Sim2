@@ -47,8 +47,10 @@ public class ChipPackage : MonoBehaviour
 
 	void Start()
     {
-        sevenSegmentDispChip = gameObject.transform.GetChild(2).GetComponentsInChildren<SegmentDisplay>();
-		int a = 0;
+        if (gameObject.transform.childCount == 3)
+            sevenSegmentDispChip = gameObject.transform.GetChild(2).GetComponentsInChildren<SegmentDisplay>();
+		
+        int a = 0;
 
 		foreach (SegmentDisplay s in sevenSegmentDispChip)
 		{

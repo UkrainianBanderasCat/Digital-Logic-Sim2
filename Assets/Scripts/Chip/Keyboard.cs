@@ -5,7 +5,6 @@ using System;
 public class Keyboard : BuiltinChip {
 
 	public List<string> chars = new List<string>();
-
 	void Update() {
 		print(Input.anyKey);
         if (Input.anyKey)

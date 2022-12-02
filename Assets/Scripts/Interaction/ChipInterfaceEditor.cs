@@ -93,14 +93,15 @@ public class ChipInterfaceEditor : InteractionHandler {
 
 	void LateUpdate() 
 	{	
-	//	Debug.Log(signals.Count);
-	// 	if (signalHolder.childCount-1 > signals.Count)
-	// 	{
-	// 		for (int i = signalHolder.childCount-signals.Count-1; i < signalHolder.childCount; i++)
-	// 		{
-	// 			signals.Add(signalHolder.GetChild(i).GetComponent<ChipSignal>());
-	// 		}
-	// 	}
+		if (signalHolder.childCount > signals.Count)
+		{
+			int _signalsCount = signals.Count;
+			signals.Clear();
+			for (int i = 0; i < signalHolder.childCount; i++)
+			{
+				signals.Add(signalHolder.GetChild(i).GetComponent<ChipSignal>());
+			}
+		}
 	}
 
 	public override void OrderedUpdate () {
@@ -290,7 +291,6 @@ public class ChipInterfaceEditor : InteractionHandler {
 
 		ChipSignal spawnedSignal = Instantiate (signalPrefab, spawnPos, Quaternion.identity);
 		Debug.Log(spawnedSignal);
-
 
 		if (editorType == EditorType.Left)
 			//spawnedSignal.gameObject.transform.eulerAngles = new Vector3(0, 0, 0);

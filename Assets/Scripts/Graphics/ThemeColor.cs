@@ -20,13 +20,13 @@ public class ThemeColor : MonoBehaviour
     public Slider bSlider;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         DontDestroyOnLoad(gameObject);
         
-        rSlider.value = PlayerPrefs.GetFloat("r");
-        gSlider.value = PlayerPrefs.GetFloat("g");
-        bSlider.value = PlayerPrefs.GetFloat("b"); 
+        rSlider.value = PlayerPrefs.GetFloat("cR");
+        gSlider.value = PlayerPrefs.GetFloat("cG");
+        bSlider.value = PlayerPrefs.GetFloat("cB");
     }
 
     // Update is called once per frame
@@ -74,9 +74,9 @@ public class ThemeColor : MonoBehaviour
     
     public void SaveColor()
     {
-        PlayerPrefs.SetFloat("r", rSlider.value);
-        PlayerPrefs.SetFloat("g", gSlider.value);
-        PlayerPrefs.SetFloat("b", bSlider.value);
+        PlayerPrefs.SetFloat("cR", rSlider.value);
+        PlayerPrefs.SetFloat("cG", gSlider.value);
+        PlayerPrefs.SetFloat("cB", bSlider.value);
     }
 
     public void Reset()
