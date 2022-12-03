@@ -18,6 +18,7 @@ public class SplashTextManager : MonoBehaviour
         showSplashTextToggle.isOn = showSplashText;
         splashTextUI.text = splashLines[Random.Range(0, splashLines.Count)];
         splashTextUI.gameObject.SetActive(showSplashText);
+        SetShowSplashText(true);
     }
 
     void Update()
