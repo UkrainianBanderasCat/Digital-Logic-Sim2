@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
+using UnityEngine;
 
 public class Logs : MonoBehaviour
 {
     string filepath = "";
+
     //string filename = "";
+    bool work = false;
 
     void OnEnable()
     {
@@ -24,38 +26,52 @@ public class Logs : MonoBehaviour
 
         if (File.Exists(filepath))
         {
-            File.Delete(filepath);
+            File.Delete (filepath);
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        filepath = Application.dataPath + "/StreamingAssets/Logs/Log.txt";
-        //filename = "Log.txt";
-        
-        if (!File.Exists(Application.dataPath + "/StreamingAssets/Logs"))
+        if (work)
         {
-            Directory.CreateDirectory(Application.dataPath + "/StreamingAssets/Logs");
-        }
-        
-        if (!File.Exists(filepath))
-        {
-            FileStream fs = File.Create(filepath);
-            fs.Close();
-        }
+            filepath = Application.dataPath + "/StreamingAssets/Logs/Log.txt";
 
-        if( new FileInfo(filepath).Length == 0)
-        {
-            TextWriter tw = new StreamWriter(filepath, true);
+            //filename = "Log.txt";
+            if (!File.Exists(Application.dataPath + "/StreamingAssets/Logs"))
+            {
+                Directory
+                    .CreateDirectory(Application.dataPath +
+                    "/StreamingAssets/Logs");
+            }
 
-            tw.Write("Operative System: " + SystemInfo.operatingSystem + "\n" +
-                        "RAM size: " + SystemInfo.systemMemorySize + "\n" + 
-                        "Processor: " + SystemInfo.processorType + "\n" +
-                        "Graphic card: " + SystemInfo.graphicsDeviceName + "\n" +
-                        "-----------------------------------------");
+            if (!File.Exists(filepath))
+            {
+                FileStream fs = File.Create(filepath);
+                fs.Close();
+            }
 
-            tw.Close();
+            if (new FileInfo(filepath).Length == 0)
+            {
+                TextWriter tw = new StreamWriter(filepath, true);
+
+                tw
+                    .Write("Operative System: " +
+                    SystemInfo.operatingSystem +
+                    "\n" +
+                    "RAM size: " +
+                    SystemInfo.systemMemorySize +
+                    "\n" +
+                    "Processor: " +
+                    SystemInfo.processorType +
+                    "\n" +
+                    "Graphic card: " +
+                    SystemInfo.graphicsDeviceName +
+                    "\n" +
+                    "-----------------------------------------");
+
+                tw.Close();
+            }
         }
     }
 
