@@ -27,34 +27,34 @@ public class MoveWorkspace : MonoBehaviour
         {
             EdgeCollider2D[] wires = implementionHolder.transform.GetChild(3).GetComponentsInChildren<EdgeCollider2D>();
             foreach (EdgeCollider2D wire in wires)
-                wire.offset -= new Vector2(0, 0.1f);
+                wire.offset += new Vector2(0, 0.1f);
 
-            implementionHolder.transform.position += new Vector3(0, 0.1f, 0);    
+            implementionHolder.transform.position -= new Vector3(0, 0.1f, 0);    
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
             EdgeCollider2D[] wires = implementionHolder.transform.GetChild(3).GetComponentsInChildren<EdgeCollider2D>();
             foreach (EdgeCollider2D wire in wires)
-                wire.offset += new Vector2(0, 0.1f);
+                wire.offset -= new Vector2(0, 0.1f);
             
-            implementionHolder.transform.position -= new Vector3(0, 0.1f, 0);
+            implementionHolder.transform.position += new Vector3(0, 0.1f, 0);
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
-        {
-            implementionHolder.transform.position += new Vector3(0.1f, 0, 0);
-        
-            inputs.transform.position -= new Vector3(0.1f, 0, 0);
-            outputs.transform.position += new Vector3(0.1f, 0, 0);
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
         {
             implementionHolder.transform.position -= new Vector3(0.1f, 0, 0);
         
             inputs.transform.position += new Vector3(0.1f, 0, 0);
             outputs.transform.position -= new Vector3(0.1f, 0, 0);
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            implementionHolder.transform.position += new Vector3(0.1f, 0, 0);
+        
+            inputs.transform.position -= new Vector3(0.1f, 0, 0);
+            outputs.transform.position += new Vector3(0.1f, 0, 0);
         }
 
         if (Input.GetKey(KeyCode.R))
