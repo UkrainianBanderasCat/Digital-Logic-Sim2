@@ -13,6 +13,10 @@ public class ChangelogManager : MonoBehaviour
 
     void Start()
     {
+        if (PlayerPrefs.GetString("version") == "")
+        {
+            PlayerPrefs.SetString("version", previousGameVersion);
+        }
         showChangelog = PlayerPrefs.GetInt("ShowChangelog") == 1 ? true : false;
         showChangelogToggle.isOn = showChangelog;
         currentGameVersion = Application.version;

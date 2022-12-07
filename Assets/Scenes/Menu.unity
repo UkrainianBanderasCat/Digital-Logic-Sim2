@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changelogBoard: {fileID: 900798040}
   currentGameVersion: 
-  previousGameVersion: 1.7
+  previousGameVersion: 1.8
   showChangelog: 1
   showChangelogToggle: {fileID: 1815611165}
 --- !u!114 &111305415
