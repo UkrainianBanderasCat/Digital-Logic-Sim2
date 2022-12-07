@@ -29,6 +29,7 @@ public class SplashTextManager : MonoBehaviour
     {
         showSplashText = value;
         PlayerPrefs.SetInt("ShowSplashText", showSplashText ? 1 : 0);
+        splashTextUI.gameObject.SetActive(showSplashText);
     }
 
 }
