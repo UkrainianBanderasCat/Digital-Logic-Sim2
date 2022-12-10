@@ -190,31 +190,31 @@ public class ChipPackage : MonoBehaviour
         }
 
         // Set container size
-        if (sevenSegmentDisp > 0)
-        {
-			containerHeight += 0.4f;
-            for (int g = 0; g < sevenSegmentDisp; g++)
-            {
-                containerWidth += 0.5f;
-                nameText.transform.position += new Vector3(0f, 0.2f, 0f);
+        // if (sevenSegmentDisp > 0)
+        // {
+		// 	containerHeight += 0.4f;
+        //     for (int g = 0; g < sevenSegmentDisp; g++)
+        //     {
+        //         containerWidth += 0.5f;
+        //         nameText.transform.position += new Vector3(0f, 0.2f, 0f);
 
-                for (int i = 0; i < chip.inputPins.Length; i++)
-                {
-                    chip.inputPins[i].transform.localPosition -= new Vector3(0.25f, 0f, 0f);
-                }
+        //         for (int i = 0; i < chip.inputPins.Length; i++)
+        //         {
+        //             chip.inputPins[i].transform.localPosition -= new Vector3(0.25f, 0f, 0f);
+        //         }
 
-                for (int i = 0; i < chip.outputPins.Length; i++)
-                {
-                    chip.outputPins[i].transform.localPosition += new Vector3(0.25f, 0f, 0f);
-                }
+        //         for (int i = 0; i < chip.outputPins.Length; i++)
+        //         {
+        //             chip.outputPins[i].transform.localPosition += new Vector3(0.25f, 0f, 0f);
+        //         }
 
-                GameObject newOnChipSegmentDisplay = Instantiate(onChipSevenSegmentDisp);
-                newOnChipSegmentDisplay.transform.parent = container;
-                newOnChipSegmentDisplay.transform.localScale = new Vector3(0.3f, 0.3f, 0.4f);
-                newOnChipSegmentDisplay.transform.localPosition = new Vector3(CalcX(sevenSegmentDisp, g), -0.05f, -1f);
-                sevenSegmentDisps.Add (newOnChipSegmentDisplay);
-            }
-        }
+        //         GameObject newOnChipSegmentDisplay = Instantiate(onChipSevenSegmentDisp);
+        //         newOnChipSegmentDisplay.transform.parent = container;
+        //         newOnChipSegmentDisplay.transform.localScale = new Vector3(0.3f, 0.3f, 0.4f);
+        //         newOnChipSegmentDisplay.transform.localPosition = new Vector3(CalcX(sevenSegmentDisp, g), -0.05f, -1f);
+        //         sevenSegmentDisps.Add (newOnChipSegmentDisplay);
+        //     }
+        // }
 
         container.transform.localScale = new Vector3(containerWidth, containerHeight, 1);
 

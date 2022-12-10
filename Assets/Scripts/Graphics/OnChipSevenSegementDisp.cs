@@ -10,6 +10,8 @@ public class OnChipSevenSegementDisp : MonoBehaviour
     
     public Material on;
     public Material off;
+    
+    bool work = false;
 
     void Start()
     {
@@ -19,16 +21,19 @@ public class OnChipSevenSegementDisp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < leds.Length; i++) 
+        if (work)
         {
-            if (sevenSegmentDisp.inputPins[i].currentState == 1)
+            for (int i = 0; i < leds.Length; i++) 
             {
-                leds[i].GetComponent<MeshRenderer>().material = on;
-            }
+                if (sevenSegmentDisp.inputPins[i].currentState == 1)
+                {
+                    leds[i].GetComponent<MeshRenderer>().material = on;
+                }
 
-            if (sevenSegmentDisp.inputPins[i].currentState == 0)
-            {
-                leds[i].GetComponent<MeshRenderer>().material = off;
+                if (sevenSegmentDisp.inputPins[i].currentState == 0)
+                {
+                    leds[i].GetComponent<MeshRenderer>().material = off;
+                }
             }
         }
     }

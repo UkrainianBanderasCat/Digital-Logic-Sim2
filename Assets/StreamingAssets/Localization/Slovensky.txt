@@ -1,4 +1,4 @@
-Version=-Verzia 1.7 <size=25><color=#505050>(Posledna aktualizacia: 06.09.2022)</color></size> 
+Version=-Verzia 1.8 <size=25><color=#505050>(Posledna aktualizacia: 02.11.2022)</color></size> 
 Created_By=-Vytvoril <color=#75ADFF><link="https://www.youtube.com/c/SebastianLague">Sebastian Lague</link> & <color=#05DDFF><link="https://www.youtube.com/channel/UCWWgp52Mkip5zeRU7GzXYUg">Lime inc.</link></color> 
 New_Project=NOVY PROJEKT
 Load_Project=NACITAT PROJEKT 

@@ -386,6 +386,7 @@ public class ChipInteraction : InteractionHandler {
 	}
 
 	bool SelectedChipsWithinPlacementArea () {
+		/*
 		float bufferX = Pin.radius + selectionBoundsBorderPadding * 0.75f;
 		float bufferY = selectionBoundsBorderPadding;
 		Bounds area = chipArea.bounds;
@@ -401,6 +402,9 @@ public class ChipInteraction : InteractionHandler {
 				return false;
 			}
 		}
+		*/
+		//UNCOMMENT IF NEEDED
+		
 		return true;
 	}
 

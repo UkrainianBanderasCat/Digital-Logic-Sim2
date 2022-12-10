@@ -48,7 +48,7 @@ public class InputSignal : ChipSignal {
 		outputPins[0].ReceiveSignal (currentState);
 	}
 
-	void SetCol () {
+	public void SetCol () {
 		SetDisplayState (currentState);
 	}
 
