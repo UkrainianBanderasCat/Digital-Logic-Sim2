@@ -13,9 +13,12 @@ public class ChangelogManager : MonoBehaviour
 
     void Start()
     {
+        if (PlayerPrefs.GetString("version") == "")
+        {
+            PlayerPrefs.SetString("version", previousGameVersion);
+        }
         showChangelog = PlayerPrefs.GetInt("ShowChangelog") == 1 ? true : false;
         showChangelogToggle.isOn = showChangelog;
-        changelogBoard.gameObject.SetActive(showChangelog);
         currentGameVersion = Application.version;
         previousGameVersion = PlayerPrefs.GetString("version");
         if(currentGameVersion != previousGameVersion)
@@ -29,11 +32,6 @@ public class ChangelogManager : MonoBehaviour
         previousGameVersion = currentGameVersion;
         PlayerPrefs.SetString("version", previousGameVersion);
         PlayerPrefs.Save();
-    }
-
-    void Update()
-    {
-
     }
 
     public void SetShowChangelog(bool value)
