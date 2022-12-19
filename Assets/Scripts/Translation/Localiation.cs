@@ -26,6 +26,42 @@ public class Localiation : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         
+        LoadLanguage();
+        
+        langButton.transform.GetComponentInChildren<TMPro.TMP_Text> ().text = selectedLanguage;
+    }
+
+    public string GetText(string id)
+    {
+        for (int i = 0; i < translations.Count; i++)
+        {
+            if (translations[i].id == id)
+            {
+                return translations[i].text;
+            }
+        }
+
+        return "";
+    }
+
+    public void ChangeLanguage()
+    {
+        int nextLanguage = avaibleLanguages.IndexOf(selectedLanguage);
+        nextLanguage++;
+        if (nextLanguage > avaibleLanguages.Count - 1)
+            nextLanguage = 0;
+
+        Debug.Log(avaibleLanguages.Count);
+        selectedLanguage = avaibleLanguages[nextLanguage];
+        PlayerPrefs.SetString("selectedLanguage", selectedLanguage);
+        langButton.transform.GetComponentInChildren<TMPro.TMP_Text> ().text = selectedLanguage;
+    
+        LoadLanguage();
+    }
+
+    public void LoadLanguage()
+    {
+        translations.Clear();
         if (PlayerPrefs.GetString("selectedLanguage") != "")
             selectedLanguage = PlayerPrefs.GetString("selectedLanguage");
 
@@ -73,35 +109,7 @@ public class Localiation : MonoBehaviour
                     translation.text = colorfulText[1];
 
                 translations.Add(translation); 
-            }  
-
-        langButton.transform.GetComponentInChildren<TMPro.TMP_Text> ().text = selectedLanguage;
-    }
-
-    public string GetText(string id)
-    {
-        for (int i = 0; i < translations.Count; i++)
-        {
-            if (translations[i].id == id)
-            {
-                return translations[i].text;
             }
-        }
-
-        return "";
-    }
-
-    public void ChangeLanguage()
-    {
-        int nextLanguage = avaibleLanguages.IndexOf(selectedLanguage);
-        nextLanguage++;
-        if (nextLanguage > avaibleLanguages.Count - 1)
-            nextLanguage = 0;
-
-        Debug.Log(avaibleLanguages.Count);
-        selectedLanguage = avaibleLanguages[nextLanguage];
-        PlayerPrefs.SetString("selectedLanguage", selectedLanguage);
-        langButton.transform.GetComponentInChildren<TMPro.TMP_Text> ().text = selectedLanguage;
     }
 
 }

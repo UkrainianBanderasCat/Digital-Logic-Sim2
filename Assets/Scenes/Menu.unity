@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changelogBoard: {fileID: 900798040}
   currentGameVersion: 
-  previousGameVersion: 1.7
+  previousGameVersion: 1.8
   showChangelog: 1
   showChangelogToggle: {fileID: 1815611165}
 --- !u!114 &111305415
@@ -1718,18 +1718,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: Pop up
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 627859328}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &129643923
 MonoBehaviour:
@@ -7387,7 +7375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &900798041
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9166,9 +9154,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.020452201
+    x: 0
     y: 0
-    width: 0.9590956
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -15221,18 +15209,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: Pop down
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 627859328}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1930569927
 MonoBehaviour:

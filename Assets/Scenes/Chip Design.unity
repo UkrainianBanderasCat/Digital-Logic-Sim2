@@ -4564,9 +4564,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.10206032
+    x: 0.08955675
     y: 0
-    width: 0.79587936
+    width: 0.8208865
     height: 1
   near clip plane: 0.3
   far clip plane: 1500
@@ -8193,9 +8193,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5803949136508767238}
-  - {fileID: 1344855017}
   - {fileID: 1959761103}
   - {fileID: 5803949135847674253}
+  - {fileID: 1344855017}
   - {fileID: 1420591096}
   - {fileID: 1772673268}
   - {fileID: 1938345925}
@@ -12036,11 +12036,56 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1191739686, guid: d48b4f02647794ac2aba95960c3d59ab, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191739686, guid: d48b4f02647794ac2aba95960c3d59ab, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191739686, guid: d48b4f02647794ac2aba95960c3d59ab, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191739686, guid: d48b4f02647794ac2aba95960c3d59ab, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191739686, guid: d48b4f02647794ac2aba95960c3d59ab, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 537848982593587216, guid: d48b4f02647794ac2aba95960c3d59ab,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 2597893335694685145, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597893335694685145, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597893335694685145, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597893335694685145, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597893335694685145, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4750937598426732714, guid: d48b4f02647794ac2aba95960c3d59ab,
         type: 3}
       propertyPath: copiedChipHolder
@@ -12110,6 +12155,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chip Editor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969557054817401872, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969557054817401872, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969557054817401872, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969557054817401872, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969557054817401872, guid: d48b4f02647794ac2aba95960c3d59ab,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

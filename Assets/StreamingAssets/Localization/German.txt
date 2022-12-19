@@ -1,4 +1,4 @@
-Version=-Version 1.7 <size=25><color=#505050>(Last update 6 Sep 2022)</color></size>
+Version=-Version 1.8 <size=25><color=#505050>(Last update 2 Dec 2022)</color></size>
 Created_By=-erstellt von: <color=#75ADFF><link="https://www.youtube.com/c/SebastianLague">Sebastian Lague</link> & <color=#05DDFF><link="https://www.youtube.com/channel/UCWWgp52Mkip5zeRU7GzXYUg">Lime inc.</link></color>
 New_Project=Neues Projekt
 Load_Project=Projekt laden 
