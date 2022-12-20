@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour {
 
-	public event System.Action<Chip> customChipCreated;
+	public event System.Action<Chip, Transform> customChipCreated;
 
 	public SceneLoader sceneLoader;
 	public ChipEditor chipEditorPrefab;
 	public ChipPackage chipPackagePrefab;
 	public Wire wirePrefab;
 	public Chip[] builtinChips;
+	public Chip[] displayChips;
+	public Chip[] utilityChips;
 	public ChipSignal inputSignalPf;
 	public Transform signalHolder;
 	public bool DebugMode;
@@ -70,7 +72,7 @@ public class Manager : MonoBehaviour {
 		package.gameObject.SetActive (false);
 
 		Chip customChip = package.GetComponent<Chip> ();
-		customChipCreated?.Invoke (customChip);
+		customChipCreated?.Invoke (customChip, chipBar);
 		currentChipCreationIndex++;
 		return customChip;
 	}

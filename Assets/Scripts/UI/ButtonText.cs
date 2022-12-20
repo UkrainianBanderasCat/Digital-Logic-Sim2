@@ -82,8 +82,8 @@ public class ButtonText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 			button = GetComponent<Button> ();
 		}
 		if (buttonText == null) {
-			buttonText = transform.GetComponentInChildren<TMPro.TMP_Text> ();
-		}
+            buttonText = transform.GetComponentInChildren<TMPro.TMP_Text>();
+        }
 	}
 
 	// void PlaySound()

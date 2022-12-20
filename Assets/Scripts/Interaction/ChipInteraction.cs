@@ -37,6 +37,8 @@ public class ChipInteraction : InteractionHandler {
 	Mesh selectionMesh;
 	Vector3[] selectedChipsOriginalPos;
 
+	bool hasJustBeenPlaced;
+
 	void Awake () {
 		newChipsToPlace = new List<Chip> ();
 		selectedChips = new List<Chip> ();
@@ -128,6 +130,7 @@ public class ChipInteraction : InteractionHandler {
 			selectedChips.Add (newChip);
 			newChipsToPlace.Add (newChip);
 			newChip.InitSimulationFrame();
+			hasJustBeenPlaced = true;
 		}
 	}
 
@@ -342,9 +345,11 @@ public class ChipInteraction : InteractionHandler {
 		}
 
 		// Place object
-		if (Input.GetMouseButtonDown (0) && SelectedChipsWithinPlacementArea ()) {
+		if (Input.GetMouseButtonDown (0) && SelectedChipsWithinPlacementArea () && !hasJustBeenPlaced) {
 			PlaceNewChips ();
 		}
+
+		hasJustBeenPlaced = false;
 	}
 
 	void PlaceNewChips () {
