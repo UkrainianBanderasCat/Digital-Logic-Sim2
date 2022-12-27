@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Update v1.8 - What's New
+  m_text: Update v1.8.1 - What's New
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5938,30 +5938,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Brand new update with lots of new Features! We are hoping to try and scale
-    up our updates. Here is a list of all the new added Features and changes.
+  m_text: 'Nothing New added but, a few annoying Bug Fixes, Improvements and Changes.
 
 
-    -
-    <b>Changelog</b>: From now on, Everytime you update the game you are informed
-    about the new features and changes once. This can be disabled from the Settings.
+    <b>Splash
+    Text Changes: </b>Splash Text Disable Toggle now makes the Splash Text Disabled
+    or Enabled Live without having to Restart the Game and Fixed bug where Splash
+    Text can be enabled when Changelog is opened even if Splash text is Disabled
+    from Settings.
 
-    -
-    <b>Splash text</b>: This is one of the main features of the update. From now
-    on, there is a Text under the game logo in the Main menu with sometimes Funny
-    jokes or motivational lines everytime you enter the Main menu. Splash texts can
-    be disabled from settings.
 
-    - Improved Credits Menu UI
+    <b>Changelog Changes: </b>Fixed Bug where Changelog will
+    appear every time the Game is opened or the Main Menu is loaded if the Show Changelog
+    Toggle is On.
 
-    - Toggle for
-    FPS Display in settings
 
-    - Clock Fix
-
-    - Edit Chips Fix
-
-'
+    <b>Translation Fix: </b>Fixed "PROJECT NAME" and "CHOOSE
+    A PROJECT" not showing up because there was no Translation for them.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7375,7 +7368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &900798041
 RectTransform:
   m_ObjectHideFlags: 0
