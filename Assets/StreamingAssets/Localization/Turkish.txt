@@ -2,6 +2,8 @@ Version=-Versiyon 1.8 <size=25><color=#505050>(Son güncelleme 2 Dec 2022)</colo
 Created_By=-Olusturan kisi <color=#75ADFF><link="https://www.youtube.com/c/SebastianLague">Sebastian Lague</link> & <color=#05DDFF><link="https://www.youtube.com/channel/UCWWgp52Mkip5zeRU7GzXYUg">Lime inc.</link></color>
 New_Project=Yeni Proje
 Load_Project=Proje Yükle
+Project_Name=PROJE ADI
+Choose_Project=BİR PROJE SEÇİN
 Instructions=Açıklamalar
 Settings=Ayarlar
 Quit=Çıkıs Yap

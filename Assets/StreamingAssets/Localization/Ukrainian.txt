@@ -2,6 +2,8 @@ Version=-Версія 1.8 <size=25><color=#505050>(останє обновлен
 Created_By=-Створено <color=#75ADFF><link="https://www.youtube.com/c/SebastianLague">Sebastian Lague</link> & <color=#05DDFF><link="https://www.youtube.com/channel/UCWWgp52Mkip5zeRU7GzXYUg">Lime inc.</link></color>
 New_Project=НОВИЙ ПРОЕКТ
 Load_Project=ЗАВАНТАЖИТИ ПРОЕКТ
+Project_Name=НАЗВА ПРОЕКТУ
+Choose_Project=ОБЕРІТЬ ПРОЕКТ
 Instructions=ІНСТРУКЦІЯ
 Settings=НАЛАШТУВАННЯ
 Project_Name=НАЗВА ПРОЕКТУ

@@ -2,6 +2,8 @@ Version=-Version 1.8 <size=25><color=#505050>(Last update 2 Dec 2022)</color></s
 Created_By=-Created by <color=#75ADFF><link="https://www.youtube.com/c/SebastianLague">Sebastian Lague</link> & <color=#05DDFF><link="https://www.youtube.com/channel/UCWWgp52Mkip5zeRU7GzXYUg">Lime inc.</link></color>
 New_Project=NEW PROJECT
 Load_Project=LOAD PROJECT
+Project_Name=PROJECT NAME
+Choose_Project=CHOOSE A PROJECT
 Instructions=INSTRUCTIONS
 Settings=SETTINGS
 Quit=QUIT
