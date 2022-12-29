@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class ChipBarUI : MonoBehaviour {
 	public RectTransform bar;
 	public Transform buttonHolder;
+	public Transform displayButtonHolder;
+	public Transform utilityButtonHolder;
 	public CustomButton buttonPrefab;
 	public float buttonSpacing = 15f;
 	public float buttonWidthPadding = 10;
@@ -19,10 +21,21 @@ public class ChipBarUI : MonoBehaviour {
 		manager = FindObjectOfType<Manager> ();
 		manager.customChipCreated += AddChipButton;
 		for (int i = 0; i < manager.builtinChips.Length; i++) {
-			AddChipButton (manager.builtinChips[i]);
+			AddChipButton (manager.builtinChips[i], buttonHolder);
 		}
+        for (int i = 0; i < manager.displayChips.Length; i++)
+        {
+            AddChipButton(manager.displayChips[i], displayButtonHolder);
+        }
+        for (int i = 0; i < manager.utilityChips.Length; i++)
+        {
+            AddChipButton(manager.utilityChips[i], utilityButtonHolder);
+        }
 
-		Canvas.ForceUpdateCanvases ();
+
+
+
+        Canvas.ForceUpdateCanvases ();
 	}
 
 	void LateUpdate () {
@@ -30,11 +43,11 @@ public class ChipBarUI : MonoBehaviour {
 	}
 
 	void UpdateBarPos () {
-		float barPosY = (horizontalScroll.gameObject.activeSelf) ? 16 : 0;
-		bar.localPosition = new Vector3 (0, barPosY, 0);
+		float barPosY = (horizontalScroll.gameObject.activeSelf) ? 0-500 : 0-500;
+		bar.localPosition = new Vector3 (45, barPosY, 0);
 	}
 
-	void AddChipButton (Chip chip) {
+	void AddChipButton (Chip chip, Transform holder) {
 		if (hideList.Contains (chip.chipName)) {
 			//Debug.Log("Hiding")
 			return;
@@ -54,7 +67,7 @@ public class ChipBarUI : MonoBehaviour {
 		buttonRect.sizeDelta = new Vector2 (buttonTextUI.preferredWidth + buttonWidthPadding, buttonRect.sizeDelta.y);
 
 		// Set button position
-		buttonRect.SetParent (buttonHolder, false);
+		buttonRect.SetParent (holder, false);
 		//buttonRect.localPosition = new Vector3 (rightmostButtonEdgeX + buttonSpacing + buttonRect.sizeDelta.x / 2f, 0, 0);
 		rightmostButtonEdgeX = buttonRect.localPosition.x + buttonRect.sizeDelta.x / 2f;
 
