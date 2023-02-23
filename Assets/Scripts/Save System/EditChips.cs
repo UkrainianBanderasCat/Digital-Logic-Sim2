@@ -46,12 +46,19 @@ public class EditChips : MonoBehaviour
         Chip loadingChip;
         List<Chip> loadedChips = new List<Chip>();
 
-        using (StreamReader reader = new StreamReader(chipPath))
+        try
         {
-            string chipSaveString = reader.ReadToEnd();
-            savedChip = JsonUtility.FromJson<SavedChip>(chipSaveString);
-        }
+            using (StreamReader reader = new StreamReader(chipPath))
+            {
+                string chipSaveString = reader.ReadToEnd();
+                savedChip = JsonUtility.FromJson<SavedChip>(chipSaveString);
+            }
 
+        }
+        catch(Exception e)
+        {
+            return;
+        }
         string originalChipName = savedChip.name;
         foreach (SavedComponentChip componentChip in savedChip.savedComponentChips)
         {
