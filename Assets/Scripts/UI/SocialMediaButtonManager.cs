@@ -18,7 +18,7 @@ public class SocialMediaButtonManager : MonoBehaviour
 
     public void openDiscordServerInvite()
     {
-        Application.OpenURL("https://discord.gg/myGkgCZm");
+        Application.OpenURL("https://discord.gg/E5WtDC8y7T");
     }
     public void openYoutubeChannel()
     {
