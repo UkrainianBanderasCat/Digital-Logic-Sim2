@@ -110,6 +110,7 @@ public class PinAndWireInteraction : InteractionHandler {
 			Vector2 mousePos = InputHelper.MouseWorldPos;
 
 			wireToPlace.UpdateWireEndPoint (mousePos);
+			
 
 			// Left mouse press
 			if (Input.GetMouseButtonDown (0)) {
@@ -145,11 +146,13 @@ public class PinAndWireInteraction : InteractionHandler {
 			RemoveConflictingWire (chipInputPin);
 
 			wireToPlace.Place (endPin);
+			wireToPlace.palette = WireColorPicker.NextWireColorPalette;
 			Pin.MakeConnection (startPin, endPin);
 			allWires.Add (wireToPlace);
 			wiresByChipInputPin.Add (chipInputPin, wireToPlace);
 			wireToPlace = null;
 			currentState = State.None;
+			
 
 			onConnectionChanged?.Invoke ();
 		} else {

@@ -2269,9 +2269,17 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4750937598611645874}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
@@ -2338,7 +2346,7 @@ MonoBehaviour:
   highlightedHandleCol: {r: 0.496, g: 0.496, b: 0.496, a: 0}
   selectedHandleCol: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 0}
   propertiesUIX: 1.6
-  propertiesHeightMinMax: {x: 69, y: 104}
+  propertiesHeightMinMax: {x: 69, y: 125}
   showPreviewSignal: 1
   groupSpacing: 0.22
 --- !u!61 &4750937598926047526
@@ -2351,6 +2359,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2450,7 +2477,7 @@ Transform:
   - {fileID: 4750937600419506468}
   - {fileID: 2304848121685295537}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5537867366871689101
 MonoBehaviour:
@@ -2535,6 +2562,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2761,7 +2807,7 @@ MonoBehaviour:
   highlightedHandleCol: {r: 0.496, g: 0.496, b: 0.496, a: 0}
   selectedHandleCol: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 0}
   propertiesUIX: -1.6
-  propertiesHeightMinMax: {x: 69, y: 104}
+  propertiesHeightMinMax: {x: 69, y: 75}
   showPreviewSignal: 1
   groupSpacing: 0.22
 --- !u!114 &2647783974511930239
@@ -2788,6 +2834,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3461,7 +3526,7 @@ MonoBehaviour:
     m_Left: 3
     m_Right: 3
     m_Top: 5
-    m_Bottom: -10
+    m_Bottom: -5
   m_ChildAlignment: 0
   m_Spacing: 1
   m_ChildForceExpandWidth: 1

@@ -77,7 +77,8 @@ public class Logs : MonoBehaviour
 
     public void Log(string logString, string stackTrace, LogType type)
     {
-        TextWriter tw = new StreamWriter(filepath, true);
+        if (filepath == null || filepath == "") return;
+        TextWriter tw = new StreamWriter(filepath , true);
 
         tw.WriteLine("[" + System.DateTime.Now + "] " + logString);
 

@@ -55,6 +55,7 @@ public class ButtonText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 	}
 
 	void Update () {
+		if (buttonText == null || button == null || nonInteractableCol == null) return;
 		Color col = (highlighted) ? highlightedCol : normalCol;
 		buttonText.color = (button.interactable) ? col : nonInteractableCol;
 		if (Input.GetKeyDown(KeyCode.Delete) && highlighted && _chipDelete != null)

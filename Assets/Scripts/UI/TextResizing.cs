@@ -18,6 +18,9 @@ public class TextResizing : MonoBehaviour
 
     void Update()
     {
+        if (GetComponent<TMP_InputField>() == null) return;
+
+
         length = GetComponent<TMP_InputField>().text.Length;
         if (Mathf.Round(width/length) < maxSize)
             GetComponent<TMP_InputField>().pointSize = Mathf.Round(width/length);

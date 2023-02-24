@@ -449,7 +449,7 @@ public class ChipInterfaceEditor : InteractionHandler {
 
 		// Enable UI:
 		propertiesUI.gameObject.SetActive (true);
-		propertiesUI.sizeDelta = new Vector2 (propertiesUI.sizeDelta.x, (isGroup) ? propertiesHeightMinMax.y : propertiesHeightMinMax.x);
+		propertiesUI.sizeDelta = new Vector2 (propertiesUI.sizeDelta.x,propertiesHeightMinMax.y);
 		nameField.text = selectedSignals[0].signalName;
 		nameField.Select ();
 		nameField.caretPosition = nameField.text.Length;
