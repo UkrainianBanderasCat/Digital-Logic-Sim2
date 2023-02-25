@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Update v1.8.1 - What's New
+  m_text: Update v1.8.2 - What's New
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1164,6 +1164,37 @@ MonoBehaviour:
   - Logic gates forever
   - Never stop
   - What do we do today? Splash TEXT!!!
+  - 01000101
+  - '?'
+  - Embarassingly Unoptimized
+  - 'Star Wars : The Phantom Pins'
+  - 'Also try Digital Logic Sim : Community Edition'
+  - 'A wise man once said : "ded chat"'
+  - Removed Herobrine.
+  - But can it run Doom ?
+  - Become a Dev by clicking the discord icon on bottom right.
+  - Wow, colorful wires !
+  - (And & Not) 2 Tetris !
+  - Sub-optimal logic simulation.
+  - ${splashTextString}
+  - NullReferenceException at line 21
+  - CPU challenge !
+  - Hold Shift to make straight lines and turns.
+  - Solve the Halting Problem !
+  - Big projects are being developped at Lime Inc !
+  - '"Ya like Jazz ?" - Barry Bee Benson'
+  - How do I make an OR gate ?
+  - 'Fun fact : every (current) dev is from a different country.'
+  - '!(Made With Scratch)'
+  - 'Mechanics 2 : Electric Boogaloo'
+  - '"Don''t believe every quote you read on the internet" - Sun Tzu'
+  - 68% statistic you see on the internet are made up, including this one.
+  - You can encrypt files in videos, making Youtube a free database with unlimited
+    storage.
+  - How did we get there ?
+  - Thank you, Alan Turing !
+  - Do we live in a simulation ? That would be an explanation on why the game runs
+    so slow.
   splashTextUI: {fileID: 627859330}
   showSplashText: 1
   showSplashTextToggle: {fileID: 831448331}
@@ -4673,7 +4704,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Version 1.7 <size=25><color=#505050>(Last update 6 Sep 2022)</color></size>
+  m_text: Version 1.8.2 <size=25><color=#505050>(Last update 24 Feb 2022)</color></size>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd4f20431fc94f610a2bede4c040ecc7, type: 2}
   m_sharedMaterial: {fileID: 6154631586329146020, guid: dd4f20431fc94f610a2bede4c040ecc7,
@@ -5914,23 +5945,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Nothing New added but, a few annoying Bug Fixes, Improvements and Changes.
+  m_text: 'As this is probably the last version of the game we release, we would
+    like to thank you, all the players, who have made this possible.
 
 
-    <b>Splash
-    Text Changes: </b>Splash Text Disable Toggle now makes the Splash Text Disabled
-    or Enabled Live without having to Restart the Game and Fixed bug where Splash
-    Text can be enabled when Changelog is opened even if Splash text is Disabled
-    from Settings.
+    <b>Chip
+    Categories : </b>The chip selection bar is now divided into three categories
+    : "Logic and Custom", "Display", and "Utility".
 
 
-    <b>Changelog Changes: </b>Fixed Bug where Changelog will
-    appear every time the Game is opened or the Main Menu is loaded if the Show Changelog
-    Toggle is On.
+    <b>Custom Wire Color :
+    </b>Added a new menu you can access by clicking on the new button on the bottom
+    left corner of the design board. In this menu, you can select the color of the
+    next wire you will place.
 
 
-    <b>Translation Fix: </b>Fixed "PROJECT NAME" and "CHOOSE
-    A PROJECT" not showing up because there was no Translation for them.'
+    <b>Theme Fix : </b>Fixed an issue where the theme
+    color selectable in the Settings menu wouldn''t save when closing and reopening
+    the game. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
