@@ -1,4 +1,4 @@
-# Digital-Logic-Sim
+# Digital-Logic-Sim2
 
 **Creators:**
 - **SebLague**
@@ -6,7 +6,7 @@
 - **AlphaCodingPilot**
 - **firecerne**
 - **TheRiggedDev**
-- **3m1l10_ha**
+- **logic.mindful**
 
 **Ideas to add:**
 - **Bus**
