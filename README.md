@@ -1,5 +1,7 @@
 # Digital-Logic-Sim2
 
+THIS SOFTWARE HAS BEEN REPLACED BY [Digital Logic Sim - Community Edit](https://github.com/firecerne/Digital-Logic-Sim-Community-Edit)
+
 **Creators:**
 - **SebLague**
 - **UkrainianBanderasCat**
